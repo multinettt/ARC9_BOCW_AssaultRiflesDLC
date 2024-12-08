@@ -456,8 +456,13 @@ SWEP.AttachmentElements = {
     },
     ["optic_mount"] = {
         Bodygroups = {
-            {2, 1},
             {3, 1},
+            {7, 1},
+        }
+    },
+    ["foregrip_mount"] = {
+        Bodygroups = {
+            {8, 1},
         }
     },
     ["bodymount_lasermixbody"] = {
@@ -595,9 +600,9 @@ SWEP.Attachments = {
     {
         PrintName = "OPTIC", -- print name
         Bone = "tag_weapon",
-        Pos = Vector(4.5, 0, 4.94),
+        Pos = Vector(4, 0, 5.01),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 0.5),
         Category = {"optic_picatinny"},
         InstalledElements = {"optic_mount"},
     },
@@ -613,10 +618,11 @@ SWEP.Attachments = {
     {
         PrintName = "UNDRBARREL",
         Bone = "tag_weapon",
-        Pos = Vector(-7, -4.42, 6.25),
+        Pos = Vector(-7, -4.42, 6.1),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(20.25, 4.5, -5),
         Category = {"bocw_underbarrel_west"},
+        InstalledElements = {"foregrip_mount"},
     },
     {
         PrintName = "BODY",
@@ -659,7 +665,7 @@ SWEP.Attachments = {
         Bone = "tag_clip",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0.25, 0, -2),
+        Icon_Offset = Vector(0, 0, 0),
         Category = {"bocw_vargo52_mag"},
     },
     {
@@ -667,7 +673,7 @@ SWEP.Attachments = {
         Bone = "tag_weapon",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(-0.75, 0, -0.5),
+        Icon_Offset = Vector(-0.5, 0, -0.25),
         Category = {"bocw_vargo52_wrap"},
     },
     {

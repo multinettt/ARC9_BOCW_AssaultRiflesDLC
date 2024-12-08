@@ -52,7 +52,7 @@ SWEP.Description = [[Full-auto assault rifle. Excellent handling speeds with imp
 
 The Groza is a bullpup assault rifle featured in Call of Duty: Black Ops Cold War and Call of Duty: Mobile.
 
-TThe Groza was added to Call of Duty: Black Ops Cold War as part of the Season One update.]]
+The Groza was added to Call of Duty: Black Ops Cold War as part of the Season One update.]]
 
 SWEP.UseHands = true
 
@@ -381,9 +381,9 @@ SWEP.CustomBlendFactor = nil
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3.023, -5, 0.11),
+    Pos = Vector(0, -2, 0),
     Ang = Angle(0, 0, 0),
-    Magnification = 1,
+    Magnification = 1.4,
     --AssociatedSlot = 0, -- Attachment slot to associate the sights with. Causes RT scopes to render.
     CrosshairInSights = false,
 }
@@ -413,8 +413,8 @@ SWEP.HolsterAng = Angle(0, -15, 25)
 
 -- Position for customizing
 SWEP.CustomizeAng = Angle(90, 4, 0)
-SWEP.CustomizePos = Vector(12, 32, 4)
-SWEP.CustomizeRotateAnchor = Vector(17, -1.88, -5)
+SWEP.CustomizePos = Vector(9, 32, 4)
+SWEP.CustomizeRotateAnchor = Vector(10, -1.88, -3)
 
 SWEP.CustomizeSnapshotFOV = 70
 SWEP.CustomizeSnapshotPos = Vector(0, 20, 0)
@@ -455,6 +455,11 @@ SWEP.AttachmentElements = {
         Bodygroups = {
             {2, 1},
         }
+    },
+    ["rearsight2"] = {
+        Bodygroups = {
+            {5, 1},
+        },
     },
     ["bodymount_lasermixbody"] = {
         Bodygroups = {
@@ -667,6 +672,14 @@ SWEP.Attachments = {
         Category = {"bocw_groza_wrap"},
     },
     {
+        PrintName = "REAR SIGHT",
+        Bone = "tag_weapon",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(-2.2, 0, 5.4),
+        Category = {"bocw_groza_rearsight"},
+    },
+    {
         PrintName = "SOUND",
         Bone = "tag_weapon",
         Pos = Vector(0, 0, 0),
@@ -723,6 +736,18 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
         Time = 10,
+    },
+    ["enter_sights"] = {
+        Source = "ads_in",
+        Time = 1,
+    },
+    ["idle_sights"] = {
+        Source = "idle",
+        Time = 1,
+    },
+    ["exit_sights"] = {
+        Source = "ads_out",
+        Time = 1,
     },
     ["draw"] = {
         Source = "draw",

@@ -157,3 +157,20 @@ ATT.SpeedMultSighted = 1.4
 ATT.SpreadMultHipFire = 1.2
 
 ARC9.LoadAttachment(ATT, "bocw_groza_stock_kgb")
+
+--
+
+ATT = {}
+
+ATT.PrintName = "400 Meter Rear Sight"
+ATT.CompactName = "400M RS"
+ATT.Icon = Material("entities/acwatt_bocw.png", "mips smooth")
+ATT.Description = [[Rotate the rear sight to 400 meter mode from 200 meters.]]
+
+ATT.SortOrder = 6
+
+ATT.Category = "bocw_groza_rearsight"
+
+ATT.ActivateElements = {"rearsight2"}
+
+ARC9.LoadAttachment(ATT, "bocw_groza_rearsight_400m")
