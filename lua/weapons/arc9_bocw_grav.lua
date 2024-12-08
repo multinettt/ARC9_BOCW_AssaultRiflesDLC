@@ -884,7 +884,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.Grav_reload_start", t = 0 },
             { s = "ARC9_BOCW.Grav_reload_magout", t = 0.35 },
             { s = "ARC9_BOCW.Grav_reload_maggrab", t = 1.3 },
-            { s = "ARC9_BOCW.Grav_reload_magin", t = 1.85 },
+            { s = "ARC9_BOCW.Grav_reload_magin", t = 1.8 },
             { s = "ARC9_BOCW.Grav_reload_grab", t = 2.7 },
             { s = "ARC9_BOCW.Grav_reload_boltback", t = 3 },
             { s = "ARC9_BOCW.Grav_reload_boltrelease", t = 3.2 },
