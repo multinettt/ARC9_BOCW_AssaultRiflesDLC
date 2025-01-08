@@ -37,7 +37,7 @@ SWEP.TrueName = "OTs-14 Groza"
 SWEP.Class = "Assault Rifle"
 SWEP.Trivia = {
      Manufacturer = "TsKIB SOO",
-     Calibre = "5.56x45mm",
+     Calibre = "7.62x39mm",
      Mechanism = "Gas-operated, Rotating bolt",
      Country = "Russia",
      Year = 1992
@@ -184,9 +184,9 @@ SWEP.Firemodes = {
 
 -------------------------- RECOIL
 
-SWEP.Recoil = 1
-SWEP.RecoilSide = -0.4
-SWEP.RecoilUp = 0.5
+SWEP.Recoil = 1.5
+SWEP.RecoilSide = -0.2
+SWEP.RecoilUp = 0.8
 
 SWEP.RecoilRandomUp = 0
 SWEP.RecoilRandomSide = 0
@@ -206,7 +206,7 @@ SWEP.SpreadAddMove = math.rad(100 / 37.5)
 SWEP.SpreadAddMidAir = 0.1
 -- SWEP.SpreadAddShooting = math.rad(5 / 37.5) -- math.rad(108 / 37.5)
 
-SWEP.RecoilPatternDrift = 8
+SWEP.RecoilPatternDrift = 6
 
 SWEP.UseVisualRecoil = true
 
@@ -343,6 +343,9 @@ SWEP.NoViewBob = false
 -------------------------- VISUALS
 
 SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
+    [1] = "tag_bullet_deplete_sqtl_00_animate",
+    [2] = "tag_bullet_deplete_sqtl_01_animate",
+    [3] = "tag_bullet_deplete_sqtl_02_animate",
 }
 SWEP.CaseBones = {}
 -- Unlike BulletBones, these bones are determined by the missing bullet amount when reloading
@@ -413,7 +416,7 @@ SWEP.HolsterAng = Angle(0, -15, 25)
 
 -- Position for customizing
 SWEP.CustomizeAng = Angle(90, 4, 0)
-SWEP.CustomizePos = Vector(9, 32, 4)
+SWEP.CustomizePos = Vector(9, 34, 4)
 SWEP.CustomizeRotateAnchor = Vector(10, -1.88, -3)
 
 SWEP.CustomizeSnapshotFOV = 70
@@ -451,14 +454,36 @@ SWEP.AttachmentElements = {
             {1, 1},
         }
     },
+    ["barrelgone"] = {
+        Bodygroups = {
+            {6, 1},
+        }
+    },
     ["optic_mount"] = {
         Bodygroups = {
             {2, 1},
         }
     },
+    ["body_mount"] = {
+        Bodygroups = {
+            {7, 1},
+        }
+    },
+    ["grip_mount"] = {
+        Bodygroups = {
+            {8, 1},
+        }
+    },
     ["rearsight2"] = {
         Bodygroups = {
             {5, 1},
+        },
+    },
+    ["bocw_optic_nochsovathermal"] = {
+        Bodygroups = {
+            {9, 1},
+            {5, 2},
+            {2, 0}
         },
     },
     ["bodymount_lasermixbody"] = {
@@ -492,62 +517,44 @@ SWEP.AttachmentElements = {
         }
     },
     ["barrel_ultralight"] = {
-        Bodygroups = {
-            {3, 1},
-        },
         AttPosMods = {
             [2] = {
-                Pos = Vector(-0.21, 0, 0),
+                Pos = Vector(-1.99, 0, 0),
             },
         },
     },
-    ["barrel_cavalrylancer"] = {
-        Bodygroups = {
-            {3, 1},
-        },
+    ["barrel_cavalry"] = {
         AttPosMods = {
             [2] = {
-                Pos = Vector(-0.21, 0, 0),
+                Pos = Vector(-0.17, 0, 0),
             },
         },
     },
-    ["barrel_reinforcedheavy"] = {
-        Bodygroups = {
-            {3, 1},
-        },
+    ["barrel_reinforced"] = {
         AttPosMods = {
             [2] = {
-                Pos = Vector(1.38, 0, 0),
+                Pos = Vector(0.36, 0, 0),
             },
         },
     },
-    ["barrel_ranger"] = {
-        Bodygroups = {
-            {3, 1},
-        },
+    ["barrel_grucomposite"] = {
         AttPosMods = {
             [2] = {
-                Pos = Vector(2.375, 0, 0),
+                Pos = Vector(-0.17, 0, 0),
             }
         },
     },
-    ["barrel_takedown"] = {
-        Bodygroups = {
-            {3, 1},
-        },
+    ["barrel_contourm2"] = {
         AttPosMods = {
             [2] = {
-                Pos = Vector(1.38, 0, 0),
+                Pos = Vector(-1.4, 0, 0),
             }
         },
     },
-    ["barrel_taskforce"] = {
-        Bodygroups = {
-            {3, 1},
-        },
+    ["barrel_cmvmilspec"] = {
         AttPosMods = {
             [2] = {
-                Pos = Vector(1.38, 0, 0),
+                Pos = Vector(0, 0, 0),
             }
         },
     },
@@ -563,6 +570,20 @@ SWEP.AttachmentSlotMods = {
 
 -- Adjust the stats of specific attachments when applied to this gun
 SWEP.AttachmentTableOverrides = {
+    ["bocw_optic_nochsovathermal"] = {
+        ModelOffset = Vector(2.4, 0, -2.1),
+        VisualRecoil = 0.1
+    },
+    ["bocw_underbarrel_east_speedgrip"] = {
+        ModelOffset = Vector(0, 0, -0.08)
+    },
+    ["bocw_underbarrel_east_mixgrip"] = {
+        ModelOffset = Vector(0, 0, -0.22)
+    },
+    ["bocw_underbarrel_east_foregrippro"] = {
+        ModelOffset = Vector(0, 0, 0.69),
+        ModelAngleOffset = Angle(-2, 0, 0)
+    },
     ["bocw_optic_visiontech2x"] = {
         VisualRecoil = 0.1
     },
@@ -599,7 +620,7 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 6.15),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),
-        Category = {"optic_picatinny"},
+        Category = {"optic_picatinny", "bocw_nochsova_optic"},
         InstalledElements = {"optic_mount"},
     },
     {
@@ -607,34 +628,35 @@ SWEP.Attachments = {
         Bone = "tag_muzzle",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, 0),
-        Category = {"bocw_groza_muzzle"},
+        Icon_Offset = Vector(1, 0, 0),
+        Category = {"bocw_groza_muzzle", "bocw_east_muzzle"},
         Installed = "bocw_groza_muzzle_base",
     },
     {
         PrintName = "UNDRBARREL",
         Bone = "tag_weapon",
-        Pos = Vector(-13.5, -4.42, 5.895),
+        Pos = Vector(-13.25, -4.42, 5.17),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(20.25, 4.5, -5),
-        Category = {"bocw_underbarrel_china"},
+        Category = {"bocw_underbarrel_east"},
+        InstalledElements = {"grip_mount"},
     },
     {
         PrintName = "BODY",
         Bone = "tag_weapon",
-        Pos = Vector(10.55, 0, 1.39),
-        Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, -0.3),
-        Category = {"bocw_groza_body"},
-        InstalledElements = {"bodymount_lasermixbody"},
+        Pos = Vector(2, 0.8, 3.49),
+        Ang = Angle(0, 0, -90),
+        Icon_Offset = Vector(0, 0, 0),
+        Category = {"bocw_ak47_body_mix"},
+        InstalledElements = {"bodymount_mixbody"},
     },
     {
         Hidden = true,
         Bone = "tag_weapon",
-        Pos = Vector(10.75, 0, 1),
+        Pos = Vector(3.65, 1.85, 3.49),
         Ang = Angle(0, 0, 0),
-        Category = {"bocw_east_body"},
-        InstalledElements = {"bodymount_flashlight"},
+        Category = {"bocw_east_body", "bocw_ak47_body"},
+        InstalledElements = {"body_mount"},
         MergeSlots = {4,5}
     },
     {
@@ -642,8 +664,9 @@ SWEP.Attachments = {
         Bone = "tag_barrel",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(2, 0, 0),
+        Icon_Offset = Vector(1, 0, 0),
         Category = {"bocw_groza_barrel"},
+        InstalledElements = {"barrelgone"},
     },
     {
         PrintName = "STOCK",
@@ -662,6 +685,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),
         Category = {"bocw_groza_mag"},
+        InstalledElements = {"maggone"},
     },
     {
         PrintName = "HANDLE",
@@ -678,14 +702,16 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(-2.2, 0, 5.4),
         Category = {"bocw_groza_rearsight"},
+        ExcludeElements = {"bocw_optic_nochsovathermal"}
     },
     {
         PrintName = "SOUND",
         Bone = "tag_weapon",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(10, 0, 2.34),
+        Icon_Offset = Vector(12, 0, 2.34),
         Category = {"bocw_groza_sound"},
+        CosmeticOnly = true,
     },
     {
         PrintName = "Cosmetic",
@@ -889,11 +915,9 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.Groza_reload_start", t = 0 },
             { s = "ARC9_BOCW.Groza_reload_magout", t = 0.2 },
             { s = "ARC9_BOCW.Groza_reload_magin", t = 1.1 },
-            { s = "ARC9_BOCW.Groza_boltback", t = 1.95 },
+            { s = "ARC9_BOCW.Groza_boltback", t = 2 },
             { s = "ARC9_BOCW.Groza_boltrelease", t = 2.15 },
-            { s = "ARC9_BOCW.Groza_reload_end", t = 2.6 },
-            { hide = 1, t = 0.75 },
-            { hide = 0, t = 0.9 }
+            { s = "ARC9_BOCW.Groza_reload_end", t = 2.5 },
         },
         IKTimeLine = {
             {
@@ -912,7 +936,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 0.85,
                 lhik = 1,
                 rhik = 0
             },
@@ -924,8 +948,8 @@ SWEP.Animations = {
         EventTable = {
             { s = "ARC9_BOCW.Groza_reload_start", t = 0 },
             { s = "ARC9_BOCW.Groza_reload_ext_magout", t = 0.2 },
-            { s = "ARC9_BOCW.Groza_reload_ext_magin", t = 1.2 },
-            { s = "ARC9_BOCW.Groza_reload_end", t = 2 },
+            { s = "ARC9_BOCW.Groza_reload_ext_magin", t = 1.1 },
+            { s = "ARC9_BOCW.Groza_reload_end", t = 1.7 },
         },
         IKTimeLine = {
             {
@@ -939,7 +963,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.7,
                 lhik = 0,
                 rhik = 0
             },
@@ -958,9 +982,9 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.Groza_reload_start", t = 0 },
             { s = "ARC9_BOCW.Groza_reload_ext_magout", t = 0.2 },
             { s = "ARC9_BOCW.Groza_reload_ext_magin", t = 1.1 },
-            { s = "ARC9_BOCW.Groza_boltback", t = 2 },
-            { s = "ARC9_BOCW.Groza_boltrelease", t = 2.25 },
-            { s = "ARC9_BOCW.Groza_reload_end", t = 2.65 },
+            { s = "ARC9_BOCW.Groza_boltback", t = 2.05 },
+            { s = "ARC9_BOCW.Groza_boltrelease", t = 2.15 },
+            { s = "ARC9_BOCW.Groza_reload_end", t = 2.5 },
         },
         IKTimeLine = {
             {
@@ -979,7 +1003,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 0.85,
                 lhik = 1,
                 rhik = 0
             },
@@ -989,6 +1013,7 @@ SWEP.Animations = {
         Source = "reload_dualmag",
         MinProgress = 0.55,
         EventTable = {
+            { s = "ARC9_BOCW.Groza_reload_start", t = 0 },
             { s = "ARC9_BOCW.Groza_reload_magout", t = 0.3 },
             { s = "ARC9_BOCW.Groza_reload_magin", t = 0.9 },
             { s = "ARC9_BOCW.Groza_reload_end", t = 1.5 },
@@ -1010,7 +1035,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.8,
                 lhik = 1,
                 rhik = 0
             },
@@ -1020,11 +1045,12 @@ SWEP.Animations = {
         Source = "reload_dualmag_empty",
         MinProgress = 0.4,
         EventTable = {
+            { s = "ARC9_BOCW.Groza_reload_start", t = 0 },
             { s = "ARC9_BOCW.Groza_reload_magout", t = 0.2 },
             { s = "ARC9_BOCW.Groza_reload_magin", t = 0.8 },
-            { s = "ARC9_BOCW.Groza_boltback", t = 1.6 },
-            { s = "ARC9_BOCW.Groza_boltrelease", t = 1.8 },
-            { s = "ARC9_BOCW.Groza_reload_end", t = 2.3 },
+            { s = "ARC9_BOCW.Groza_boltback", t = 1.55 },
+            { s = "ARC9_BOCW.Groza_boltrelease", t = 1.7 },
+            { s = "ARC9_BOCW.Groza_reload_end", t = 2.1 },
         },
         IKTimeLine = {
             {
@@ -1053,6 +1079,7 @@ SWEP.Animations = {
         Source = "reload_dualmag2",
         MinProgress = 0.55,
         EventTable = {
+            { s = "ARC9_BOCW.Groza_reload_start", t = 0 },
             { s = "ARC9_BOCW.Groza_reload_magout", t = 0.3 },
             { s = "ARC9_BOCW.Groza_reload_magin", t = 1 },
             { s = "ARC9_BOCW.Groza_reload_end", t = 1.7 },
@@ -1084,11 +1111,12 @@ SWEP.Animations = {
         Source = "reload_dualmag2_empty",
         MinProgress = 0.45,
         EventTable = {
+            { s = "ARC9_BOCW.Groza_reload_start", t = 0 },
             { s = "ARC9_BOCW.Groza_reload_magout", t = 0.2 },
             { s = "ARC9_BOCW.Groza_reload_magin", t = 1 },
-            { s = "ARC9_BOCW.Groza_boltback", t = 1.8 },
-            { s = "ARC9_BOCW.Groza_boltrelease", t = 2 },
-            { s = "ARC9_BOCW.Groza_reload_end", t = 2.4 },
+            { s = "ARC9_BOCW.Groza_boltback", t = 1.9 },
+            { s = "ARC9_BOCW.Groza_boltrelease", t = 2.1 },
+            { s = "ARC9_BOCW.Groza_reload_end", t = 2.3 },
         },
         IKTimeLine = {
             {
@@ -1119,7 +1147,7 @@ SWEP.Animations = {
         EventTable = {
             { s = "ARC9_BOCW.Groza_reload_start", t = 0 },
             { s = "ARC9_BOCW.Groza_reload_magout", t = 0.3 },
-            { s = "ARC9_BOCW.Groza_reload_magin", t = 1.2 },
+            { s = "ARC9_BOCW.Groza_reload_magin", t = 1 },
             { s = "ARC9_BOCW.Groza_reload_end", t = 1.8 },
         },
         IKTimeLine = {
@@ -1152,12 +1180,10 @@ SWEP.Animations = {
         EventTable = {
             { s = "ARC9_BOCW.Groza_reload_start", t = 0 },
             { s = "ARC9_BOCW.Groza_reload_magout", t = 0.3 },
-            { s = "ARC9_BOCW.Groza_reload_magin", t = 1.15 },
+            { s = "ARC9_BOCW.Groza_reload_magin", t = 1 },
             { s = "ARC9_BOCW.Groza_boltback", t = 1.95 },
             { s = "ARC9_BOCW.Groza_boltrelease", t = 2.15 },
-            { s = "ARC9_BOCW.Groza_reload_end", t = 2.6 },
-            { hide = 1, t = 0.75 },
-            { hide = 0, t = 0.9 }
+            { s = "ARC9_BOCW.Groza_reload_end", t = 2.5 },
         },
         IKTimeLine = {
             {
@@ -1176,7 +1202,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.9,
                 lhik = 1,
                 rhik = 0
             },

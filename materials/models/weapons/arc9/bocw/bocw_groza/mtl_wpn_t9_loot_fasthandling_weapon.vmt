@@ -1,6 +1,6 @@
 "VertexLitGeneric"
 {
-    "$basetexture" "models\weapons\arc9\bocw\bocw_groza\mtl_wpn_t9_loot_fasthandling_weapon_rgb"
+    "$basetexture" "models\weapons\arc9\bocw\bocw_groza\mtl_wpn_t9_loot_fasthandling_weapon_camo_rgb"
     "$bumpmap" "models\weapons\arc9\bocw\bocw_groza\mtl_wpn_t9_loot_fasthandling_weapon_n"
     "$phongexponenttexture" "models\weapons\arc9\bocw\bocw_groza\mtl_wpn_t9_loot_fasthandling_weapon_e"
 
@@ -31,12 +31,18 @@
     //remove this if not using MWB
     "Proxies"
     {
-        "MwEnvMapTint"
+        "Arc9EnvMapTint"
         {
             "min" "0"
             "max" "1"
             "envmap" "\specularity_00"
             "color" "[0.102 0.102 0.102]"
+        }
+         "CustomCamo" 
+        {
+	camoTexture $detail
+	camoScale $detailscale
+            	blend $detailblendfactor
         }
     }
 }
