@@ -16,7 +16,7 @@ ATT.Category = "bocw_fara83_mag"
 ATT.Model = "models/weapons/arc9/atts/bocw_fara83_magazine_ext1.mdl"
 
 ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0.72)
+ATT.ModelOffset = Vector(0, 0, -0.06)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.ClipSizeOverride = 40
@@ -68,7 +68,7 @@ ATT.Category = "bocw_fara83_mag"
 ATT.Model = "models/weapons/arc9/atts/bocw_fara83_magazine_mix1.mdl"
 
 ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0.72)
+ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.ReloadTimeMult = 0.75
@@ -95,7 +95,7 @@ ATT.Category = "bocw_fara83_mag"
 ATT.Model = "models/weapons/arc9/atts/bocw_fara83_magazine_extpro.mdl"
 
 ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0.72)
+ATT.ModelOffset = Vector(0, 0, -0.08)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.ClipSizeOverride = 50
@@ -151,7 +151,7 @@ ATT.Category = "bocw_fara83_mag"
 ATT.Model = "models/weapons/arc9/atts/bocw_fara83_magazine_mixpro.mdl"
 
 ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0.72)
+ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.AimDownSightsTimeMult = 1.25

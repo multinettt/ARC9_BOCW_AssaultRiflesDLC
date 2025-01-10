@@ -13,12 +13,6 @@ ATT.SortOrder = 0
 
 ATT.Category = "bocw_fara83_stock"
 
-ATT.Model = "models/weapons/arc9/atts/bocw_fara83_stock_tactical.mdl"
-
-ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0)
-ATT.ModelAngleOffset = Angle(0, 0, 0)
-
 ATT.ActivateElements = {"stock_tactical"}
 
 ATT.SpeedMultSights = 1.2
@@ -44,7 +38,7 @@ ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
-ATT.ActivateElements = {"stock_wire"}
+ATT.ActivateElements = {"stockgone"}
 
 ATT.SprintToFireTimeMult = 0.9
 
@@ -63,15 +57,15 @@ ATT.SortOrder = 2
 
 ATT.Category = "bocw_fara83_stock"
 
-ATT.Model = "models/weapons/arc9/atts/bocw_fara83_stock_duster.mdl"
-
-ATT.SpeedMult = 1.05
+ATT.Model = "models/weapons/arc9/atts/bocw_fara83_stock_nostock.mdl"
 
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
-ATT.ActivateElements = {"stock_dst"}
+ATT.SpeedMult = 1.05
+
+ATT.ActivateElements = {"stock_duster"}
 
 ARC9.LoadAttachment(ATT, "bocw_fara83_stock_duster")
 
@@ -88,7 +82,7 @@ ATT.SortOrder = 3
 
 ATT.Category = "bocw_fara83_stock"
 
-ATT.Model = "models/weapons/arc9/atts/bocw_fara83_stock_none.mdl"
+ATT.Model = "models/weapons/arc9/atts/bocw_fara83_stock_nostock.mdl"
 
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
@@ -98,9 +92,9 @@ ATT.SprintToFireTimeMult = 0.7
 
 ATT.SpreadMultHipFire = 1.15
 
-ATT.ActivateElements = {"stock_none"}
+ATT.ActivateElements = {"stockgone"}
 
-ARC9.LoadAttachment(ATT, "bocw_fara83_stock_cqbpad")
+ARC9.LoadAttachment(ATT, "bocw_fara83_stock_nostock")
 
 ATT = {}
 
@@ -114,12 +108,6 @@ The Raider Stock is a Stock attachment available for some NATO related primary w
 ATT.SortOrder = 5
 
 ATT.Category = "bocw_fara83_stock"
-
-ATT.Model = "models/weapons/arc9/atts/bocw_fara83_stock_raider.mdl"
-
-ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0)
-ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.SpeedMultShooting = 1.05
 ATT.SpeedMultSighted = 1.4
@@ -142,12 +130,6 @@ The KGB Skeletal Stock is a Stock attachment available for some Warsaw Pact rela
 ATT.SortOrder = 6
 
 ATT.Category = "bocw_fara83_stock"
-
-ATT.Model = "models/weapons/arc9/atts/bocw_fara83_stock_kgb.mdl"
-
-ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0)
-ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.SprintToFireTimeMult = 1.3
 ATT.SpeedMultSighted = 1.4

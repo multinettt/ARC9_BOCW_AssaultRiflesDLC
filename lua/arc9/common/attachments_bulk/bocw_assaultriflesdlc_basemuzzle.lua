@@ -39,7 +39,7 @@ ATT.Model = "models/weapons/arc9/atts/bocw_fara83_muzzle.mdl"
 
 ATT.Category = {"bocw_fara83_muzzle"}
 
-ATT.ModelOffset = Vector(0.88, 0, 0)
+ATT.ModelOffset = Vector(0.55, -0.03, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.MuzzleParticleOverride = "muzzleflash_4"
@@ -54,7 +54,7 @@ ATT = {}
 
 ATT.PrintName = "C58 Muzzle Brake"
 ATT.CompactName = "C58 MUZZ"
-ATT.Icon = Material("entities/bocw_atts/muzzles/groza_base.png", "mips smooth")
+ATT.Icon = Material("entities/bocw_atts/muzzles/c58_base.png", "mips smooth")
 ATT.Description = [[7.62x51mm Muzzle Brake]]
 
 ATT.SortOrder = -10
@@ -78,7 +78,7 @@ ATT = {}
 
 ATT.PrintName = "EM2 Muzzle Brake"
 ATT.CompactName = "EM2 MUZZ"
-ATT.Icon = Material("entities/bocw_atts/muzzles/groza_base.png", "mips smooth")
+ATT.Icon = Material("entities/bocw_atts/muzzles/em2_base.png", "mips smooth")
 ATT.Description = [[.280 British Muzzle Brake]]
 
 ATT.SortOrder = -10
@@ -126,7 +126,7 @@ ATT = {}
 
 ATT.PrintName = "Vargo52 Muzzle Brake"
 ATT.CompactName = "VRGO MUZZ"
-ATT.Icon = Material("entities/bocw_atts/muzzles/groza_base.png", "mips smooth")
+ATT.Icon = Material("entities/bocw_atts/muzzles/vargo52_base.png", "mips smooth")
 ATT.Description = [[5.56x45mm Muzzle Brake]]
 
 ATT.SortOrder = -10
