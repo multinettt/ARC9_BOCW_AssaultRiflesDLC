@@ -182,8 +182,8 @@ SWEP.Firemodes = {
 
 -------------------------- RECOIL
 
-SWEP.Recoil = 1
-SWEP.RecoilSide = -0.4
+SWEP.Recoil = 0.8
+SWEP.RecoilSide = 0.4
 SWEP.RecoilUp = 0.5
 
 SWEP.RecoilRandomUp = 0
@@ -192,7 +192,7 @@ SWEP.RecoilRandomSide = 0
 SWEP.RecoilDissipationRate = 40 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0.1 -- How long the gun must go before the recoil pattern starts to reset.
 
-SWEP.RecoilAutoControl = 0.75
+SWEP.RecoilAutoControl = 0.25
 SWEP.RecoilKick = 2
 
 SWEP.Spread = math.rad(1.3 / 37.5)
@@ -217,7 +217,7 @@ SWEP.VisualRecoilRoll = 0.1
 
 SWEP.VisualRecoilCenter = Vector(0, 0, 0)
 
-SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilPunch = 1
 SWEP.VisualRecoilPunchMultSights = 0.6
 
 
@@ -606,8 +606,28 @@ SWEP.AttachmentSlotMods = {
 
 -- Adjust the stats of specific attachments when applied to this gun
 SWEP.AttachmentTableOverrides = {
+    ["bocw_ak47_body_laser1"] = {
+        ActivateElements = {"bodymount_laser"}
+    },
+    ["bocw_ak47_body_laserpro"] = {
+        ActivateElements = {"bodymount_laser"},
+        ModelOffset = Vector(0, 0, 0.03)
+    },
     ["bocw_ak47_body_mixbody1"] = {
-        ModelOffset = Vector(0, -0.2, 0)
+        ModelOffset = Vector(0, -0.64, 0),
+        ModelAngleOffset = Angle(0, 0, 184)
+    },
+    ["bocw_ak47_body_mixbodypro"] = {
+        ModelOffset = Vector(0, -0.62, 0),
+        ModelAngleOffset = Angle(0, 0, 184)
+    },
+    ["bocw_ak47_body_flashlight1"] = {
+        ActivateElements = {"bodymount_flashlight"},
+        ModelOffset = Vector(0, 0.04, -0.01)
+    },
+    ["bocw_ak47_body_flashlightpro"] = {
+        ActivateElements = {"bodymount_flashlight"},
+        ModelOffset = Vector(0, 0.04, -0.01)
     },
     ["bocw_optic_visiontech2x"] = {
         VisualRecoil = 0.1
@@ -654,7 +674,7 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),
-        Category = {"bocw_fara83_muzzle"},
+        Category = {"bocw_fara83_muzzle", "bocw_east_muzzle"},
         Installed = "bocw_fara83_muzzle_base",
     },
     {
@@ -672,26 +692,8 @@ SWEP.Attachments = {
         Pos = Vector(18.7, -1.59, 4.25),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),
-        Category = {"bocw_ak47_body"},
-        InstalledElements = {"bodymount_laser"},
-    },
-    {
-        Hidden = true,
-        Bone = "tag_weapon",
-        Pos = Vector(20, -2, 4.25),
-        Ang = Angle(0, 0, 0),
-        Category = {"bocw_east_body"},
-        InstalledElements = {"bodymount_flashlight"},
-        MergeSlots = {4,5}
-    },
-    {
-        Hidden = true,
-        Bone = "tag_weapon",
-        Pos = Vector(19, -1.13, 4.25),
-        Ang = Angle(0, 0, 94),
-        Category = {"bocw_ak47_body_mix"},
+        Category = {"bocw_ak47_body", "bocw_east_body", "bocw_ak47_body_mix"},
         InstalledElements = {"bodymount_mix"},
-        MergeSlots = {4,5}
     },
     {
         PrintName = "BARREL",
@@ -770,6 +772,12 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
     
     local elements = swep:GetElements()
 
+    if anim == "ready" then
+        if elements["stock_nofold"] then
+            return anim .. "_nostock"
+        end
+    end
+
     if elements["fara83_mag_ext"] then
         return anim .. "_ext"
     end
@@ -781,7 +789,6 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
     if elements["fara83_mag_mix"] then
         return anim .. "_mix"
     end
-
 end
 
 SWEP.Animations = {
@@ -842,6 +849,26 @@ SWEP.Animations = {
         EventTable = {
             { s = "ARC9_BOCW.FARA83_ready", t = 0 },
             { s = "ARC9_BOCW.FARA83_ready_end", t = 1 },
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 0
+            },
+        },
+    },
+    ["ready_nostock"] = {
+        Source = {"ready_nostock"},
+        EventTable = {
+            { s = "ARC9_BOCW.FARA83_boltback", t = 0.4 },
+            { s = "ARC9_BOCW.FARA83_boltrelease", t = 0.65 },
+            { s = "ARC9_BOCW.FARA83_ready_end", t = 0.9 },
         },
         IKTimeLine = {
             {
@@ -1282,12 +1309,10 @@ SWEP.Animations = {
             },
         },
     },
-    --[[
     ["1_enter_inspect"] = {
-        Source = "inspect_fire",
+        Source = "inspect_krieger",
         EventTable = {
-            { s = "ARC9_BOCW.FARA83_inspect_fire_part1", t = 0 },
-            { s = "ARC9_BOCW.FARA83_inspect_fire_part2", t = 3 },
+            { s = "ARC9_BOCW.FARA83_inspect_krieger", t = 0 },
         },
         IKTimeLine = {
             {
@@ -1312,5 +1337,4 @@ SWEP.Animations = {
             },
         },
     },
-    ]]
 }

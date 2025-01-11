@@ -38,7 +38,7 @@ ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
-ATT.ActivateElements = {"stockgone"}
+ATT.ActivateElements = {"stockgone", "stock_nofold"}
 
 ATT.SprintToFireTimeMult = 0.9
 
@@ -65,7 +65,7 @@ ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.SpeedMult = 1.05
 
-ATT.ActivateElements = {"stock_duster"}
+ATT.ActivateElements = {"stock_duster", "stock_nofold"}
 
 ARC9.LoadAttachment(ATT, "bocw_fara83_stock_duster")
 
@@ -92,7 +92,7 @@ ATT.SprintToFireTimeMult = 0.7
 
 ATT.SpreadMultHipFire = 1.15
 
-ATT.ActivateElements = {"stockgone"}
+ATT.ActivateElements = {"stockgone", "stock_nofold"}
 
 ARC9.LoadAttachment(ATT, "bocw_fara83_stock_nostock")
 

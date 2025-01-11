@@ -226,6 +226,13 @@ sound.Add({
     sound = "weapons/arc9/bocw_fara83/fara83_inspect_part3.wav"
 })
 
+sound.Add({
+    name = "ARC9_BOCW.FARA83_inspect_krieger",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    sound = "weapons/arc9/bocw_fara83/fara83_inspect_krieger.wav"
+})
+
 -- READY PULLOUT PUTAWAY
 
 sound.Add({

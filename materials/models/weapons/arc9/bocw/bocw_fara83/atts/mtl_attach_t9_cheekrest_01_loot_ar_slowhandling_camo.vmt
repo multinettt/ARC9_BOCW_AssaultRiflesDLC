@@ -1,8 +1,8 @@
 "VertexLitGeneric"
 {
-    "$basetexture" "models\weapons\arc9\bocw\bocw_fara83\mtl_wpn_t9_loot_ar_slowhandling_handguard_rgb"
-    "$bumpmap" "models\weapons\arc9\bocw\bocw_fara83\mtl_wpn_t9_loot_ar_slowhandling_handguard_n"
-    "$phongexponenttexture" "models\weapons\arc9\bocw\bocw_fara83\mtl_wpn_t9_loot_ar_slowhandling_handguard_e"
+    "$basetexture" "models\weapons\arc9\bocw\bocw_fara83\atts\mtl_attach_t9_cheekrest_01_loot_ar_slowhandling_camo_rgb"
+    "$bumpmap" "models\weapons\arc9\bocw\bocw_fara83\atts\mtl_attach_t9_cheekrest_01_loot_ar_slowhandling_camo_n"
+    "$phongexponenttexture" "models\weapons\arc9\bocw\bocw_fara83\atts\mtl_attach_t9_cheekrest_01_loot_ar_slowhandling_camo_e"
 
     /////////////////
     "$color2" "[0 0 0]"                                     //do not touch this
@@ -25,8 +25,9 @@
     "$normalmapalphaenvmapmask" "1"                         //do not touch this
     /////////////////
 
-    "$envmap" "\specularity_00"
-    "$envmaptint" "[0.106 0.106 0.106]"                 
+    "$detail" ""
+    "$detailblendfactor" "0.5"
+    "$detailblendmode" "2"
 
     //remove this if not using MWB
     "Proxies"
@@ -36,7 +37,13 @@
             "min" "0"
             "max" "1"
             "envmap" "\specularity_00"
-            "color" "[0.106 0.106 0.106]"
+            "color" "[0.118 0.118 0.118]"
+        }
+        "CustomCamo" 
+        {
+            camoTexture $detail
+            camoScale $detailscale
+            blend $detailblendfactor
         }
     }
 }

@@ -30,7 +30,7 @@ ATT = {}
 
 ATT.PrintName = "FARA 83 Muzzle Brake"
 ATT.CompactName = "FARA MUZZ"
-ATT.Icon = Material("entities/bocw_atts/muzzles/groza_base.png", "mips smooth")
+ATT.Icon = Material("entities/bocw_atts/muzzles/c58_base.png", "mips smooth")
 ATT.Description = [[5.56x45mm Muzzle Brake]]
 
 ATT.SortOrder = -10
