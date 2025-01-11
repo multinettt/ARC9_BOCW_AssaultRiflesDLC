@@ -32,12 +32,6 @@ ATT.SortOrder = 1
 
 ATT.Category = "bocw_c58_stock"
 
-ATT.Model = "models/weapons/arc9/atts/bocw_c58_stock_marathon.mdl"
-
-ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0)
-ATT.ModelAngleOffset = Angle(0, 0, 0)
-
 ATT.ActivateElements = {"stock_marathon"}
 
 ATT.SprintToFireTimeMult = 0.9
@@ -57,6 +51,12 @@ ATT.SortOrder = 2
 
 ATT.Category = "bocw_c58_stock"
 
+ATT.Model = "models/weapons/arc9/atts/bocw_c58_stock_duster.mdl"
+
+ATT.Scale = 1
+ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
+
 ATT.SpeedMult = 1.05
 
 ATT.ActivateElements = {"stock_duster"}
@@ -75,12 +75,6 @@ The CQB Stock is a Stock attachment in Call of Duty: Black Ops Cold War. There a
 ATT.SortOrder = 3
 
 ATT.Category = "bocw_c58_stock"
-
-ATT.Model = "models/weapons/arc9/atts/bocw_c58_stock_cqb.mdl"
-
-ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0)
-ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.SprintToFireTimeMult = 0.7
 
@@ -114,7 +108,7 @@ ATT.SpeedMultSighted = 1.4
 
 ATT.SpreadMultHipFire = 1.15
 
-ATT.ActivateElements = {"stock_sascombat"}
+ATT.ActivateElements = {"stock_tactical"}
 
 ARC9.LoadAttachment(ATT, "bocw_c58_stock_sascombat")
 
@@ -130,12 +124,6 @@ The Raider Stock is a Stock attachment available for some NATO related primary w
 ATT.SortOrder = 6
 
 ATT.Category = "bocw_c58_stock"
-
-ATT.Model = "models/weapons/arc9/atts/bocw_c58_stock_raider.mdl"
-
-ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0)
-ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.MultAimDownSightsTime = 0.9
 

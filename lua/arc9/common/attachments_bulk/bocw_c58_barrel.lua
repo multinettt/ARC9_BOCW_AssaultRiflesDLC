@@ -176,7 +176,7 @@ ATT.Category = "bocw_c58_barrel"
 ATT.Model = "models/weapons/arc9/atts/bocw_c58_barrel_taskforce.mdl"
 
 ATT.Scale = 1
-ATT.ModelOffset = Vector(-9.497, 0, 0)
+ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.DamageMaxMult = 1.08

@@ -16,7 +16,7 @@ ATT.Category = "bocw_c58_mag"
 ATT.Model = "models/weapons/arc9/atts/bocw_c58_magazine_ext1.mdl"
 
 ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0.72)
+ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.ClipSizeOverride = 35
@@ -68,7 +68,7 @@ ATT.Category = "bocw_c58_mag"
 ATT.Model = "models/weapons/arc9/atts/bocw_c58_magazine_mix1.mdl"
 
 ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0.72)
+ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.ClipSizeOverride = 25
@@ -96,7 +96,7 @@ ATT.Category = "bocw_c58_mag"
 ATT.Model = "models/weapons/arc9/atts/bocw_c58_magazine_extpro.mdl"
 
 ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0.72)
+ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.ClipSizeOverride = 60
@@ -138,8 +138,8 @@ ARC9.LoadAttachment(ATT, "bocw_c58_magazine_dualpro")
 
 ATT = {}
 
-ATT.PrintName = "Salvo 30 Rnd Fast Mag" --// 6
-ATT.CompactName = "30 RND FAST"
+ATT.PrintName = "Salvo 30 Rnd Fast Mag 5.56 Conversion" --// 6
+ATT.CompactName = "30 RND 5.56"
 ATT.Icon = Material("entities/bocw_atts/magazines/c58_mixpro.png", "mips smooth")
 ATT.Description = [[Refitted chamber and extended steel magazine, utilizing 5.56 ammunition. Holds 30 rounds and improves reload speed.
 
@@ -152,16 +152,16 @@ ATT.Category = "bocw_c58_mag"
 ATT.Model = "models/weapons/arc9/atts/bocw_c58_magazine_mixpro.mdl"
 
 ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0.72)
+ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.ClipSizeOverride = 30
-ATT.ReloadTimeMult = 0.72
+ATT.ReloadTimeMult = 0.8
 ATT.RecoilUpMult = 0.92
 
 ATT.AimDownSightsTimeMult = 1.25
 ATT.DamageMaxMult = 0.92
 
-ATT.ActivateElements = {"c58_mag_mix"}
+ATT.ActivateElements = {"c58_mag_mix", "mag_mixpro"}
 
 ARC9.LoadAttachment(ATT, "bocw_c58_magazine_mixpro")
