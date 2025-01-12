@@ -460,16 +460,6 @@ SWEP.AttachmentElements = {
             {2, 1},
         }
     },
-    ["bodymount_lasermixbody"] = {
-        Bodygroups = {
-            {6, 1},
-        }
-    },
-    ["bodymount_flashlight"] = {
-        Bodygroups = {
-            {6, 2},
-        }
-    },
     ["stock_tactical"] = {
         Bodygroups = {
             {6, 1},
@@ -478,25 +468,25 @@ SWEP.AttachmentElements = {
     ["stock_marathon"] = {
         Bodygroups = {
             {5, 1},
-            {6, 2},
+            {6, 1},
         }
     },
     ["stock_duster"] = {
         Bodygroups = {
             {5, 1},
-            {6, 5},
+            {6, 1},
         }
     },
     ["stock_cqb"] = {
         Bodygroups = {
             {5, 1},
-            {6, 3},
+            {6, 1},
         }
     },
     ["stock_raider"] = {
         Bodygroups = {
             {5, 1},
-            {6, 4},
+            {6, 1},
         }
     },
     ["mag_mixpro"] = {
@@ -508,6 +498,7 @@ SWEP.AttachmentElements = {
     ["barrel_ultralight"] = {
         Bodygroups = {
             {8, 1},
+            {9, 2},
         },
         AttPosMods = {
             [2] = {
@@ -517,7 +508,8 @@ SWEP.AttachmentElements = {
     },
     ["barrel_cavalrylancer"] = {
         Bodygroups = {
-            {8, 2},
+            {8, 1},
+            {9, 2},
         },
         AttPosMods = {
             [2] = {
@@ -527,7 +519,8 @@ SWEP.AttachmentElements = {
     },
     ["barrel_reinforced"] = {
         Bodygroups = {
-            {8, 3},
+            {8, 1},
+            {9, 2},
         },
         AttPosMods = {
             [2] = {
@@ -537,7 +530,9 @@ SWEP.AttachmentElements = {
     },
     ["barrel_ranger"] = {
         Bodygroups = {
-            {8, 4},
+            {8, 1},
+            {9, 0},
+            {10, 1},
         },
         AttPosMods = {
             [2] = {
@@ -547,7 +542,8 @@ SWEP.AttachmentElements = {
     },
     ["barrel_takedown"] = {
         Bodygroups = {
-            {8, 5},
+            {8, 1},
+            {9, 2},
         },
         AttPosMods = {
             [2] = {
@@ -557,7 +553,8 @@ SWEP.AttachmentElements = {
     },
     ["barrel_taskforce"] = {
         Bodygroups = {
-            {8, 6},
+            {8, 1},
+            {9, 2},
         },
         AttPosMods = {
             [2] = {
@@ -577,6 +574,12 @@ SWEP.AttachmentSlotMods = {
 
 -- Adjust the stats of specific attachments when applied to this gun
 SWEP.AttachmentTableOverrides = {
+    ["bocw_xm4_body_flashlight1"] = {
+        ModelOffset = Vector(0, 0, -0.43)
+    },
+    ["bocw_xm4_body_flashlightpro"] = {
+        ModelOffset = Vector(0, 0, -0.43)
+    },
     ["bocw_optic_visiontech2x"] = {
         VisualRecoil = 0.1
     },
@@ -636,20 +639,10 @@ SWEP.Attachments = {
     {
         PrintName = "BODY",
         Bone = "tag_weapon",
-        Pos = Vector(20, 2, 4.25),
+        Pos = Vector(15.4, 0, 4.35),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, -0.3),
+        Icon_Offset = Vector(0, 0, 0),
         Category = {"bocw_c58_body"},
-        InstalledElements = {"bodymount_lasermixbody"},
-    },
-    {
-        Hidden = true,
-        Bone = "tag_weapon",
-        Pos = Vector(20, 2, 4.25),
-        Ang = Angle(0, 0, 0),
-        Category = {"bocw_east_body"},
-        InstalledElements = {"bodymount_flashlight"},
-        MergeSlots = {4,5}
     },
     {
         PrintName = "BARREL",
@@ -691,7 +684,7 @@ SWEP.Attachments = {
         Bone = "tag_barrel",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(6, 0, 0),
+        Icon_Offset = Vector(18, 0, 0),
         Category = {"bocw_c58_sound"},
         CosmeticOnly = true,
     },
@@ -712,14 +705,10 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
     local vm = data.model
     local attached = data.elements
 
-
-    local camo = 0
-    if attached["universal_camo"] then
-        camo = 1
+    if attached["barrel_ranger"] and attached["optic_mount"] then
+        vm:SetBodygroup(9, 1) -- this is to switch to bipod nofrontsight ranger config
+        vm:SetBodygroup(10, 0)
     end
-
-    vm:SetSkin(camo)
-
 end
 
 SWEP.Hook_TranslateAnimation = function(swep, anim)
@@ -812,12 +801,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.6,
+                t = 0.65,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.8,
                 lhik = 1,
                 rhik = 0
             },
@@ -836,12 +825,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.6,
+                t = 0.65,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.8,
                 lhik = 1,
                 rhik = 0
             },
@@ -861,12 +850,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.65,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 0.7,
                 lhik = 1,
                 rhik = 0
             },
@@ -904,12 +893,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.8,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.85,
                 lhik = 1,
                 rhik = 0
             },
@@ -973,12 +962,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.8,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.85,
                 lhik = 1,
                 rhik = 0
             },
@@ -1042,12 +1031,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.65,
+                t = 0.8,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.85,
                 lhik = 1,
                 rhik = 0
             },
@@ -1062,7 +1051,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.C58_reload_maggrab", t = 0.8 },
             { s = "ARC9_BOCW.C58_reload_magin", t = 1.2 },
             { s = "ARC9_BOCW.C58_reload_boltback", t = 2.3 },
-            { s = "ARC9_BOCW.C58_reload_boltrelease", t = 2.6 },
+            { s = "ARC9_BOCW.C58_reload_boltrelease", t = 2.5 },
             { s = "ARC9_BOCW.C58_reload_end", t = 3.3 },
         },
         IKTimeLine = {
@@ -1077,7 +1066,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.8,
                 lhik = 0,
                 rhik = 0
             },
@@ -1109,12 +1098,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.65,
+                t = 0.8,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 0.85,
                 lhik = 1,
                 rhik = 0
             },
@@ -1128,7 +1117,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.C58_reload_magout", t = 0.2 },
             { s = "ARC9_BOCW.C58_reload_magin", t = 1.2 },
             { s = "ARC9_BOCW.C58_reload_boltback", t = 2.3 },
-            { s = "ARC9_BOCW.C58_reload_boltrelease", t = 2.6 },
+            { s = "ARC9_BOCW.C58_reload_boltrelease", t = 2.5 },
             { s = "ARC9_BOCW.C58_reload_end", t = 3.3 },
         },
         IKTimeLine = {
@@ -1143,12 +1132,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.8,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.9,
                 lhik = 1,
                 rhik = 0
             },
@@ -1211,12 +1200,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.8,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.9,
                 lhik = 1,
                 rhik = 0
             },

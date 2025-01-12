@@ -13,6 +13,12 @@ ATT.SortOrder = 0
 
 ATT.Category = "bocw_c58_stock"
 
+ATT.Model = "models/weapons/arc9/atts/bocw_c58_stock_tactical.mdl"
+
+ATT.Scale = 1
+ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
+
 ATT.SpeedMultSights = 1.2
 
 ATT.ActivateElements = {"stock_tactical"}
@@ -31,6 +37,12 @@ The Marathon Stock is set of Stock attachments available in Call of Duty: Black 
 ATT.SortOrder = 1
 
 ATT.Category = "bocw_c58_stock"
+
+ATT.Model = "models/weapons/arc9/atts/bocw_c58_stock_marathon.mdl"
+
+ATT.Scale = 1
+ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.ActivateElements = {"stock_marathon"}
 
@@ -75,6 +87,12 @@ The CQB Stock is a Stock attachment in Call of Duty: Black Ops Cold War. There a
 ATT.SortOrder = 3
 
 ATT.Category = "bocw_c58_stock"
+
+ATT.Model = "models/weapons/arc9/atts/bocw_c58_stock_cqb.mdl"
+
+ATT.Scale = 1
+ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.SprintToFireTimeMult = 0.7
 
@@ -124,6 +142,12 @@ The Raider Stock is a Stock attachment available for some NATO related primary w
 ATT.SortOrder = 6
 
 ATT.Category = "bocw_c58_stock"
+
+ATT.Model = "models/weapons/arc9/atts/bocw_c58_stock_raider.mdl"
+
+ATT.Scale = 1
+ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.MultAimDownSightsTime = 0.9
 
