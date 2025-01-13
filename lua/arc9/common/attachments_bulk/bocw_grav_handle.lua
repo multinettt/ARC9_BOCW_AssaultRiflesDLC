@@ -42,6 +42,8 @@ ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
+ATT.ActivateElements = {"gripgone"}
+
 ARC9.LoadAttachment(ATT, "bocw_grav_handle_dropshot")
 
 ATT = {}
@@ -138,5 +140,7 @@ ATT.AimDownSightsTimeMult = 0.7
 
 ATT.SprintToFireTimeMult = 1.15
 ATT.SpeedMultShootingMult = 0.85
+
+ATT.ActivateElements = {"gripgone"}
 
 ARC9.LoadAttachment(ATT, "bocw_grav_handle_airborne")

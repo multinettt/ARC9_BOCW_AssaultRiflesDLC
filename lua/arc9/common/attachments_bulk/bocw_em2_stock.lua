@@ -13,6 +13,12 @@ ATT.SortOrder = 0
 
 ATT.Category = "bocw_em2_stock"
 
+ATT.Model = "models/weapons/arc9/atts/bocw_em2_stock_tactical.mdl"
+
+ATT.Scale = 1
+ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
+
 ATT.SpeedMultSights = 1.2
 
 ATT.ActivateElements = {"stock_tactical"}
@@ -56,6 +62,12 @@ The Duster Stock is available as a stock attachment in Call of Duty: Black Ops C
 ATT.SortOrder = 2
 
 ATT.Category = "bocw_em2_stock"
+
+ATT.Model = "models/weapons/arc9/atts/bocw_em2_stock_duster.mdl"
+
+ATT.Scale = 1
+ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.SpeedMult = 1.05
 

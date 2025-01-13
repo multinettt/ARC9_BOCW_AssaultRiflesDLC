@@ -13,9 +13,15 @@ ATT.SortOrder = 0
 
 ATT.Category = "bocw_grav_stock"
 
+ATT.Model = "models/weapons/arc9/atts/bocw_grav_stock_tactical.mdl"
+
+ATT.Scale = 1
+ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
+
 ATT.SpeedMultSights = 1.2
 
-ATT.ActivateElements = {"stock_tactical"}
+ATT.ActivateElements = {"stockmountgone", "stockgone"}
 
 ARC9.LoadAttachment(ATT, "bocw_grav_stock_tactical")
 
@@ -38,7 +44,7 @@ ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
-ATT.ActivateElements = {"stock_marathon"}
+ATT.ActivateElements = {"stockgone"}
 
 ATT.SprintToFireTimeMult = 0.9
 
@@ -57,9 +63,15 @@ ATT.SortOrder = 2
 
 ATT.Category = "bocw_grav_stock"
 
+ATT.Model = "models/weapons/arc9/atts/bocw_grav_stock_duster.mdl"
+
+ATT.Scale = 1
+ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
+
 ATT.SpeedMult = 1.05
 
-ATT.ActivateElements = {"stock_duster"}
+ATT.ActivateElements = {"stockmountgone", "stockgone"}
 
 ARC9.LoadAttachment(ATT, "bocw_grav_stock_duster")
 
@@ -67,7 +79,7 @@ ATT = {}
 
 ATT.PrintName = "No Stock" --// 4
 ATT.CompactName = "NO STOCK"
-ATT.Icon = Material("entities/bocw_atts/stocks/grav_nostock.png", "mips smooth")
+ATT.Icon = Material("entities/bocw_atts/stocks/fara83_nostock.png", "mips smooth")
 ATT.Description = [[Removed stock enables concealment versatility to improve sprint recovery time.
 
 The No Stock attachment reappears in Call of Duty: Black Ops Cold War. It gives a much improved sprint to fire time at the cost of a worsened hip fire spread. It has alternates in the forms of Buffer Tube, CQB Pad, and Marathon Stock.]]
@@ -76,19 +88,13 @@ ATT.SortOrder = 3
 
 ATT.Category = "bocw_grav_stock"
 
-ATT.Model = "models/weapons/arc9/atts/bocw_grav_stock_none.mdl"
-
-ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0)
-ATT.ModelAngleOffset = Angle(0, 0, 0)
-
 ATT.SprintToFireTimeMult = 0.7
 
 ATT.SpreadMultHipFire = 1.15
 
-ATT.ActivateElements = {"stock_none"}
+ATT.ActivateElements = {"stockmountgone", "stockgone"}
 
-ARC9.LoadAttachment(ATT, "bocw_grav_stock_cqbpad")
+ARC9.LoadAttachment(ATT, "bocw_grav_stock_nostock")
 
 ATT = {}
 
@@ -114,7 +120,7 @@ ATT.SpeedMultSighted = 1.4
 
 ATT.SpreadMultHipFire = 1.15
 
-ATT.ActivateElements = {"stock_sascombat"}
+ATT.ActivateElements = {"stockgone"}
 
 ARC9.LoadAttachment(ATT, "bocw_grav_stock_sascombat")
 
@@ -139,11 +145,11 @@ ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.MultAimDownSightsTime = 0.9
 
-ATT.ActivateElements = {"stock_raider"}
+ATT.ActivateElements = {"stockmountgone", "stockgone"}
 
 ATT.SprintToFireTimeMult = 1.3
 ATT.SpeedMultSighted = 1.4
 
 ATT.SpreadMultHipFire = 1.3
 
-ARC9.LoadAttachment(ATT, "bocw_grav_stock_raiderpad")
+ARC9.LoadAttachment(ATT, "bocw_grav_stock_raider")

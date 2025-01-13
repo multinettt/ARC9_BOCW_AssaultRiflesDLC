@@ -140,3 +140,22 @@ ATT.SprintToFireTimeMult = 1.15
 ATT.SpeedMultShootingMult = 0.85
 
 ARC9.LoadAttachment(ATT, "bocw_em2_handle_airborne")
+
+--
+
+ATT = {}
+
+ATT.PrintName = "Remove Winter Trigger Guard"
+ATT.CompactName = "REMOVE TG"
+ATT.Icon = Material("entities/acwatt_bocw.png", "mips smooth")
+ATT.Description = [[Get rid of the enlarged trigger guard meant for use with heavy cold weather gloves.]]
+
+ATT.SortOrder = 1
+
+ATT.Category = {"bocw_em2_triggerguard"}
+
+ATT.MenuCategory = "ARC9 - BOCW Attachments"
+
+ATT.ActivateElements = {"triggerguardgone"}
+
+ARC9.LoadAttachment(ATT, "bocw_em2_triggerguard_removed")

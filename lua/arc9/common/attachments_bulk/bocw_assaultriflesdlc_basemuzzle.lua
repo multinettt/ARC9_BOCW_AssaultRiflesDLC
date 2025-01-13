@@ -102,7 +102,7 @@ ATT = {}
 
 ATT.PrintName = "Galil Muzzle Brake"
 ATT.CompactName = "GRAV MUZZ"
-ATT.Icon = Material("entities/bocw_atts/muzzles/groza_base.png", "mips smooth")
+ATT.Icon = Material("entities/bocw_atts/muzzles/em2_base.png", "mips smooth")
 ATT.Description = [[5.56x45mm Muzzle Brake]]
 
 ATT.SortOrder = -10

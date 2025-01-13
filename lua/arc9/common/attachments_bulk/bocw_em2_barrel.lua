@@ -131,7 +131,7 @@ ARC9.LoadAttachment(ATT, "bocw_em2_barrel_ranger")
 ATT = {}
 
 ATT.PrintName = [[26.3" Takedown]]
-ATT.CompactName = [[26.3" TKDWN]]
+ATT.CompactName = [[26.3" TDWN]]
 ATT.Icon = Material("entities/bocw_atts/barrels/em2_takedown.png", "mips smooth")
 ATT.Description = [[Tapered barrel with a chrome lined bore and chamber. Improves damage range.
 

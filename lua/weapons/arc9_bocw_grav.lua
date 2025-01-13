@@ -197,13 +197,13 @@ SWEP.RecoilResetTime = 0.1 -- How long the gun must go before the recoil pattern
 SWEP.RecoilAutoControl = 0.75
 SWEP.RecoilKick = 2
 
-SWEP.Spread = math.rad(1.3 / 37.5)
+SWEP.Spread = math.rad(0.429718)
 SWEP.SpreadMultRecoil = 1.2
 
 SWEP.SpreadMultSights = 0.1
 SWEP.SpreadAddHipFire = math.rad(150 / 37.5)
 SWEP.SpreadAddMove = math.rad(100 / 37.5)
-SWEP.SpreadAddMidAir = 0.1
+SWEP.SpreadAddMidAir = math.rad(20 / 37.5)
 -- SWEP.SpreadAddShooting = math.rad(5 / 37.5) -- math.rad(108 / 37.5)
 
 SWEP.RecoilPatternDrift = 8
@@ -417,7 +417,7 @@ SWEP.SightMidPoint = {
 -- Position for customizing
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(11, 40, 4)
-SWEP.CustomizeRotateAnchor = Vector(17, -1.88, -5)
+SWEP.CustomizeRotateAnchor = Vector(12, 0, -5)
 
 SWEP.CustomizeSnapshotFOV = 70
 SWEP.CustomizeSnapshotPos = Vector(0, 20, 0)
@@ -454,6 +454,21 @@ SWEP.AttachmentElements = {
             {1, 1},
         }
     },
+    ["stockmountgone"] = {
+        Bodygroups = {
+            {5, 1},
+        }
+    },
+    ["stockgone"] = {
+        Bodygroups = {
+            {6, 1},
+        }
+    },
+    ["gripgone"] = {
+        Bodygroups = {
+            {7, 1},
+        }
+    },
     ["optic_mount"] = {
         Bodygroups = {
             {2, 1},
@@ -475,78 +490,65 @@ SWEP.AttachmentElements = {
             {3, 1},
         }
     },
-    ["stock_dst"] = {
+    ["barrel_extended"] = {
         Bodygroups = {
-            {3, 1},
-        }
-    },
-    ["stock_cqb"] = {
-        Bodygroups = {
-            {3, 1},
-        }
-    },
-    ["stock_kgb"] = {
-        Bodygroups = {
-            {3, 1},
-        }
-    },
-    ["barrel_ultralight"] = {
-        Bodygroups = {
-            {3, 1},
+            {8, 1},
         },
         AttPosMods = {
             [2] = {
-                Pos = Vector(-0.21, 0, 0),
+                Pos = Vector(4.01, 0, 0),
             },
         },
     },
     ["barrel_cavalrylancer"] = {
         Bodygroups = {
-            {3, 1},
+            {8, 1},
         },
         AttPosMods = {
             [2] = {
-                Pos = Vector(-0.21, 0, 0),
+                Pos = Vector(-1.4, 0, 0),
             },
         },
     },
-    ["barrel_reinforcedheavy"] = {
+    ["barrel_reinforced"] = {
         Bodygroups = {
-            {3, 1},
+            {8, 1},
         },
         AttPosMods = {
             [2] = {
-                Pos = Vector(1.38, 0, 0),
+                Pos = Vector(2.9, 0, 0),
             },
         },
     },
     ["barrel_ranger"] = {
         Bodygroups = {
-            {3, 1},
+            {8, 1},
+            {9, 1},
         },
         AttPosMods = {
             [2] = {
-                Pos = Vector(2.375, 0, 0),
+                Pos = Vector(0.9, 0, 0),
             }
         },
     },
     ["barrel_takedown"] = {
         Bodygroups = {
-            {3, 1},
+            {8, 1},
+            {9, 1},
         },
         AttPosMods = {
             [2] = {
-                Pos = Vector(1.38, 0, 0),
+                Pos = Vector(0.14, 0, 0),
             }
         },
     },
     ["barrel_taskforce"] = {
         Bodygroups = {
-            {3, 1},
+            {8, 1},
         },
         AttPosMods = {
             [2] = {
-                Pos = Vector(1.38, 0, 0),
+                Pos = Vector(2.06, 0, 0),
             }
         },
     },
@@ -641,13 +643,13 @@ SWEP.Attachments = {
         Bone = "tag_barrel",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(-3.5, 0, 0),
+        Icon_Offset = Vector(3, 0, 0),
         Category = {"bocw_grav_barrel"},
     },
     {
         PrintName = "STOCK",
         Bone = "tag_stock",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-1.856, 0, 0),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),
         Category = {"bocw_grav_stock"},
@@ -659,8 +661,9 @@ SWEP.Attachments = {
         Bone = "tag_clip",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0.25, 0, -2),
+        Icon_Offset = Vector(0, 0, 0),
         Category = {"bocw_grav_mag"},
+        InstalledElements = {"maggone"},
     },
     {
         PrintName = "HANDLE",
@@ -981,7 +984,7 @@ SWEP.Animations = {
         },
     },
     ["reload_dual"] = {
-        Source = "reload_dualmag",
+        Source = "reload_dual",
         MinProgress = 0.55,
         EventTable = {
             { s = "ARC9_BOCW.Grav_reload_magout", t = 0.3 },
@@ -1012,7 +1015,7 @@ SWEP.Animations = {
         },
     },
     ["reload_empty_dual"] = {
-        Source = "reload_dualmag_empty",
+        Source = "reload_dual_empty",
         MinProgress = 0.4,
         EventTable = {
             { s = "ARC9_BOCW.Grav_reload_magout", t = 0.2 },
@@ -1045,7 +1048,7 @@ SWEP.Animations = {
         },
     },
     ["1_reload_dual"] = {
-        Source = "reload_dualmag2",
+        Source = "reload_dual2",
         MinProgress = 0.55,
         EventTable = {
             { s = "ARC9_BOCW.Grav_reload_magout", t = 0.3 },
@@ -1076,7 +1079,7 @@ SWEP.Animations = {
         },
     },
     ["1_reload_empty_dual"] = {
-        Source = "reload_dualmag2_empty",
+        Source = "reload_dual2_empty",
         MinProgress = 0.45,
         EventTable = {
             { s = "ARC9_BOCW.Grav_reload_magout", t = 0.2 },
