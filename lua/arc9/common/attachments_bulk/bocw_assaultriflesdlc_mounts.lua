@@ -114,7 +114,7 @@ ATT.PrintName = "Side Flashlight Mount"
 ATT.CompactName = "FLSH MNT"
 ATT.Icon = Material("entities/bocw_atts/bodies/em2_mount.png", "mips smooth")
 ATT.Description = [[Side installed mount for flashlights on the EM2.]]
-ATT.SortOrder = 0
+ATT.SortOrder = 1
 ATT.MenuCategory = "ARC9 - BOCW Attachments"
 ATT.Free = true
 
@@ -139,3 +139,67 @@ ATT.Attachments = {
 }
 
 ARC9.LoadAttachment(ATT, "bocw_em2_mount_flashlight")
+
+ATT = {}
+
+ATT.PrintName = "Laser Mount"
+ATT.CompactName = "LSR MNT"
+ATT.Icon = Material("entities/bocw_atts/bodies/em2_mount.png", "mips smooth")
+ATT.Description = [[Barrel installed mount for laser body attachments on the Grav.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - BOCW Attachments"
+ATT.Free = true
+
+ATT.Category = {"bocw_grav_body"}
+
+ATT.Model = "models/weapons/arc9/atts/bocw_grav_mount_body.mdl"
+ATT.ModelBodygroups = "00"
+
+ATT.Scale = 1
+ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
+
+ATT.Attachments = {
+    {
+        PrintName = "BODY",
+        Bone = "tag_weapon",
+        Pos = Vector(-0.5, 0, 1.35),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        Category = {"bocw_xm4_body"},
+    }
+}
+
+ARC9.LoadAttachment(ATT, "bocw_grav_mount_lasermix")
+
+ATT = {}
+
+ATT.PrintName = "Side Flashlight Mount"
+ATT.CompactName = "FLSH MNT"
+ATT.Icon = Material("entities/bocw_atts/bodies/em2_mount.png", "mips smooth")
+ATT.Description = [[Barrel installed mount for flashlights on the Grav.]]
+ATT.SortOrder = 1
+ATT.MenuCategory = "ARC9 - BOCW Attachments"
+ATT.Free = true
+
+ATT.Category = {"bocw_grav_body"}
+
+ATT.Model = "models/weapons/arc9/atts/bocw_grav_mount_body.mdl"
+ATT.ModelBodygroups = "01"
+
+ATT.Scale = 1
+ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
+
+ATT.Attachments = {
+    {
+        PrintName = "BODY",
+        Bone = "tag_weapon",
+        Pos = Vector(0, 0, 1.65),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        Category = {"bocw_xm4_body_flash"},
+    }
+}
+
+ARC9.LoadAttachment(ATT, "bocw_grav_mount_flashlight")

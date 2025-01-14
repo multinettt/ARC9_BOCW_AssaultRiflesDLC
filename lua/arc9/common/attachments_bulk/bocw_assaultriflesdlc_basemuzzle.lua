@@ -111,7 +111,7 @@ ATT.Model = "models/weapons/arc9/atts/bocw_grav_muzzle.mdl"
 
 ATT.Category = {"bocw_grav_muzzle"}
 
-ATT.ModelOffset = Vector(0.07, 0, 0)
+ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.MuzzleParticleOverride = "muzzleflash_4"

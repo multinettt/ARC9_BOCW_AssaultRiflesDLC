@@ -858,4 +858,8 @@ Watch yourself.
 
 -Emirhan
 
+14.01.2025
+
+dont know why i yapped this hard im good lmao
+
 ]]

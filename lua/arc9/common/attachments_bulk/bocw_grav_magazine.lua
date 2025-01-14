@@ -19,7 +19,7 @@ ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
-ATT.ClipSizeMult = 43
+ATT.ClipSizeMult = 1.43
 
 ATT.ReloadTimeMult = 1.1
 
@@ -71,7 +71,7 @@ ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
-ATT.ClipSizeMult = 14
+ATT.ClipSizeMult = 1.15
 ATT.ReloadTimeMult = 0.75
 
 ATT.ActivateElements = {"grav_mag_mix"}
@@ -81,7 +81,7 @@ ARC9.LoadAttachment(ATT, "bocw_grav_magazine_mix1")
 ATT = {}
 
 ATT.PrintName = "RK-7 30 Rnd Conversion" --// 4
-ATT.CompactName = "30 RND"
+ATT.CompactName = "30 RND 7.62"
 ATT.Icon = Material("entities/bocw_atts/magazines/grav_extpro.png", "mips smooth")
 ATT.Description = [[Refitted chamber and magazine utilizing 7.62 caliber ammunition to improve damage. Magazine holds 30 rounds.
 

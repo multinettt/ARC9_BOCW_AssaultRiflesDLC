@@ -41,7 +41,7 @@ ATT.Category = "bocw_grav_stock"
 ATT.Model = "models/weapons/arc9/atts/bocw_grav_stock_marathon.mdl"
 
 ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelOffset = Vector(-0.02, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.ActivateElements = {"stockgone"}
@@ -112,7 +112,7 @@ ATT.Category = "bocw_grav_stock"
 ATT.Model = "models/weapons/arc9/atts/bocw_grav_stock_sascombat.mdl"
 
 ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelOffset = Vector(-0.01, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.SpeedMultShooting = 1.05

@@ -84,3 +84,20 @@ ATT.MenuCategory = "ARC9 - BOCW Attachments"
 ATT.ActivateElements = {"em2_sound_reload"}
 
 ARC9.LoadAttachment(ATT, "bocw_em2_sound_reload")
+
+ATT = {}
+
+ATT.PrintName = "Warzone Firing Sound"
+ATT.CompactName = "WZ SOUND"
+ATT.Icon = Material("entities/bocw_atts/sound_wz.png", "mips smooth")
+ATT.Description = [[Beefier firing sound from Warzone.]]
+
+ATT.SortOrder = 1
+
+ATT.Category = {"bocw_grav_sound"}
+
+ATT.ShootSoundOverride = "ARC9_BOCW.Grav_fire_wz"
+
+ATT.MenuCategory = "ARC9 - BOCW Attachments"
+
+ARC9.LoadAttachment(ATT, "bocw_grav_sound_wz")
