@@ -75,7 +75,7 @@ ATT.SortOrder = 17.1
 
 ATT.Category = "bocw_vargo52_barrel"
 
-ATT.Model = "models/weapons/arc9/atts/bocw_vargo52_barrel_reinforced.mdl"
+ATT.Model = "models/weapons/arc9/atts/bocw_vargo52_barrel_vdvreinforced.mdl"
 
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)

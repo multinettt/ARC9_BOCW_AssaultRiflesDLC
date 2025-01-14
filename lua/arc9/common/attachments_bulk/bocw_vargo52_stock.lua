@@ -19,7 +19,7 @@ ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
-ATT.ActivateElements = {"stock_tactical"}
+ATT.ActivateElements = {"pistolgripgone"}
 
 ATT.SpeedMultSights = 1.2
 
@@ -43,8 +43,6 @@ ATT.Model = "models/weapons/arc9/atts/bocw_vargo52_stock_wire.mdl"
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
-
-ATT.ActivateElements = {"stock_wire"}
 
 ATT.SprintToFireTimeMult = 0.9
 
@@ -71,15 +69,13 @@ ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
-ATT.ActivateElements = {"stock_dst"}
-
 ARC9.LoadAttachment(ATT, "bocw_vargo52_stock_duster")
 
 ATT = {}
 
 ATT.PrintName = "No Stock" --// 4
 ATT.CompactName = "NO STOCK"
-ATT.Icon = Material("entities/bocw_atts/stocks/vargo52_nostock.png", "mips smooth")
+ATT.Icon = Material("entities/bocw_atts/stocks/fara83_nostock.png", "mips smooth")
 ATT.Description = [[Removed stock enables concealment versatility to improve sprint recovery time.
 
 The No Stock attachment reappears in Call of Duty: Black Ops Cold War. It gives a much improved sprint to fire time at the cost of a worsened hip fire spread. It has alternates in the forms of Buffer Tube, CQB Pad, and Marathon Stock.]]
@@ -88,17 +84,9 @@ ATT.SortOrder = 3
 
 ATT.Category = "bocw_vargo52_stock"
 
-ATT.Model = "models/weapons/arc9/atts/bocw_vargo52_stock_none.mdl"
-
-ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0)
-ATT.ModelAngleOffset = Angle(0, 0, 0)
-
 ATT.SprintToFireTimeMult = 0.7
 
 ATT.SpreadMultHipFire = 1.15
-
-ATT.ActivateElements = {"stock_none"}
 
 ARC9.LoadAttachment(ATT, "bocw_vargo52_stock_cqbpad")
 
@@ -126,7 +114,7 @@ ATT.SpeedMultSighted = 1.4
 
 ATT.SpreadMultHipFire = 1.15
 
-ATT.ActivateElements = {"stock_spetsnaz"}
+ATT.ActivateElements = {"pistolgripgone"}
 
 ARC9.LoadAttachment(ATT, "bocw_vargo52_stock_spetsnaz")
 
@@ -153,7 +141,5 @@ ATT.SprintToFireTimeMult = 1.3
 ATT.SpeedMultSighted = 1.4
 
 ATT.SpreadMultHipFire = 1.3
-
-ATT.ActivateElements = {"stock_kgb"}
 
 ARC9.LoadAttachment(ATT, "bocw_vargo52_stock_kgb")

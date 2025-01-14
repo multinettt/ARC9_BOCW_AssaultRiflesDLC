@@ -78,7 +78,7 @@ ATT.SortOrder = 4
 
 ATT.Category = "bocw_vargo52_wrap"
 
-ATT.Model = "models/weapons/arc9/atts/bocw_vargo52_handle_spetsnazfieldgrip.mdl"
+ATT.Model = "models/weapons/arc9/atts/bocw_vargo52_handle_spetsnazfield.mdl"
 
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
@@ -93,7 +93,7 @@ ARC9.LoadAttachment(ATT, "bocw_vargo52_handle_spetsnazfieldgrip")
 ATT = {}
 
 ATT.PrintName = "Serpent Wrap" --// 5
-ATT.CompactName = "SRPNT Wrap"
+ATT.CompactName = "SRPNT WRAP"
 ATT.Icon = Material("entities/bocw_atts/handles/vargo52_serpent.png", "mips smooth")
 ATT.Description = [[Duct tape with an adhesive coating ensures a firm grip to imrove aiming speed.
 

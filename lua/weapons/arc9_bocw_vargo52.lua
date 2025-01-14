@@ -36,11 +36,11 @@ SWEP.PrintName = "Vargo 52"
 SWEP.TrueName = "VAHAN"
 SWEP.Class = "Assault Rifle"
 SWEP.Trivia = {
-     Designer = "Vahan S. Manasian",
-     Calibre = "5.45x39mm",
-     Mechanism = "Lever-delayed blowback",
-     Country = "Armenian SSR",
-     Year = 1992
+    Designer = "Vahan S. Manasian",
+    Calibre = "5.45x39mm",
+    Mechanism = "Lever-delayed blowback",
+    Country = "Armenian SSR",
+    Year = 1992
 }
 
 SWEP.Credits = {
@@ -381,7 +381,7 @@ SWEP.CustomBlendFactor = nil
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(0, -1.8, 0),
+    Pos = Vector(0, -1.6, 0.05),
     Ang = Angle(0, 0, 0),
     Magnification = 1.4,
     Blur = true,
@@ -452,6 +452,17 @@ SWEP.AttachmentElements = {
     ["maggone"] = {
         Bodygroups = {
             {1, 1},
+            {2, 1},
+        }
+    },
+    ["stockgone"] = {
+        Bodygroups = {
+            {6, 1},
+        }
+    },
+    ["pistolgripgone"] = {
+        Bodygroups = {
+            {9, 1},
         }
     },
     ["optic_mount"] = {
@@ -475,83 +486,63 @@ SWEP.AttachmentElements = {
             {6, 2},
         }
     },
-    ["stock_mrt"] = {
-        Bodygroups = {
-            {3, 1},
-        }
-    },
-    ["stock_dst"] = {
-        Bodygroups = {
-            {3, 1},
-        }
-    },
-    ["stock_cqb"] = {
-        Bodygroups = {
-            {3, 1},
-        }
-    },
-    ["stock_kgb"] = {
-        Bodygroups = {
-            {3, 1},
-        }
-    },
     ["barrel_ultralight"] = {
         Bodygroups = {
-            {3, 1},
+            {5, 1},
         },
         AttPosMods = {
             [2] = {
-                Pos = Vector(-0.21, 0, 0),
+                Pos = Vector(-2, 0, 0),
             },
         },
     },
-    ["barrel_cavalrylancer"] = {
+    ["barrel_cavalry"] = {
         Bodygroups = {
-            {3, 1},
+            {5, 1},
         },
         AttPosMods = {
             [2] = {
-                Pos = Vector(-0.21, 0, 0),
+                Pos = Vector(-1, 0, 0),
             },
         },
     },
-    ["barrel_reinforcedheavy"] = {
+    ["barrel_reinforced"] = {
         Bodygroups = {
-            {3, 1},
+            {5, 1},
         },
         AttPosMods = {
             [2] = {
-                Pos = Vector(1.38, 0, 0),
+                Pos = Vector(0.18, 0, 0),
             },
         },
     },
-    ["barrel_ranger"] = {
+    ["barrel_liberator"] = {
         Bodygroups = {
-            {3, 1},
+            {5, 1},
         },
         AttPosMods = {
             [2] = {
-                Pos = Vector(2.375, 0, 0),
+                Pos = Vector(1.98, 0, 0),
             }
         },
     },
     ["barrel_takedown"] = {
         Bodygroups = {
-            {3, 1},
+            {5, 1},
         },
         AttPosMods = {
             [2] = {
-                Pos = Vector(1.38, 0, 0),
+                Pos = Vector(1, 0, 0),
             }
         },
     },
     ["barrel_taskforce"] = {
         Bodygroups = {
-            {3, 1},
+            {5, 1},
         },
         AttPosMods = {
             [2] = {
-                Pos = Vector(1.38, 0, 0),
+                Pos = Vector(1.26, 0, 0),
             }
         },
     },
@@ -616,13 +607,12 @@ SWEP.Attachments = {
         Installed = "bocw_vargo52_muzzle_base",
     },
     {
-        PrintName = "UNDRBARREL",
-        Bone = "tag_weapon",
-        Pos = Vector(-7, -4.42, 6.1),
+        PrintName = "BARREL",
+        Bone = "tag_barrel",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(20.25, 4.5, -5),
-        Category = {"bocw_underbarrel_west"},
-        InstalledElements = {"foregrip_mount"},
+        Icon_Offset = Vector(0, 0, 0),
+        Category = {"bocw_vargo52_barrel"},
     },
     {
         PrintName = "BODY",
@@ -643,12 +633,36 @@ SWEP.Attachments = {
         MergeSlots = {4,5}
     },
     {
-        PrintName = "BARREL",
-        Bone = "tag_barrel",
+        PrintName = "UNDRBARREL",
+        Bone = "tag_weapon",
+        Pos = Vector(-7, -4.42, 6.1),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(20.25, 4.5, -5),
+        Category = {"bocw_underbarrel_east"},
+        InstalledElements = {"foregrip_mount"},
+    },
+    {
+        PrintName = "MAGAZINE",
+        DefaultName = "30 Rnd",
+        Bone = "tag_clip",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(-3.5, 0, 0),
-        Category = {"bocw_vargo52_barrel"},
+        Icon_Offset = Vector(0, 0, 0),
+        DuplicateModels = {
+            {
+                Bone = "tag_clip1",
+            },
+        },
+        Category = {"bocw_vargo52_mag"},
+        InstalledElements = {"maggone"},
+    },
+    {
+        PrintName = "HANDLE",
+        Bone = "tag_weapon",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(-0.25, 0, -0.25),
+        Category = {"bocw_vargo52_wrap"},
     },
     {
         PrintName = "STOCK",
@@ -658,23 +672,6 @@ SWEP.Attachments = {
         Icon_Offset = Vector(0, 0, 0),
         Category = {"bocw_vargo52_stock"},
         InstalledElements = {"stockgone"},
-    },
-    {
-        PrintName = "MAGAZINE",
-        DefaultName = "30 Rnd",
-        Bone = "tag_clip",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, 0),
-        Category = {"bocw_vargo52_mag"},
-    },
-    {
-        PrintName = "HANDLE",
-        Bone = "tag_weapon",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(-0.5, 0, -0.25),
-        Category = {"bocw_vargo52_wrap"},
     },
     {
         PrintName = "SOUND",
@@ -983,7 +980,7 @@ SWEP.Animations = {
         },
     },
     ["reload_dual"] = {
-        Source = "reload_dualmag",
+        Source = "reload_dual",
         MinProgress = 0.55,
         EventTable = {
             { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.3 },
@@ -1014,7 +1011,7 @@ SWEP.Animations = {
         },
     },
     ["reload_empty_dual"] = {
-        Source = "reload_dualmag_empty",
+        Source = "reload_dual_empty",
         MinProgress = 0.4,
         EventTable = {
             { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.2 },
@@ -1047,7 +1044,7 @@ SWEP.Animations = {
         },
     },
     ["1_reload_dual"] = {
-        Source = "reload_dualmag2",
+        Source = "reload_dual2",
         MinProgress = 0.55,
         EventTable = {
             { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.3 },
@@ -1078,7 +1075,7 @@ SWEP.Animations = {
         },
     },
     ["1_reload_empty_dual"] = {
-        Source = "reload_dualmag2_empty",
+        Source = "reload_dual2_empty",
         MinProgress = 0.45,
         EventTable = {
             { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.2 },
