@@ -774,6 +774,13 @@ sound.Add({
     sound = "weapons/arc9/bocw_vargo52/vargo52_inspect.wav"
 })
 
+sound.Add({
+    name = "ARC9_BOCW.Vargo52_inspect_furryfluid",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    sound = "weapons/arc9/bocw_vargo52/vargo52_inspect_furryfluid.wav"
+})
+
 -- READY PULLOUT PUTAWAY
 
 sound.Add({

@@ -3,7 +3,7 @@ local ATT = {}
 ATT = {}
 
 ATT.PrintName = "Speed Tape" --// 1
-ATT.CompactName = "SPD TAPE"
+ATT.CompactName = "SPEED TAPE"
 ATT.Icon = Material("entities/bocw_atts/handles/fara83_speed.png", "mips smooth")
 ATT.Description = [[Duct tape applied to handle increases friction for improved aiming speed.
 
@@ -47,7 +47,7 @@ ARC9.LoadAttachment(ATT, "bocw_fara83_handle_dropshot")
 ATT = {}
 
 ATT.PrintName = "Field Tape" --// 3
-ATT.CompactName = "FILD TPE"
+ATT.CompactName = "FIELD TAPE"
 ATT.Icon = Material("entities/bocw_atts/handles/fara83_fieldtape.png", "mips smooth")
 ATT.Description = [[A layer of adhesive fabric tape absorbs shock to improve flinch stability.
 
@@ -93,7 +93,7 @@ ARC9.LoadAttachment(ATT, "bocw_fara83_handle_spetsnazfieldgrip")
 ATT = {}
 
 ATT.PrintName = "Serpent Wrap" --// 5
-ATT.CompactName = "SRPNT Wrap"
+ATT.CompactName = "SRPNT WRAP"
 ATT.Icon = Material("entities/bocw_atts/handles/fara83_serpent.png", "mips smooth")
 ATT.Description = [[Duct tape with an adhesive coating ensures a firm grip to imrove aiming speed.
 
@@ -118,7 +118,7 @@ ARC9.LoadAttachment(ATT, "bocw_fara83_handle_serpent")
 ATT = {}
 
 ATT.PrintName = "GRU Elastic Wrap" --// 6
-ATT.CompactName = "GRU WRP"
+ATT.CompactName = "GRU WRAP"
 ATT.Icon = Material("entities/bocw_atts/handles/fara83_gruelastic.png", "mips smooth")
 ATT.Description = [[Non-abrasive grip sleeve improves shooter stability while maintaining agility.
 

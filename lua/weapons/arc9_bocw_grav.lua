@@ -83,7 +83,7 @@ SWEP.DamageMin = 28 -- Damage done at maximum range
 
 SWEP.DamageRand = 1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 23 * 39.37 -- How far bullets retain their maximum damage for.
+SWEP.RangeMin = 50.8 * 39.37 -- How far bullets retain their maximum damage for.
 SWEP.RangeMax = 350 * 39.37 -- In Hammer units, how far bullets can travel before dealing DamageMin.
 SWEP.Distance = 1200 * 39.37 -- In Hammer units, how far bullets can travel, period.
 
@@ -128,7 +128,7 @@ SWEP.TracerNum = 1 -- Tracer every X
 SWEP.TracerFinalMag = 0 -- The last X bullets in a magazine are all tracers
 SWEP.TracerEffect = "ARC9_tracer" -- The effect to use for hitscan tracers
 SWEP.TracerColor = Color(255, 200, 200)
-SWEP.TracerSize = 0.5
+SWEP.TracerSize = 1
 
 -------------------------- MAGAZINE
 
@@ -136,7 +136,7 @@ SWEP.Ammo = "ar2" -- What ammo type this gun uses.
 
 SWEP.ChamberSize = 1 -- The amount of rounds this gun can chamber.
 SWEP.ClipSize = 35 -- Self-explanatory.
-SWEP.SupplyLimit = 3 -- Amount of magazines of ammo this gun can take from an ARC-9 supply crate.
+SWEP.SupplyLimit = 2 -- Amount of magazines of ammo this gun can take from an ARC-9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
 SWEP.ForceDefaultClip = nil -- Set to force a default amount of ammo this gun can have. Otherwise, this is controlled by console variables.
@@ -246,9 +246,9 @@ SWEP.ShootWhileSprint = false
 SWEP.Speed = 1
 
 SWEP.SpeedMult = 0.95
-SWEP.SpeedMultSprint = 1.34
-SWEP.SpeedMultSights = 0.375
-SWEP.SpeedMultShooting = 0.95
+SWEP.SpeedMultSprint = 0.706
+SWEP.SpeedMultSights = 0.395
+SWEP.SpeedMultShooting = 0.85
 SWEP.SpeedMultMelee = 0.8
 SWEP.SpeedMultCrouch = 1
 --SWEP.SpeedMultBlindFire = 1

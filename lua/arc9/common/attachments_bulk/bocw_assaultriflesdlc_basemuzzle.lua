@@ -3,7 +3,7 @@ local ATT = {}
 ATT = {}
 
 ATT.PrintName = "Groza Muzzle Brake"
-ATT.CompactName = "GRZA MUZZ"
+ATT.CompactName = "GROZA MUZZ"
 ATT.Icon = Material("entities/bocw_atts/muzzles/groza_base.png", "mips smooth")
 ATT.Description = [[7.62x39mm Muzzle Brake]]
 

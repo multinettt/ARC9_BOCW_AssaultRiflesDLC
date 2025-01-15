@@ -30,7 +30,7 @@ ARC9.LoadAttachment(ATT, "bocw_c58_magazine_ext1")
 ATT = {}
 
 ATT.PrintName = "Jungle-Style Mag" --// 2
-ATT.CompactName = "JNGL MAG"
+ATT.CompactName = "JUNGLE MAG"
 ATT.Icon = Material("entities/bocw_atts/magazines/c58_dual1.png", "mips smooth")
 ATT.Description = [[Magazines secured together with duct tape to improve reload speed.
 
@@ -111,7 +111,7 @@ ARC9.LoadAttachment(ATT, "bocw_c58_magazine_extpro")
 ATT = {}
 
 ATT.PrintName = "SAS Mag Clamp" --// 5
-ATT.CompactName = "SAS CLMP"
+ATT.CompactName = "SAS CLAMP"
 ATT.Icon = Material("entities/bocw_atts/magazines/c58_dualpro.png", "mips smooth")
 ATT.Description = [[Magazine coupler joins an additional inverted magazine to the one in the gun for faster reloads.
 

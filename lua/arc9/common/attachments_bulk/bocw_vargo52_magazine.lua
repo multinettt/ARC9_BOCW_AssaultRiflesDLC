@@ -30,7 +30,7 @@ ARC9.LoadAttachment(ATT, "bocw_vargo52_magazine_ext1")
 ATT = {}
 
 ATT.PrintName = "Taped Mags" --// 2
-ATT.CompactName = "TAPD MAG"
+ATT.CompactName = "TAPED MAGS"
 ATT.Icon = Material("entities/bocw_atts/magazines/vargo52_dual1.png", "mips smooth")
 ATT.Description = [[Magazines secured together with duct tape to improve reload speed.
 
@@ -68,7 +68,7 @@ ATT.Category = "bocw_vargo52_mag"
 ATT.Model = "models/weapons/arc9/atts/bocw_vargo52_magazine_mix1.mdl"
 
 ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0.72)
+ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.ReloadTimeMult = 0.75
@@ -110,7 +110,7 @@ ARC9.LoadAttachment(ATT, "bocw_vargo52_magazine_extpro")
 ATT = {}
 
 ATT.PrintName = "GRU Mag Clamp" --// 5
-ATT.CompactName = "GRU CLMP"
+ATT.CompactName = "GRU CLAMP"
 ATT.Icon = Material("entities/bocw_atts/magazines/vargo52_dualpro.png", "mips smooth")
 ATT.Description = [[Magazine coupler joins an additional inverted magazine to the one in the gun for faster reloads.
 
@@ -151,7 +151,7 @@ ATT.Category = "bocw_vargo52_mag"
 ATT.Model = "models/weapons/arc9/atts/bocw_vargo52_magazine_mixpro.mdl"
 
 ATT.Scale = 1
-ATT.ModelOffset = Vector(0, 0, 0.72)
+ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.AimDownSightsTimeMult = 1.25

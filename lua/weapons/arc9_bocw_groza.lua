@@ -36,16 +36,16 @@ SWEP.PrintName = "Groza"
 SWEP.TrueName = "OTs-14 Groza"
 SWEP.Class = "Assault Rifle"
 SWEP.Trivia = {
-     Manufacturer = "TsKIB SOO",
-     Calibre = "7.62x39mm",
-     Mechanism = "Gas-operated, Rotating bolt",
-     Country = "Russia",
-     Year = 1992
+    Manufacturer = "TsKIB SOO",
+    Calibre = "7.62x39mm",
+    Mechanism = "Gas-operated, Rotating bolt",
+    Country = "Russia",
+    Year = 1992
 }
 
 SWEP.Credits = {
-     Author = "multinett",
-     --Contact = "https://steamcommunity.com/id/multinett/"
+    Author = "multinett",
+    --Contact = "https://steamcommunity.com/id/multinett/"
 }
 
 SWEP.Description = [[Full-auto assault rifle. Excellent handling speeds with improved damage. Fast fire rate and fair damage range.
@@ -66,7 +66,7 @@ SWEP.MirrorVMWM = true
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.WorldModelOffset = {
-    Pos = Vector(-5, 3, -6.2),
+    Pos = Vector(-8, 3, -6.2),
     Ang = Angle(-10, 0, 180),
     Scale = 1
 }
@@ -81,11 +81,11 @@ SWEP.ViewModelFOVBase = 70
 SWEP.DamageMax = 34 -- Damage done at point blank range
 SWEP.DamageMin = 28 -- Damage done at maximum range
 
-SWEP.DamageRand = 0.01 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
+SWEP.DamageRand = 1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 23 * 39.37 -- How far bullets retain their maximum damage for.
+SWEP.RangeMin = 53.34 * 39.37 -- How far bullets retain their maximum damage for.
 SWEP.RangeMax = 350 * 39.37 -- In Hammer units, how far bullets can travel before dealing DamageMin.
-SWEP.Distance = 1200 * 39.37 -- In Hammer units, how far bullets can travel, period.
+SWEP.Distance = 500 * 39.37 -- In Hammer units, how far bullets can travel, period.
 
 SWEP.Num = 1 -- Number of bullets to shoot
 -- Bear in mind: Damage is divided by Num
@@ -99,7 +99,7 @@ SWEP.DamageType = DMG_BULLET -- The damage type of the gun.
 
 SWEP.ArmorPiercing = 0.5 -- Between 0-1. A proportion of damage that is done as direct damage, ignoring protection.
 
-SWEP.HeadshotDamage = 1.4
+SWEP.HeadshotDamage = 1
 SWEP.ChestDamage = 1
 SWEP.StomachDamage = 1
 SWEP.ArmDamage = 1
@@ -117,7 +117,7 @@ SWEP.BodyDamageMults = {
 
 SWEP.AlwaysPhysBullet = true
 
-SWEP.PhysBulletMuzzleVelocity = 650 * 39.37
+SWEP.PhysBulletMuzzleVelocity = 660 * 39.37
 SWEP.PhysBulletDrag = 1
 SWEP.PhysBulletGravity = 1
 SWEP.PhysBulletDontInheritPlayerVelocity = false -- Set to true to disable "Browning Effect"
@@ -128,7 +128,7 @@ SWEP.TracerNum = 1 -- Tracer every X
 SWEP.TracerFinalMag = 0 -- The last X bullets in a magazine are all tracers
 SWEP.TracerEffect = "ARC9_tracer" -- The effect to use for hitscan tracers
 SWEP.TracerColor = Color(255, 200, 200)
-SWEP.TracerSize = 0.5
+SWEP.TracerSize = 1
 
 -------------------------- MAGAZINE
 
@@ -180,12 +180,15 @@ SWEP.Firemodes = {
     {
         Mode = -1,
     },
+    {
+        Mode = 1,
+    },
 }
 
 -------------------------- RECOIL
 
 SWEP.Recoil = 1.5
-SWEP.RecoilSide = -0.2
+SWEP.RecoilSide = -0.4
 SWEP.RecoilUp = 0.8
 
 SWEP.RecoilRandomUp = 0
@@ -206,7 +209,7 @@ SWEP.SpreadAddMove = math.rad(100 / 37.5)
 SWEP.SpreadAddMidAir = 0.1
 -- SWEP.SpreadAddShooting = math.rad(5 / 37.5) -- math.rad(108 / 37.5)
 
-SWEP.RecoilPatternDrift = 6
+SWEP.RecoilPatternDrift = 5
 
 SWEP.UseVisualRecoil = true
 
@@ -246,8 +249,9 @@ SWEP.ShootWhileSprint = false
 SWEP.Speed = 1
 
 SWEP.SpeedMult = 0.95
-SWEP.SpeedMultSights = 0.41
-SWEP.SpeedMultShooting = 0.95
+SWEP.SpeedMultSprint = 0.727
+SWEP.SpeedMultSights = 0.395
+SWEP.SpeedMultShooting = 0.85
 SWEP.SpeedMultMelee = 0.8
 SWEP.SpeedMultCrouch = 1
 --SWEP.SpeedMultBlindFire = 1
@@ -338,7 +342,12 @@ SWEP.CamQCA = 3
 
 --SWEP.DoFireAnimation = true
 
+SWEP.FireInterruptInspect = true
+SWEP.SightsInterruptInspect = true
+
 SWEP.NoViewBob = false
+
+SWEP.BobSprintMult = 0.1
 
 -------------------------- VISUALS
 
@@ -417,7 +426,7 @@ SWEP.HolsterAng = Angle(0, -15, 25)
 -- Position for customizing
 SWEP.CustomizeAng = Angle(90, 4, 0)
 SWEP.CustomizePos = Vector(9, 34, 4)
-SWEP.CustomizeRotateAnchor = Vector(10, -1.88, -3)
+SWEP.CustomizeRotateAnchor = Vector(10, 0, -3)
 
 SWEP.CustomizeSnapshotFOV = 70
 SWEP.CustomizeSnapshotPos = Vector(0, 20, 0)
@@ -1215,7 +1224,7 @@ SWEP.Animations = {
     },
     ["idle_sprint"] = {
         Source = "sprint_loop",
-        Time = 3,
+        Time = 2,
         NoStatAffectors = true
     },
     ["exit_sprint"] = {

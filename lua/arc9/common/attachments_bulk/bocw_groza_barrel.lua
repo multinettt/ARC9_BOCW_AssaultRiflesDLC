@@ -3,7 +3,7 @@ local ATT = {}
 ATT = {}
 
 ATT.PrintName = [[15.3" Ultralight]] --// 1
-ATT.CompactName = [[15.3" LGHT]]
+ATT.CompactName = [[15.3" ULIGHT]]
 ATT.Icon = Material("entities/bocw_atts/barrels/groza_ultralight.png", "mips smooth")
 ATT.Description = [[Shortened steel barrel reduces weapon weight to improve maneuverability.
 
@@ -34,7 +34,7 @@ ARC9.LoadAttachment(ATT, "bocw_groza_barrel_ultralight")
 ATT = {}
 
 ATT.PrintName = [[16.2" Cavalry Lancer]] --// 2
-ATT.CompactName = [[16.2" CVLRY]]
+ATT.CompactName = [[16.2" CAVLRY]]
 ATT.Icon = Material("entities/bocw_atts/barrels/groza_cavalry.png", "mips smooth")
 ATT.Description = [[Heavy profile barrel. Broach rifling improves damage against enemy vehicles.
 

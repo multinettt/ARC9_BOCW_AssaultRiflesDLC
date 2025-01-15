@@ -36,16 +36,16 @@ SWEP.PrintName = "FARA 83"
 SWEP.TrueName = "FARA 83"
 SWEP.Class = "Assault Rifle"
 SWEP.Trivia = {
-     Manufacturer = "FMAP-DM",
-     Calibre = "5.56x45mm NATO",
-     Mechanism = "Gas-operated",
-     Country = "Argentina",
-     Year = 1984
+    Manufacturer = "FMAP-DM",
+    Calibre = "5.56x45mm NATO",
+    Mechanism = "Gas-operated",
+    Country = "Argentina",
+    Year = 1984
 }
 
 SWEP.Credits = {
-     Author = "multinett",
-     --Contact = "https://steamcommunity.com/id/multinett/"
+    Author = "multinett",
+    --Contact = "https://steamcommunity.com/id/multinett/"
 }
 
 SWEP.Description = [[Full-auto assault rifle. High fire rate and muzzle velocity provides reliable stopping power from long range. Slightly heavier recoil with slower handling speeds.
@@ -64,8 +64,8 @@ SWEP.MirrorVMWM = true
 SWEP.DefaultBodygroups = "00000000000000000000"
 
 SWEP.WorldModelOffset = {
-    Pos = Vector(-5, 3, -6.2),
-    Ang = Angle(-10, 0, 180),
+    Pos = Vector(-5, 4, -6.2),
+    Ang = Angle(-10, 0, 170),
     Scale = 1
 }
 
@@ -76,12 +76,12 @@ SWEP.ViewModelFOVBase = 70
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 34 -- Damage done at point blank range
+SWEP.DamageMax = 30 -- Damage done at point blank range
 SWEP.DamageMin = 28 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.01 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 23 * 39.37 -- How far bullets retain their maximum damage for.
+SWEP.RangeMin = 63.5 * 39.37 -- How far bullets retain their maximum damage for.
 SWEP.RangeMax = 350 * 39.37 -- In Hammer units, how far bullets can travel before dealing DamageMin.
 SWEP.Distance = 1200 * 39.37 -- In Hammer units, how far bullets can travel, period.
 
@@ -97,14 +97,14 @@ SWEP.DamageType = DMG_BULLET -- The damage type of the gun.
 
 SWEP.ArmorPiercing = 0.5 -- Between 0-1. A proportion of damage that is done as direct damage, ignoring protection.
 
-SWEP.HeadshotDamage = 1.4
+SWEP.HeadshotDamage = 1
 SWEP.ChestDamage = 1
 SWEP.StomachDamage = 1
 SWEP.ArmDamage = 1
 SWEP.LegDamage = 1
 
 SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 1.4,
+    [HITGROUP_HEAD] = 1.25,
     [HITGROUP_CHEST] = 1,
     [HITGROUP_STOMACH] = 1,
     [HITGROUP_LEFTARM] = 1,
@@ -115,7 +115,7 @@ SWEP.BodyDamageMults = {
 
 SWEP.AlwaysPhysBullet = true
 
-SWEP.PhysBulletMuzzleVelocity = 650 * 39.37
+SWEP.PhysBulletMuzzleVelocity = 729 * 39.37
 SWEP.PhysBulletDrag = 1
 SWEP.PhysBulletGravity = 1
 SWEP.PhysBulletDontInheritPlayerVelocity = false -- Set to true to disable "Browning Effect"
@@ -163,7 +163,7 @@ SWEP.DropMagazineVelocity = Vector(0, -100, 0) -- Put something here if your ani
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 750
+SWEP.RPM = 800
 
 -- Works different to ArcCW
 
@@ -177,6 +177,9 @@ SWEP.RPM = 750
 SWEP.Firemodes = {
     {
         Mode = -1,
+    },
+    {
+        Mode = 1,
     },
 }
 
@@ -236,7 +239,7 @@ SWEP.FreeAimRadiusSights = 0
 
 SWEP.SwayMultSights = 0.5
 
-SWEP.AimDownSightsTime = 0.25 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 0.325 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.4 -- How long it takes to go from sprinting to being able to fire.
 
 SWEP.ShootWhileSprint = false
@@ -244,8 +247,9 @@ SWEP.ShootWhileSprint = false
 SWEP.Speed = 1
 
 SWEP.SpeedMult = 0.95
-SWEP.SpeedMultSights = 0.41
-SWEP.SpeedMultShooting = 0.95
+SWEP.SpeedMultSprint = 0.743
+SWEP.SpeedMultSights = 0.395
+SWEP.SpeedMultShooting = 0.85
 SWEP.SpeedMultMelee = 0.8
 SWEP.SpeedMultCrouch = 1
 --SWEP.SpeedMultBlindFire = 1
@@ -336,7 +340,12 @@ SWEP.CamQCA = 3
 
 --SWEP.DoFireAnimation = true
 
+SWEP.FireInterruptInspect = true
+SWEP.SightsInterruptInspect = true
+
 SWEP.NoViewBob = false
+
+SWEP.BobSprintMult = 0.1
 
 -------------------------- VISUALS
 
@@ -1271,7 +1280,7 @@ SWEP.Animations = {
     },
     ["idle_sprint"] = {
         Source = "sprint_loop",
-        Time = 3,
+        Time = 2,
         NoStatAffectors = true
     },
     ["exit_sprint"] = {

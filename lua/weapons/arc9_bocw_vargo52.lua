@@ -78,12 +78,12 @@ SWEP.ViewModelFOVBase = 70
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 34 -- Damage done at point blank range
+SWEP.DamageMax = 32 -- Damage done at point blank range
 SWEP.DamageMin = 28 -- Damage done at maximum range
 
-SWEP.DamageRand = 0.01 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
+SWEP.DamageRand = 1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 23 * 39.37 -- How far bullets retain their maximum damage for.
+SWEP.RangeMin = 38.1 * 39.37 -- How far bullets retain their maximum damage for.
 SWEP.RangeMax = 350 * 39.37 -- In Hammer units, how far bullets can travel before dealing DamageMin.
 SWEP.Distance = 1200 * 39.37 -- In Hammer units, how far bullets can travel, period.
 
@@ -99,7 +99,7 @@ SWEP.DamageType = DMG_BULLET -- The damage type of the gun.
 
 SWEP.ArmorPiercing = 0.5 -- Between 0-1. A proportion of damage that is done as direct damage, ignoring protection.
 
-SWEP.HeadshotDamage = 1.4
+SWEP.HeadshotDamage = 1
 SWEP.ChestDamage = 1
 SWEP.StomachDamage = 1
 SWEP.ArmDamage = 1
@@ -117,7 +117,7 @@ SWEP.BodyDamageMults = {
 
 SWEP.AlwaysPhysBullet = true
 
-SWEP.PhysBulletMuzzleVelocity = 650 * 39.37
+SWEP.PhysBulletMuzzleVelocity = 700 * 39.37
 SWEP.PhysBulletDrag = 1
 SWEP.PhysBulletVargo52ity = 1
 SWEP.PhysBulletDontInheritPlayerVelocity = false -- Set to true to disable "Browning Effect"
@@ -165,7 +165,7 @@ SWEP.DropMagazineVelocity = Vector(0, -100, 0) -- Put something here if your ani
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 650
+SWEP.RPM = 800
 
 -- Works different to ArcCW
 
@@ -185,8 +185,8 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 SWEP.Recoil = 1
-SWEP.RecoilSide = -0.4
-SWEP.RecoilUp = 0.5
+SWEP.RecoilSide = 0.4
+SWEP.RecoilUp = 0.8
 
 SWEP.RecoilRandomUp = 0
 SWEP.RecoilRandomSide = 0
@@ -206,7 +206,7 @@ SWEP.SpreadAddMove = math.rad(100 / 37.5)
 SWEP.SpreadAddMidAir = 0.1
 -- SWEP.SpreadAddShooting = math.rad(5 / 37.5) -- math.rad(108 / 37.5)
 
-SWEP.RecoilPatternDrift = 8
+SWEP.RecoilPatternDrift = 4
 
 SWEP.UseVisualRecoil = true
 
@@ -238,7 +238,7 @@ SWEP.FreeAimRadiusSights = 0
 
 SWEP.SwayMultSights = 0.5
 
-SWEP.AimDownSightsTime = 0.25 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.4 -- How long it takes to go from sprinting to being able to fire.
 
 SWEP.ShootWhileSprint = false
@@ -246,8 +246,9 @@ SWEP.ShootWhileSprint = false
 SWEP.Speed = 1
 
 SWEP.SpeedMult = 0.95
-SWEP.SpeedMultSights = 0.41
-SWEP.SpeedMultShooting = 0.95
+SWEP.SpeedMultSprint = 0.706
+SWEP.SpeedMultSights = 0.395
+SWEP.SpeedMultShooting = 0.85
 SWEP.SpeedMultMelee = 0.8
 SWEP.SpeedMultCrouch = 1
 --SWEP.SpeedMultBlindFire = 1
@@ -338,7 +339,12 @@ SWEP.CamQCA = 3
 
 --SWEP.DoFireAnimation = true
 
+SWEP.FireInterruptInspect = true
+SWEP.SightsInterruptInspect = true
+
 SWEP.NoViewBob = false
+
+SWEP.BobSprintMult = 0.1
 
 -------------------------- VISUALS
 
@@ -587,6 +593,8 @@ SWEP.AttachmentTableOverrides = {
     },
 }
 
+SWEP.DuplicateAttachments = true
+
 SWEP.Attachments = {
     {
         PrintName = "OPTIC", -- print name
@@ -745,20 +753,14 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw",
-        Time = 0.5,
         IKTimeLine = {
             {
                 t = 0,
-                lhik = 0,
+                lhik = 1,
                 rhik = 0
             },
             {
-                t = 0.45,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.8,
+                t = 1,
                 lhik = 1,
                 rhik = 0
             },
@@ -766,7 +768,6 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-        Time = 0.5,
         IKTimeLine = {
             {
                 t = 0,
@@ -824,12 +825,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.65,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 0.8,
                 lhik = 1,
                 rhik = 0
             },
@@ -849,7 +850,7 @@ SWEP.Animations = {
         MinProgress = 0.55,
         EventTable = {
             { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
-            { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.4 },
+            { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.35 },
             { s = "ARC9_BOCW.Vargo52_reload_maginstart", t = 0.9 },
             { s = "ARC9_BOCW.Vargo52_reload_magin", t = 1.1 },
             { s = "ARC9_BOCW.Vargo52_reload_end", t = 1.8 },
@@ -871,7 +872,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.9,
                 lhik = 1,
                 rhik = 0
             },
@@ -901,12 +902,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.45,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 0.6,
                 lhik = 1,
                 rhik = 0
             },
@@ -914,11 +915,13 @@ SWEP.Animations = {
     },
     ["reload_ext"] = {
         Source = "reload_ext",
-        MinProgress = 0.6,
+        Mult = 0.9,
+        MinProgress = 0.55,
         EventTable = {
             { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
-            { s = "ARC9_BOCW.Vargo52_reload_ext_magout", t = 0.2 },
-            { s = "ARC9_BOCW.Vargo52_reload_ext_magin", t = 1.2 },
+            { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.4 },
+            { s = "ARC9_BOCW.Vargo52_reload_maginstart", t = 0.9 },
+            { s = "ARC9_BOCW.Vargo52_reload_magin", t = 1.1 },
             { s = "ARC9_BOCW.Vargo52_reload_end", t = 2 },
         },
         IKTimeLine = {
@@ -938,7 +941,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.9,
                 lhik = 1,
                 rhik = 0
             },
@@ -946,15 +949,17 @@ SWEP.Animations = {
     },
     ["reload_empty_ext"] = {
         Source = "reload_ext_empty",
-        MinProgress = 0.475,
+        Mult = 0.9,
+        MinProgress = 0.4,
         MagSwapTime = 1,
         EventTable = {
             { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
-            { s = "ARC9_BOCW.Vargo52_reload_ext_magout", t = 0.2 },
-            { s = "ARC9_BOCW.Vargo52_reload_ext_magin", t = 1.1 },
-            { s = "ARC9_BOCW.Vargo52_boltback", t = 2 },
-            { s = "ARC9_BOCW.Vargo52_boltrelease", t = 2.25 },
-            { s = "ARC9_BOCW.Vargo52_reload_end", t = 2.65 },
+            { s = "ARC9_BOCW.Vargo52_reload_empty_magout", t = 0.2 },
+            { s = "ARC9_BOCW.Vargo52_reload_maginstart", t = 0.8 },
+            { s = "ARC9_BOCW.Vargo52_reload_empty_magin", t = 0.9 },
+            { s = "ARC9_BOCW.Vargo52_boltback", t = 1.9 },
+            { s = "ARC9_BOCW.Vargo52_boltrelease", t = 2.1 },
+            { s = "ARC9_BOCW.Vargo52_reload_end", t = 2.5 },
         },
         IKTimeLine = {
             {
@@ -968,12 +973,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.45,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 0.6,
                 lhik = 1,
                 rhik = 0
             },
@@ -983,7 +988,9 @@ SWEP.Animations = {
         Source = "reload_dual",
         MinProgress = 0.55,
         EventTable = {
+            { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
             { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.3 },
+            { s = "ARC9_BOCW.Vargo52_reload_maginstart", t = 0.6 },
             { s = "ARC9_BOCW.Vargo52_reload_magin", t = 0.9 },
             { s = "ARC9_BOCW.Vargo52_reload_end", t = 1.5 },
         },
@@ -994,17 +1001,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.65,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.75,
+                t = 1,
                 lhik = 1,
                 rhik = 0
             },
@@ -1014,74 +1011,12 @@ SWEP.Animations = {
         Source = "reload_dual_empty",
         MinProgress = 0.4,
         EventTable = {
+            { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
             { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.2 },
-            { s = "ARC9_BOCW.Vargo52_reload_magin", t = 0.8 },
-            { s = "ARC9_BOCW.Vargo52_boltback", t = 1.6 },
-            { s = "ARC9_BOCW.Vargo52_boltrelease", t = 1.8 },
-            { s = "ARC9_BOCW.Vargo52_reload_end", t = 2.3 },
-        },
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.75,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.9,
-                lhik = 1,
-                rhik = 0
-            },
-        },
-    },
-    ["1_reload_dual"] = {
-        Source = "reload_dual2",
-        MinProgress = 0.55,
-        EventTable = {
-            { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.3 },
-            { s = "ARC9_BOCW.Vargo52_reload_magin", t = 1 },
-            { s = "ARC9_BOCW.Vargo52_reload_end", t = 1.7 },
-        },
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.65,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.9,
-                lhik = 1,
-                rhik = 0
-            },
-        },
-    },
-    ["1_reload_empty_dual"] = {
-        Source = "reload_dual2_empty",
-        MinProgress = 0.45,
-        EventTable = {
-            { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.2 },
-            { s = "ARC9_BOCW.Vargo52_reload_magin", t = 1 },
-            { s = "ARC9_BOCW.Vargo52_boltback", t = 1.8 },
-            { s = "ARC9_BOCW.Vargo52_boltrelease", t = 2 },
+            { s = "ARC9_BOCW.Vargo52_reload_maginstart", t = 0.6 },
+            { s = "ARC9_BOCW.Vargo52_reload_magin", t = 1.2 },
+            { s = "ARC9_BOCW.Vargo52_boltback", t = 1.9 },
+            { s = "ARC9_BOCW.Vargo52_boltrelease", t = 2.2 },
             { s = "ARC9_BOCW.Vargo52_reload_end", t = 2.4 },
         },
         IKTimeLine = {
@@ -1091,6 +1026,78 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
+                t = 1,
+                lhik = 1,
+                rhik = 0
+            },
+        },
+    },
+    ["1_reload_dual"] = {
+        Source = "reload_dual2",
+        MinProgress = 0.65,
+        EventTable = {
+            { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
+            { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.3 },
+            { s = "ARC9_BOCW.Vargo52_reload_maginstart", t = 0.6 },
+            { s = "ARC9_BOCW.Vargo52_reload_magin", t = 1 },
+            { s = "ARC9_BOCW.Vargo52_reload_end", t = 1.6 },
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 0
+            },
+        },
+    },
+    ["1_reload_empty_dual"] = {
+        Source = "reload_dual2_empty",
+        MinProgress = 0.45,
+        EventTable = {
+            { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
+            { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.2 },
+            { s = "ARC9_BOCW.Vargo52_reload_maginstart", t = 0.6 },
+            { s = "ARC9_BOCW.Vargo52_reload_magin", t = 1.2 },
+            { s = "ARC9_BOCW.Vargo52_boltback", t = 1.9 },
+            { s = "ARC9_BOCW.Vargo52_boltrelease", t = 2.2 },
+            { s = "ARC9_BOCW.Vargo52_reload_end", t = 2.4 },
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 0
+            },
+        },
+    },
+    ["reload_mix"] = {
+        Source = "reload_mix",
+        Mult = 1.5,
+        MinProgress = 0.58,
+        EventTable = {
+            { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
+            { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.35 },
+            { s = "ARC9_BOCW.Vargo52_reload_maginstart", t = 0.6 },
+            { s = "ARC9_BOCW.Vargo52_reload_magin", t = 0.9 },
+            { s = "ARC9_BOCW.Vargo52_reload_end", t = 1.3 },
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
                 t = 0.1,
                 lhik = 0,
                 rhik = 0
@@ -1101,19 +1108,24 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.9,
                 lhik = 1,
                 rhik = 0
             },
         },
     },
-    ["reload_mix"] = {
-        Source = "reload_mix",
-        MinProgress = 0.58,
+    ["reload_empty_mix"] = {
+        Source = "reload_mix_empty",
+        Mult = 1.5,
+        MinProgress = 0.45,
+        MagSwapTime = 1,
         EventTable = {
             { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
-            { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.3 },
-            { s = "ARC9_BOCW.Vargo52_reload_magin", t = 1.2 },
+            { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.2 },
+            { s = "ARC9_BOCW.Vargo52_reload_maginstart", t = 0.5 },
+            { s = "ARC9_BOCW.Vargo52_reload_magin", t = 0.7 },
+            { s = "ARC9_BOCW.Vargo52_boltback", t = 1.3 },
+            { s = "ARC9_BOCW.Vargo52_boltrelease", t = 1.5 },
             { s = "ARC9_BOCW.Vargo52_reload_end", t = 1.8 },
         },
         IKTimeLine = {
@@ -1128,49 +1140,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.45,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.85,
-                lhik = 1,
-                rhik = 0
-            },
-        },
-    },
-    ["reload_empty_mix"] = {
-        Source = "reload_mix_empty",
-        MinProgress = 0.45,
-        MagSwapTime = 1,
-        EventTable = {
-            { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
-            { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.3 },
-            { s = "ARC9_BOCW.Vargo52_reload_magin", t = 1.15 },
-            { s = "ARC9_BOCW.Vargo52_boltback", t = 1.95 },
-            { s = "ARC9_BOCW.Vargo52_boltrelease", t = 2.15 },
-            { s = "ARC9_BOCW.Vargo52_reload_end", t = 2.6 },
-            { hide = 1, t = 0.75 },
-            { hide = 0, t = 0.9 }
-        },
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.75,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.95,
+                t = 0.6,
                 lhik = 1,
                 rhik = 0
             },
@@ -1183,7 +1158,7 @@ SWEP.Animations = {
     },
     ["idle_sprint"] = {
         Source = "sprint_loop",
-        Time = 3,
+        Time = 2,
         NoStatAffectors = true
     },
     ["exit_sprint"] = {
@@ -1209,23 +1184,50 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.5,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.65,
                 lhik = 1,
                 rhik = 0
             },
         },
     },
-    --[[
-    ["1_enter_inspect"] = {
-        Source = "inspect_fire",
+    ["enter_inspect_dual"] = {
+        Source = "inspect_dualmag",
+        Mult = 0.8,
         EventTable = {
-            { s = "ARC9_BOCW.Vargo52_inspect_fire_part1", t = 0 },
-            { s = "ARC9_BOCW.Vargo52_inspect_fire_part2", t = 3 },
+            { s = "ARC9_BOCW.Vargo52_inspect", t = 0 },
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.65,
+                lhik = 1,
+                rhik = 0
+            },
+        },
+    },
+    ["1_enter_inspect"] = {
+        Source = "inspect_furryfluid",
+        EventTable = {
+            { s = "ARC9_BOCW.Vargo52_inspect_furryfluid", t = 0 },
         },
         IKTimeLine = {
             {
@@ -1250,5 +1252,4 @@ SWEP.Animations = {
             },
         },
     },
-    ]]
 }

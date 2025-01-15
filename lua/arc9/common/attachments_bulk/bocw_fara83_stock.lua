@@ -22,7 +22,7 @@ ARC9.LoadAttachment(ATT, "bocw_fara83_stock_tactical")
 ATT = {}
 
 ATT.PrintName = "Wire Stock" --// 2
-ATT.CompactName = "WIRE STCK"
+ATT.CompactName = "WIRE STOCK"
 ATT.Icon = Material("entities/bocw_atts/stocks/fara83_wire.png", "mips smooth")
 ATT.Description = [[Wire stock reduces weapon weight to improve sprint to fire time.
 

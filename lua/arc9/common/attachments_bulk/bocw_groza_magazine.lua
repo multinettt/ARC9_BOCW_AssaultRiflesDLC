@@ -30,7 +30,7 @@ ARC9.LoadAttachment(ATT, "bocw_groza_magazine_ext1")
 ATT = {}
 
 ATT.PrintName = "Taped Mags" --// 2
-ATT.CompactName = "TAPD MAG"
+ATT.CompactName = "TAPED MAGS"
 ATT.Icon = Material("entities/bocw_atts/magazines/groza_dual1.png", "mips smooth")
 ATT.Description = [[Magazines secured together with duct tape to improve reload speed.
 
@@ -111,7 +111,7 @@ ARC9.LoadAttachment(ATT, "bocw_groza_magazine_extpro")
 ATT = {}
 
 ATT.PrintName = "GRU Mag Clamp" --// 5
-ATT.CompactName = "GRU CLMP"
+ATT.CompactName = "GRU CLAMP"
 ATT.Icon = Material("entities/bocw_atts/magazines/groza_dualpro.png", "mips smooth")
 ATT.Description = [[Magazine coupler joins an additional inverted magazine to the one in the gun for faster reloads.
 
