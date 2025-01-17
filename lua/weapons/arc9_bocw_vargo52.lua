@@ -484,12 +484,13 @@ SWEP.AttachmentElements = {
     },
     ["bodymount_lasermixbody"] = {
         Bodygroups = {
-            {6, 1},
+            {10, 1},
         }
     },
     ["bodymount_flashlight"] = {
         Bodygroups = {
-            {6, 2},
+            {10, 1},
+            {11, 1},
         }
     },
     ["barrel_ultralight"] = {
@@ -564,6 +565,17 @@ SWEP.AttachmentSlotMods = {
 
 -- Adjust the stats of specific attachments when applied to this gun
 SWEP.AttachmentTableOverrides = {
+    ["bocw_ak47_body_laser1"] = {
+        ModelOffset = Vector(0,-0.007,0.03),
+        Scale = 0.9,
+    },
+    ["bocw_ak47_body_laserpro"] = {
+        ModelOffset = Vector(0,-0.007,0.031),
+        Scale = 0.9,
+    },
+    ["bocw_ak47_body_mixbody1"] = {
+        ModelOffset = Vector(0.8,-0.18,0),
+    },
     ["bocw_optic_visiontech2x"] = {
         VisualRecoil = 0.1
     },
@@ -625,25 +637,25 @@ SWEP.Attachments = {
     {
         PrintName = "BODY",
         Bone = "tag_weapon",
-        Pos = Vector(22.5, 0, 1),
-        Ang = Angle(0, 0, 0),
+        Pos = Vector(17.5, 1.28, 3.8),
+        Ang = Angle(0, 0, -90),
         Icon_Offset = Vector(0, 0, -0.3),
-        Category = {"bocw_vargo52_body"},
+        Category = {"bocw_ak47_body_mix"},
         InstalledElements = {"bodymount_lasermixbody"},
     },
     {
         Hidden = true,
         Bone = "tag_weapon",
-        Pos = Vector(20, -2, 4.25),
+        Pos = Vector(17.5, 2.095, 3.8),
         Ang = Angle(0, 0, 0),
-        Category = {"bocw_east_body"},
+        Category = {"bocw_east_body", "bocw_ak47_body"},
         InstalledElements = {"bodymount_flashlight"},
         MergeSlots = {4,5}
     },
     {
         PrintName = "UNDRBARREL",
         Bone = "tag_weapon",
-        Pos = Vector(-7, -4.42, 6.1),
+        Pos = Vector(-7, -4.42, 6.04),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(20.25, 4.5, -5),
         Category = {"bocw_underbarrel_east"},

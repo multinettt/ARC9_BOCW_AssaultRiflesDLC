@@ -583,16 +583,6 @@ SWEP.AttachmentTableOverrides = {
         ModelOffset = Vector(2.4, 0, -2.1),
         VisualRecoil = 0.1
     },
-    ["bocw_underbarrel_east_speedgrip"] = {
-        ModelOffset = Vector(0, 0, -0.08)
-    },
-    ["bocw_underbarrel_east_mixgrip"] = {
-        ModelOffset = Vector(0, 0, -0.22)
-    },
-    ["bocw_underbarrel_east_foregrippro"] = {
-        ModelOffset = Vector(0, 0, 0.69),
-        ModelAngleOffset = Angle(-2, 0, 0)
-    },
     ["bocw_optic_visiontech2x"] = {
         VisualRecoil = 0.1
     },
@@ -644,7 +634,7 @@ SWEP.Attachments = {
     {
         PrintName = "UNDRBARREL",
         Bone = "tag_weapon",
-        Pos = Vector(-13.25, -4.42, 5.17),
+        Pos = Vector(-13.19, -4.42, 5.17),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(20.25, 4.5, -5),
         Category = {"bocw_underbarrel_east"},
