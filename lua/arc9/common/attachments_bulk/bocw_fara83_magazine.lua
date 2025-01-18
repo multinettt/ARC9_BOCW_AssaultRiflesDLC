@@ -14,6 +14,7 @@ ATT.SortOrder = 0
 ATT.Category = "bocw_fara83_mag"
 
 ATT.Model = "models/weapons/arc9/atts/bocw_fara83_magazine_ext1.mdl"
+ATT.DropMagazineModelOverride = "models/weapons/arc9/atts/bocw_fara83_magazine_ext1.mdl"
 
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, -0.06)
@@ -93,6 +94,7 @@ ATT.SortOrder = 3
 ATT.Category = "bocw_fara83_mag"
 
 ATT.Model = "models/weapons/arc9/atts/bocw_fara83_magazine_extpro.mdl"
+ATT.DropMagazineModelOverride = "models/weapons/arc9/atts/bocw_fara83_magazine_extpro.mdl"
 
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, -0.08)

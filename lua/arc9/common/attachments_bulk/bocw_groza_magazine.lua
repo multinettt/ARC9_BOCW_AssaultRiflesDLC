@@ -14,6 +14,7 @@ ATT.SortOrder = 0
 ATT.Category = "bocw_groza_mag"
 
 ATT.Model = "models/weapons/arc9/atts/bocw_groza_magazine_ext1.mdl"
+ATT.DropMagazineModelOverride = "models/weapons/arc9/atts/bocw_groza_magazine_ext1.mdl"
 
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0.72)
@@ -41,6 +42,7 @@ ATT.SortOrder = 1
 ATT.Category = "bocw_groza_mag"
 
 ATT.Model = "models/weapons/arc9/atts/bocw_groza_magazine_dual1.mdl"
+ATT.DropMagazineModelOverride = "models/weapons/arc9/atts/bocw_groza_magazine_dual1.mdl"
 
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
@@ -66,6 +68,7 @@ ATT.SortOrder = 2
 ATT.Category = "bocw_groza_mag"
 
 ATT.Model = "models/weapons/arc9/atts/bocw_groza_magazine_mix1.mdl"
+ATT.DropMagazineModelOverride = "models/weapons/arc9/atts/bocw_groza_magazine_mix1.mdl"
 
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0.72)
@@ -94,6 +97,7 @@ ATT.SortOrder = 3
 ATT.Category = "bocw_groza_mag"
 
 ATT.Model = "models/weapons/arc9/atts/bocw_groza_magazine_extpro.mdl"
+ATT.DropMagazineModelOverride = "models/weapons/arc9/atts/bocw_groza_magazine_extpro.mdl"
 
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0.72)
@@ -122,6 +126,7 @@ ATT.SortOrder = 4
 ATT.Category = "bocw_groza_mag"
 
 ATT.Model = "models/weapons/arc9/atts/bocw_groza_magazine_dualpro.mdl"
+ATT.DropMagazineModelOverride = "models/weapons/arc9/atts/bocw_groza_magazine_dualpro.mdl"
 
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
@@ -148,6 +153,7 @@ ATT.SortOrder = 5
 ATT.Category = "bocw_groza_mag"
 
 ATT.Model = "models/weapons/arc9/atts/bocw_groza_magazine_mixpro.mdl"
+ATT.DropMagazineModelOverride = "models/weapons/arc9/atts/bocw_groza_magazine_mixpro.mdl"
 
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0.72)

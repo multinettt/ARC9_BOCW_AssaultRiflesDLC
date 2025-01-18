@@ -159,9 +159,9 @@ SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineSkin = 0 -- Model skin of mag.
 SWEP.DropMagazineTime = 2
 SWEP.DropMagazineQCA = nil -- QC Attachment drop mag from, would drop from shell port if not defined
-SWEP.DropMagazinePos = Vector(0, -8, -6) -- offsets
+SWEP.DropMagazinePos = Vector(-40, -30, 10) -- offsets
 SWEP.DropMagazineAng = Angle(0, -90, 0)
-SWEP.DropMagazineVelocity = Vector(0, -100, 0) -- Put something here if your anim throws the mag with force
+SWEP.DropMagazineVelocity = Vector(-200, -200, 0) -- Put something here if your anim throws the mag with force
 
 -------------------------- FIREMODES
 
@@ -349,6 +349,10 @@ SWEP.BobSprintMult = 0.1
 -------------------------- VISUALS
 
 SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
+    "tag_bullet_deplete_sqtl_00_animate",
+    "tag_bullet_deplete_sqtl_01_animate",
+    "tag_bullet_deplete_sqtl_02_animate",
+    "tag_bullet_deplete_sqtl_03_animate"
 }
 SWEP.CaseBones = {}
 -- Unlike BulletBones, these bones are determined by the missing bullet amount when reloading
@@ -365,7 +369,8 @@ SWEP.HideBones = {
     "tag_clip1"
 } -- bones to hide in third person and customize menu. {"list", "of", "bones"}
 SWEP.ReloadHideBoneTables = {
-    [1] = {"tag_bullet_deplete_sqtl_00_animate", "tag_bullet_deplete_sqtl_01_animate", "tag_bullet_deplete_sqtl_02_animate", "tag_bullet_deplete_sqtl_03_animate"} -- works only with TPIK
+    [1] = {"tag_clip1"},
+    [2] = {"tag_clip", "tag_bullet_deplete_sqtl_00_animate", "tag_bullet_deplete_sqtl_01_animate", "tag_bullet_deplete_sqtl_02_animate", "tag_bullet_deplete_sqtl_03_animate"} -- works only with TPIK
 }
 
 SWEP.PoseParameters = {} -- Poseparameters to manage. ["parameter"] = starting value.
@@ -432,6 +437,9 @@ SWEP.CustomizeNoRotate = false
 
 SWEP.BipodPos = Vector(0, 4, -4)
 SWEP.BipodAng = Angle(0, 0, 0)
+
+SWEP.PeekPos = Vector(-1.5, 3, -2)
+SWEP.PeekAng = Angle(0, 0.4, -35)
 
 -------------------------- HoldTypes
 
@@ -718,15 +726,6 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
 
     local vm = data.model
     local attached = data.elements
-
-
-    local camo = 0
-    if attached["universal_camo"] then
-        camo = 1
-    end
-
-    vm:SetSkin(camo)
-
 end
 
 SWEP.Hook_TranslateAnimation = function(swep, anim)
@@ -744,7 +743,6 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
     if elements["vargo52_mag_mix"] then
         return anim .. "_mix"
     end
-
 end
 
 SWEP.Animations = {
@@ -808,16 +806,11 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
-                lhik = 0,
+                lhik = 1,
                 rhik = 0
             },
             {
-                t = 0.6,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.75,
+                t = 1,
                 lhik = 1,
                 rhik = 0
             },
@@ -866,6 +859,10 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.Vargo52_reload_maginstart", t = 0.9 },
             { s = "ARC9_BOCW.Vargo52_reload_magin", t = 1.1 },
             { s = "ARC9_BOCW.Vargo52_reload_end", t = 1.8 },
+            { hide = 1, t = 0 },
+            { hide = 0, t = 0.2 },
+            { hide = 2, t = 1.9 },
+            { hide = 1, t = 2.25 },
         },
         IKTimeLine = {
             {
@@ -893,6 +890,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload_empty",
         MinProgress = 0.4,
+        DropMagAt = 0.6,
         EventTable = {
             { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
             { s = "ARC9_BOCW.Vargo52_reload_empty_magout", t = 0.2 },
@@ -901,6 +899,10 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.Vargo52_boltback", t = 1.8 },
             { s = "ARC9_BOCW.Vargo52_boltrelease", t = 2 },
             { s = "ARC9_BOCW.Vargo52_reload_end", t = 2.35 },
+            { hide = 1, t = 0 },
+            { hide = 0, t = 0.2 },
+            { hide = 2, t = 1 },
+            { hide = 1, t = 2.68},
         },
         IKTimeLine = {
             {
@@ -927,14 +929,18 @@ SWEP.Animations = {
     },
     ["reload_ext"] = {
         Source = "reload_ext",
-        Mult = 0.9,
+        Mult = 1,
         MinProgress = 0.55,
         EventTable = {
             { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
-            { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.4 },
+            { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.5 },
             { s = "ARC9_BOCW.Vargo52_reload_maginstart", t = 0.9 },
-            { s = "ARC9_BOCW.Vargo52_reload_magin", t = 1.1 },
-            { s = "ARC9_BOCW.Vargo52_reload_end", t = 2 },
+            { s = "ARC9_BOCW.Vargo52_reload_magin", t = 1.2 },
+            { s = "ARC9_BOCW.Vargo52_reload_end", t = 2.1 },
+            { hide = 1, t = 0 },
+            { hide = 0, t = 0.2 },
+            { hide = 2, t = 1.9 },
+            { hide = 1, t = 2.25 },
         },
         IKTimeLine = {
             {
@@ -961,17 +967,22 @@ SWEP.Animations = {
     },
     ["reload_empty_ext"] = {
         Source = "reload_ext_empty",
-        Mult = 0.9,
+        Mult = 1,
         MinProgress = 0.4,
         MagSwapTime = 1,
+        DropMagAt = 0.6,
         EventTable = {
             { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
             { s = "ARC9_BOCW.Vargo52_reload_empty_magout", t = 0.2 },
             { s = "ARC9_BOCW.Vargo52_reload_maginstart", t = 0.8 },
             { s = "ARC9_BOCW.Vargo52_reload_empty_magin", t = 0.9 },
-            { s = "ARC9_BOCW.Vargo52_boltback", t = 1.9 },
-            { s = "ARC9_BOCW.Vargo52_boltrelease", t = 2.1 },
-            { s = "ARC9_BOCW.Vargo52_reload_end", t = 2.5 },
+            { s = "ARC9_BOCW.Vargo52_boltback", t = 2 },
+            { s = "ARC9_BOCW.Vargo52_boltrelease", t = 2.2 },
+            { s = "ARC9_BOCW.Vargo52_reload_end", t = 2.6 },
+            { hide = 1, t = 0 },
+            { hide = 0, t = 0.2 },
+            -- duplicate attachments fucks this up, it hides both mags when the mag bone is hid
+            -- cant go further than this with the reloadhidebones, sorry. goes for rest of att mags
         },
         IKTimeLine = {
             {
@@ -998,13 +1009,14 @@ SWEP.Animations = {
     },
     ["reload_dual"] = {
         Source = "reload_dual",
-        MinProgress = 0.55,
+        MinProgress = 0.6,
         EventTable = {
             { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
             { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.3 },
             { s = "ARC9_BOCW.Vargo52_reload_maginstart", t = 0.6 },
             { s = "ARC9_BOCW.Vargo52_reload_magin", t = 0.9 },
             { s = "ARC9_BOCW.Vargo52_reload_end", t = 1.5 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -1021,7 +1033,7 @@ SWEP.Animations = {
     },
     ["reload_empty_dual"] = {
         Source = "reload_dual_empty",
-        MinProgress = 0.4,
+        MinProgress = 0.5,
         EventTable = {
             { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
             { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.2 },
@@ -1030,6 +1042,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.Vargo52_boltback", t = 1.9 },
             { s = "ARC9_BOCW.Vargo52_boltrelease", t = 2.2 },
             { s = "ARC9_BOCW.Vargo52_reload_end", t = 2.4 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -1053,6 +1066,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.Vargo52_reload_maginstart", t = 0.6 },
             { s = "ARC9_BOCW.Vargo52_reload_magin", t = 1 },
             { s = "ARC9_BOCW.Vargo52_reload_end", t = 1.6 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -1069,7 +1083,8 @@ SWEP.Animations = {
     },
     ["1_reload_empty_dual"] = {
         Source = "reload_dual2_empty",
-        MinProgress = 0.45,
+        MinProgress = 0.5,
+        DropMagAt = 1.1,
         EventTable = {
             { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
             { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.2 },
@@ -1078,6 +1093,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.Vargo52_boltback", t = 1.9 },
             { s = "ARC9_BOCW.Vargo52_boltrelease", t = 2.2 },
             { s = "ARC9_BOCW.Vargo52_reload_end", t = 2.4 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -1129,7 +1145,7 @@ SWEP.Animations = {
     ["reload_empty_mix"] = {
         Source = "reload_mix_empty",
         Mult = 1.5,
-        MinProgress = 0.45,
+        MinProgress = 0.4,
         MagSwapTime = 1,
         EventTable = {
             { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
@@ -1139,6 +1155,8 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.Vargo52_boltback", t = 1.3 },
             { s = "ARC9_BOCW.Vargo52_boltrelease", t = 1.5 },
             { s = "ARC9_BOCW.Vargo52_reload_end", t = 1.8 },
+            { hide = 1, t = 0 },
+            { hide = 0, t = 0.2 },
         },
         IKTimeLine = {
             {
@@ -1253,12 +1271,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 0.95,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 1,
                 lhik = 1,
                 rhik = 0
             },

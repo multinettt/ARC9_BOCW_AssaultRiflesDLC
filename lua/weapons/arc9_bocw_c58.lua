@@ -126,7 +126,7 @@ SWEP.TracerNum = 1 -- Tracer every X
 SWEP.TracerFinalMag = 0 -- The last X bullets in a magazine are all tracers
 SWEP.TracerEffect = "ARC9_tracer" -- The effect to use for hitscan tracers
 SWEP.TracerColor = Color(255, 200, 200)
-SWEP.TracerSize = 0.5
+SWEP.TracerSize = 1
 
 -------------------------- MAGAZINE
 
@@ -436,6 +436,9 @@ SWEP.CustomizeNoRotate = false
 
 SWEP.BipodPos = Vector(0, 4, -4)
 SWEP.BipodAng = Angle(0, 0, 0)
+
+SWEP.PeekPos = Vector(-1.5, 3, -2)
+SWEP.PeekAng = Angle(0, 0.4, -35)
 
 -------------------------- HoldTypes
 

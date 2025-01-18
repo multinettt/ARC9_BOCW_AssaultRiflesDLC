@@ -157,9 +157,9 @@ SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineSkin = 0 -- Model skin of mag.
 SWEP.DropMagazineTime = 2
 SWEP.DropMagazineQCA = nil -- QC Attachment drop mag from, would drop from shell port if not defined
-SWEP.DropMagazinePos = Vector(0, -8, -6) -- offsets
+SWEP.DropMagazinePos = Vector(-65, -30, 15) -- offsets
 SWEP.DropMagazineAng = Angle(0, -90, 0)
-SWEP.DropMagazineVelocity = Vector(0, -100, 0) -- Put something here if your anim throws the mag with force
+SWEP.DropMagazineVelocity = Vector(-100, -60, 0) -- Put something here if your anim throws the mag with force
 
 -------------------------- FIREMODES
 
@@ -433,6 +433,9 @@ SWEP.CustomizeNoRotate = false
 
 SWEP.BipodPos = Vector(0, 4, -4)
 SWEP.BipodAng = Angle(0, 0, 0)
+
+SWEP.PeekPos = Vector(-1.5, 3, -2)
+SWEP.PeekAng = Angle(0, 0.4, -35)
 
 -------------------------- HoldTypes
 
@@ -931,6 +934,7 @@ SWEP.Animations = {
         Source = "reload_empty",
         Mult = 0.95,
         MinProgress = 2,
+        DropMagAt = 1.35,
         EventTable = {
             { s = "ARC9_BOCW.FARA83_reload_start", t = 0 },
             { s = "ARC9_BOCW.FARA83_reload_magout", t = 0.3 },
@@ -966,6 +970,7 @@ SWEP.Animations = {
     },
     ["reload_ext"] = {
         Source = "reload_ext",
+        Mult = 0.75,
         MinProgress = 0.75,
         EventTable = {
             { s = "ARC9_BOCW.FARA83_reload_start", t = 0 },
@@ -999,8 +1004,10 @@ SWEP.Animations = {
     },
     ["reload_empty_ext"] = {
         Source = "reload_ext_empty",
+        Mult = 0.8,
         MinProgress = 0.6,
         MagSwapTime = 1,
+        DropMagAt = 1.35,
         EventTable = {
             { s = "ARC9_BOCW.FARA83_reload_start", t = 0 },
             { s = "ARC9_BOCW.FARA83_reload_magout", t = 0.3 },

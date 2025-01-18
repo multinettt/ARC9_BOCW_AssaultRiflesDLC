@@ -157,9 +157,9 @@ SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineSkin = 0 -- Model skin of mag.
 SWEP.DropMagazineTime = 2
 SWEP.DropMagazineQCA = nil -- QC Attachment drop mag from, would drop from shell port if not defined
-SWEP.DropMagazinePos = Vector(0, -8, -6) -- offsets
+SWEP.DropMagazinePos = Vector(-30, -30, -20) -- offsets
 SWEP.DropMagazineAng = Angle(0, -90, 0)
-SWEP.DropMagazineVelocity = Vector(0, -100, 0) -- Put something here if your anim throws the mag with force
+SWEP.DropMagazineVelocity = Vector(-20, -20, 0) -- Put something here if your anim throws the mag with force
 
 -------------------------- FIREMODES
 
@@ -366,7 +366,8 @@ SWEP.HideBones = {
     "tag_clip1"
 } -- bones to hide in third person and customize menu. {"list", "of", "bones"}
 SWEP.ReloadHideBoneTables = {
-    [1] = {"tag_bullet_deplete_sqtl_00_animate", "tag_bullet_deplete_sqtl_01_animate", "tag_bullet_deplete_sqtl_02_animate", "tag_bullet_deplete_sqtl_03_animate"} -- works only with TPIK
+    [1] = {"tag_clip1"},
+    [2] = {"tag_clip", "tag_bullet_deplete_sqtl_00_animate", "tag_bullet_deplete_sqtl_01_animate", "tag_bullet_deplete_sqtl_02_animate"}
 }
 
 SWEP.PoseParameters = {} -- Poseparameters to manage. ["parameter"] = starting value.
@@ -434,6 +435,9 @@ SWEP.CustomizeNoRotate = false
 SWEP.BipodPos = Vector(0, 4, -4)
 SWEP.BipodAng = Angle(0, 0, 0)
 
+SWEP.PeekPos = Vector(-1.5, 3, -2)
+SWEP.PeekAng = Angle(0, 0.4, -35)
+
 -------------------------- HoldTypes
 
 SWEP.HoldType = "ar2"
@@ -459,6 +463,11 @@ SWEP.AttachmentElements = {
     ["maggone"] = {
         Bodygroups = {
             {1, 1},
+        }
+    },
+    ["em2_mag_mix"] = {
+        Bodygroups = {
+            {2, 1},
         }
     },
     ["triggerguardgone"] = {
@@ -940,6 +949,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.EM2_reload_magout", t = 0.3 },
             { s = "ARC9_BOCW.EM2_reload_magin", t = 1.2 },
             { s = "ARC9_BOCW.EM2_reload_end", t = 1.4 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -973,6 +983,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.EM2_reload_empty_magout", t = 0.6 },
             { s = "ARC9_BOCW.EM2_reload_empty_magin", t = 1.64 },
             { s = "ARC9_BOCW.EM2_reload_end", t = 2.3 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -1005,6 +1016,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.EM2_reload_magout", t = 0.3 },
             { s = "ARC9_BOCW.EM2_reload_magin", t = 1 },
             { s = "ARC9_BOCW.EM2_reload_end", t = 1.2 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -1018,7 +1030,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.65,
+                t = 0.7,
                 lhik = 0,
                 rhik = 0
             },
@@ -1038,6 +1050,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.EM2_reload_empty_magin", t = 1 },
             { s = "ARC9_BOCW.EM2_reload_dual_empty_magtap", t = 1.8 },
             { s = "ARC9_BOCW.EM2_reload_end", t = 1.8 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -1070,6 +1083,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.EM2_reload_magout", t = 0.3 },
             { s = "ARC9_BOCW.EM2_reload_magin", t = 1 },
             { s = "ARC9_BOCW.EM2_reload_end", t = 1.3 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -1103,6 +1117,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.EM2_reload_empty_magin", t = 1.2 },
             { s = "ARC9_BOCW.EM2_reload_dual_empty_magtap", t = 2 },
             { s = "ARC9_BOCW.EM2_reload_end", t = 2 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -1135,6 +1150,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.EM2_reload_magout", t = 0.3 },
             { s = "ARC9_BOCW.EM2_reload_magin", t = 1.2 },
             { s = "ARC9_BOCW.EM2_reload_end", t = 1.4 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -1168,8 +1184,10 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.EM2_reload_empty_magout", t = 1.2 },
             { s = "ARC9_BOCW.EM2_reload_empty_magin", t = 1.5 },
             { s = "ARC9_BOCW.EM2_reload_end", t = 2.2 },
-            { hide = 1, t = 0.75 },
-            { hide = 0, t = 0.9 }
+            { hide = 1, t = 0 },
+            { hide = 0, t = 1 },
+            { hide = 2, t = 2 },
+            { hide = 0, t = 3.4 },
         },
         IKTimeLine = {
             {
@@ -1188,7 +1206,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.9,
                 lhik = 1,
                 rhik = 0
             },
@@ -1203,6 +1221,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.EM2_reload_magout_old", t = 0.3 },
             { s = "ARC9_BOCW.EM2_reload_magin_old", t = 1.2 },
             { s = "ARC9_BOCW.EM2_reload_end", t = 1.4 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -1231,11 +1250,13 @@ SWEP.Animations = {
         Source = "reload_empty",
         MinProgress = 0.55,
         MagSwapTime = 1,
+        DropMagAt = 1.4,
         EventTable = {
             { s = "ARC9_BOCW.EM2_reload_start", t = 0 },
             { s = "ARC9_BOCW.EM2_reload_empty_magout_old", t = 0.6 },
             { s = "ARC9_BOCW.EM2_reload_empty_magin_old", t = 1.64 },
             { s = "ARC9_BOCW.EM2_reload_end", t = 2.3 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -1268,6 +1289,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.EM2_reload_magout_old", t = 0.3 },
             { s = "ARC9_BOCW.EM2_reload_magin_old", t = 1 },
             { s = "ARC9_BOCW.EM2_reload_end", t = 1.2 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -1281,12 +1303,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.65,
+                t = 0.7,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.85,
                 lhik = 1,
                 rhik = 0
             },
@@ -1301,6 +1323,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.EM2_reload_empty_magin_old", t = 1 },
             { s = "ARC9_BOCW.EM2_reload_dual_empty_magtap", t = 1.8 },
             { s = "ARC9_BOCW.EM2_reload_end", t = 1.8 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -1333,6 +1356,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.EM2_reload_magout_old", t = 0.3 },
             { s = "ARC9_BOCW.EM2_reload_magin_old", t = 1 },
             { s = "ARC9_BOCW.EM2_reload_end", t = 1.3 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -1360,12 +1384,14 @@ SWEP.Animations = {
     ["1_reload_empty_dual_old"] = {
         Source = "reload_dual2_empty",
         MinProgress = 0.45,
+        DropMagAt = 0.74,
         EventTable = {
             { s = "ARC9_BOCW.EM2_reload_start", t = 0 },
             { s = "ARC9_BOCW.EM2_reload_magout_old", t = 0.3 },
             { s = "ARC9_BOCW.EM2_reload_empty_magin_old", t = 1.2 },
             { s = "ARC9_BOCW.EM2_reload_dual_empty_magtap", t = 2 },
             { s = "ARC9_BOCW.EM2_reload_end", t = 2 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -1398,6 +1424,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.EM2_reload_magout_old", t = 0.3 },
             { s = "ARC9_BOCW.EM2_reload_magin_old", t = 1.2 },
             { s = "ARC9_BOCW.EM2_reload_end", t = 1.4 },
+            { hide = 1, t = 0 },
         },
         IKTimeLine = {
             {
@@ -1431,8 +1458,10 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.EM2_reload_empty_magout_old", t = 1.2 },
             { s = "ARC9_BOCW.EM2_reload_empty_magin_old", t = 1.5 },
             { s = "ARC9_BOCW.EM2_reload_end", t = 2.2 },
-            { hide = 1, t = 0.75 },
-            { hide = 0, t = 0.9 }
+            { hide = 1, t = 0 },
+            { hide = 0, t = 1 },
+            { hide = 2, t = 2 },
+            { hide = 0, t = 3.4 },
         },
         IKTimeLine = {
             {
@@ -1451,7 +1480,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.9,
                 lhik = 1,
                 rhik = 0
             },
@@ -1489,7 +1518,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.8,
                 lhik = 0,
                 rhik = 0
             },
@@ -1517,7 +1546,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.8,
                 lhik = 0,
                 rhik = 0
             },

@@ -159,9 +159,9 @@ SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineSkin = 0 -- Model skin of mag.
 SWEP.DropMagazineTime = 2
 SWEP.DropMagazineQCA = nil -- QC Attachment drop mag from, would drop from shell port if not defined
-SWEP.DropMagazinePos = Vector(0, -8, -6) -- offsets
+SWEP.DropMagazinePos = Vector(-65, -30, 0) -- offsets
 SWEP.DropMagazineAng = Angle(0, -90, 0)
-SWEP.DropMagazineVelocity = Vector(0, -100, 0) -- Put something here if your anim throws the mag with force
+SWEP.DropMagazineVelocity = Vector(-200, 0, 0) -- Put something here if your anim throws the mag with force
 
 -------------------------- FIREMODES
 
@@ -431,6 +431,9 @@ SWEP.CustomizeNoRotate = false
 
 SWEP.BipodPos = Vector(0, 4, -4)
 SWEP.BipodAng = Angle(0, 0, 0)
+
+SWEP.PeekPos = Vector(-1.5, 3, -2)
+SWEP.PeekAng = Angle(0, 0.4, -35)
 
 -------------------------- HoldTypes
 
@@ -804,16 +807,11 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
-                lhik = 0,
+                lhik = 1,
                 rhik = 0
             },
             {
-                t = 0.6,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.75,
+                t = 1,
                 lhik = 1,
                 rhik = 0
             },
@@ -833,12 +831,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.65,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 0.7,
                 lhik = 1,
                 rhik = 0
             },
@@ -891,6 +889,7 @@ SWEP.Animations = {
         Source = "reload_empty",
         Mult = 0.8,
         MinProgress = 0.6,
+        DropMagAt = 1.35,
         EventTable = {
             { s = "ARC9_BOCW.Grav_reload_start", t = 0 },
             { s = "ARC9_BOCW.Grav_reload_magout", t = 0.35 },
@@ -962,6 +961,7 @@ SWEP.Animations = {
         Mult = 0.8,
         MinProgress = 0.475,
         MagSwapTime = 1,
+        DropMagAt = 1.35,
         EventTable = {
             { s = "ARC9_BOCW.Grav_reload_start", t = 0 },
             { s = "ARC9_BOCW.Grav_reload_magout", t = 0.35 },
