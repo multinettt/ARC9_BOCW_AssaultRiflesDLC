@@ -400,17 +400,17 @@ SWEP.MagnificationZoomSpeed = 20
 
 SWEP.HasSights = true
 
-SWEP.ActivePos = Vector(0, -1.2, 0)
+SWEP.ActivePos = Vector(0, -0.5, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.CrouchPos = Vector(-1.6, -1, -1)
-SWEP.CrouchAng = Angle(0, 0, -20)
+SWEP.CrouchPos = Vector(-0.5, -1, -1)
+SWEP.CrouchAng = Angle(0, 0, -10)
 
 -- Position when sprinting or safe
 SWEP.RestPos = Vector(0, -1.2, 0)
 SWEP.RestAng = Angle(0, 0, 0)
 
-SWEP.SprintPos = Vector(0, -1.2, 0)
+SWEP.SprintPos = Vector(0, -4, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.HolsterPos = Vector(0, 0, -5)
@@ -427,7 +427,7 @@ SWEP.CustomizePos = Vector(12, 40, 4)
 SWEP.CustomizeRotateAnchor = Vector(15, -1.88, -5)
 
 SWEP.CustomizeSnapshotFOV = 70
-SWEP.CustomizeSnapshotPos = Vector(0, 20, 0)
+SWEP.CustomizeSnapshotPos = Vector(3, 15, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -492,38 +492,19 @@ SWEP.AttachmentElements = {
     },
     ["stockgone"] = {
         Bodygroups = {
-            {5, 5},
-            {6, 1},
-        }
-    },
-    ["stock_tactical"] = {
-        Bodygroups = {
             {5, 1},
         }
     },
-    ["stock_duster"] = {
+    ["stockmountgone"] = {
         Bodygroups = {
-            {5, 2},
-            {6, 1}
-        }
-    },
-    ["stock_raider"] = {
-        Bodygroups = {
-            {5, 3},
-        }
-    },
-    ["stock_kgb"] = {
-        Bodygroups = {
-            {5, 4},
+            {6, 1},
         }
     },
     ["barrel_ultralight"] = {
         Bodygroups = {
             {3, 1},
-            {10, 3},
+            {10, 1},
             {11, 2},
-            {12, 4},
-            {14, 1},
         },
         AttPosMods = {
             [2] = {
@@ -533,10 +514,9 @@ SWEP.AttachmentElements = {
     },
     ["barrel_cavalry"] = {
         Bodygroups = {
-            {10, 0},
+            {3, 1},
+            {10, 1},
             {11, 0},
-            {12, 0},
-            {14, 1},
         },
         AttPosMods = {
             [2] = {
@@ -546,11 +526,9 @@ SWEP.AttachmentElements = {
     },
     ["barrel_contour"] = {
         Bodygroups = {
-            {10, 0},
+            {3, 1},
+            {10, 1},
             {11, 0},
-            {12, 2},
-            {13, 1},
-            {14, 1},
         },
         AttPosMods = {
             [2] = {
@@ -561,11 +539,8 @@ SWEP.AttachmentElements = {
     ["barrel_liberator"] = {
         Bodygroups = {
             {3, 1},
-            {10, 2},
+            {10, 1},
             {11, 3},
-            {12, 1},
-            {13, 1},
-            {14, 1},
         },
         AttPosMods = {
             [2] = {
@@ -576,11 +551,8 @@ SWEP.AttachmentElements = {
     ["barrel_takedown"] = {
         Bodygroups = {
             {3, 1},
-            {10, 2},
+            {10, 1},
             {11, 3},
-            {12, 0},
-            {13, 0},
-            {14, 1},
         },
         AttPosMods = {
             [2] = {
@@ -591,11 +563,8 @@ SWEP.AttachmentElements = {
     ["barrel_spetsnazrpk"] = {
         Bodygroups = {
             {3, 1},
-            {10, 3},
+            {10, 1},
             {11, 2},
-            {12, 3},
-            {13, 1},
-            {14, 1},
         },
         AttPosMods = {
             [2] = {
@@ -767,14 +736,6 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
     if attached["bipodgone"] and attached["bocw_fara83_barrel"] then
         vm:SetBodygroup(11, 4) -- this is to remove bipod when grip is attached
     end
-
-    local camo = 0
-    if attached["universal_camo"] then
-        camo = 1
-    end
-
-    vm:SetSkin(camo)
-
 end
 
 SWEP.Hook_TranslateAnimation = function(swep, anim)
@@ -784,6 +745,12 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
     if anim == "ready" then
         if elements["stock_nofold"] then
             return anim .. "_nostock"
+        end
+    end
+
+    if anim == "enter_inspect" then
+        if elements["bocw_underbarrel_west"] then
+            return anim .. "_grip"
         end
     end
 
@@ -969,7 +936,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.FARA83_reload_magout", t = 0.3 },
             { s = "ARC9_BOCW.FARA83_reload_maggrab", t = 1.2 },
             { s = "ARC9_BOCW.FARA83_reload_magin", t = 1.8 },
-            { s = "ARC9_BOCW.FARA83_reload_grab", t = 2.7 },
+            { s = "ARC9_BOCW.FARA83_reload_grab", t = 2.6 },
             { s = "ARC9_BOCW.FARA83_boltback", t = 3 },
             { s = "ARC9_BOCW.FARA83_boltrelease", t = 3.2 },
             { s = "ARC9_BOCW.FARA83_reload_end", t = 3.4 },
@@ -1318,6 +1285,27 @@ SWEP.Animations = {
             },
         },
     },
+    ["enter_inspect_grip"] = {
+        Source = "inspect_grip",
+        EventTable = {
+            { s = "ARC9_BOCW.FARA83_inspect_part1", t = 0 },
+            { s = "ARC9_BOCW.FARA83_inspect_part2", t = 3.3 },
+            { s = "ARC9_BOCW.FARA83_inspect_part3", t = 5.2 },
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 0
+            },
+        },
+    },
+    --[[
     ["1_enter_inspect"] = {
         Source = "inspect_krieger",
         EventTable = {
@@ -1346,4 +1334,5 @@ SWEP.Animations = {
             },
         },
     },
+    ]]
 }

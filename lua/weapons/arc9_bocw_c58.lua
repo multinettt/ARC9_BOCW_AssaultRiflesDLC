@@ -406,8 +406,8 @@ SWEP.HasSights = true
 SWEP.ActivePos = Vector(0, -1.2, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.CrouchPos = Vector(-1.6, -1, -1)
-SWEP.CrouchAng = Angle(0, 0, -20)
+SWEP.CrouchPos = Vector(-0.5, -1, -1)
+SWEP.CrouchAng = Angle(0, 0, -10)
 
 -- Position when sprinting or safe
 SWEP.RestPos = Vector(0, -1.2, 0)

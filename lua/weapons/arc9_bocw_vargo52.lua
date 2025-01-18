@@ -402,8 +402,8 @@ SWEP.HasSights = true
 SWEP.ActivePos = Vector(0, -1.2, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.CrouchPos = Vector(-1.6, -1, -1)
-SWEP.CrouchAng = Angle(0, 0, -20)
+SWEP.CrouchPos = Vector(-0.5, -1, -1)
+SWEP.CrouchAng = Angle(0, 0, -10)
 
 -- Position when sprinting or safe
 SWEP.RestPos = Vector(0, -1.2, 0)
@@ -423,7 +423,7 @@ SWEP.SightMidPoint = {
 -- Position for customizing
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(15, 40, 4)
-SWEP.CustomizeRotateAnchor = Vector(17, -1.88, -5)
+SWEP.CustomizeRotateAnchor = Vector(17, 0, -5)
 
 SWEP.CustomizeSnapshotFOV = 70
 SWEP.CustomizeSnapshotPos = Vector(0, 20, 0)
@@ -655,7 +655,7 @@ SWEP.Attachments = {
     {
         PrintName = "UNDRBARREL",
         Bone = "tag_weapon",
-        Pos = Vector(-7, -4.42, 6.04),
+        Pos = Vector(-7, -4.42, 6.17),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(20.25, 4.5, -5),
         Category = {"bocw_underbarrel_east"},
