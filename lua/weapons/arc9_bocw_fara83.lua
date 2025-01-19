@@ -157,7 +157,7 @@ SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineSkin = 0 -- Model skin of mag.
 SWEP.DropMagazineTime = 2
 SWEP.DropMagazineQCA = nil -- QC Attachment drop mag from, would drop from shell port if not defined
-SWEP.DropMagazinePos = Vector(-65, -30, 15) -- offsets
+SWEP.DropMagazinePos = Vector(-65, -30, 0) -- offsets
 SWEP.DropMagazineAng = Angle(0, -90, 0)
 SWEP.DropMagazineVelocity = Vector(-100, -60, 0) -- Put something here if your anim throws the mag with force
 
@@ -350,6 +350,10 @@ SWEP.BobSprintMult = 0.1
 -------------------------- VISUALS
 
 SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
+    "tag_bullet_deplete_sqtl_00_animate",
+    "tag_bullet_deplete_sqtl_01_animate",
+    "tag_bullet_deplete_sqtl_02_animate",
+    "tag_bullet_deplete_sqtl_03_animate"
 }
 SWEP.CaseBones = {}
 -- Unlike BulletBones, these bones are determined by the missing bullet amount when reloading
@@ -659,13 +663,12 @@ SWEP.Attachments = {
         Installed = "bocw_fara83_muzzle_base",
     },
     {
-        PrintName = "UNDRBARREL",
-        Bone = "tag_weapon",
-        Pos = Vector(-7, -4.42, 6.25),
+        PrintName = "BARREL",
+        Bone = "tag_handguard",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(20.25, 4.5, -5),
-        Category = {"bocw_underbarrel_west"},
-        InstalledElements = {"bipodgone"},
+        Icon_Offset = Vector(0, 0, 0),
+        Category = {"bocw_fara83_barrel"},
     },
     {
         PrintName = "BODY",
@@ -677,20 +680,13 @@ SWEP.Attachments = {
         InstalledElements = {"bodymount_mix"},
     },
     {
-        PrintName = "BARREL",
-        Bone = "tag_handguard",
-        Pos = Vector(0, 0, 0),
+        PrintName = "UNDRBARREL",
+        Bone = "tag_weapon",
+        Pos = Vector(-7, -4.42, 6.25),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, 0),
-        Category = {"bocw_fara83_barrel"},
-    },
-    {
-        PrintName = "STOCK",
-        Bone = "tag_stock",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, 0),
-        Category = {"bocw_fara83_stock"},
+        Icon_Offset = Vector(20.25, 4.5, -5),
+        Category = {"bocw_underbarrel_west"},
+        InstalledElements = {"bipodgone"},
     },
     {
         PrintName = "MAGAZINE",
@@ -709,6 +705,14 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(-0.75, 0, -0.5),
         Category = {"bocw_fara83_wrap"},
+    },
+    {
+        PrintName = "STOCK",
+        Bone = "tag_stock",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        Category = {"bocw_fara83_stock"},
     },
     {
         PrintName = "SOUND",
@@ -1010,9 +1014,9 @@ SWEP.Animations = {
         DropMagAt = 1.35,
         EventTable = {
             { s = "ARC9_BOCW.FARA83_reload_start", t = 0 },
-            { s = "ARC9_BOCW.FARA83_reload_magout", t = 0.3 },
+            { s = "ARC9_BOCW.FARA83_reload_magout", t = 0.4 },
             { s = "ARC9_BOCW.FARA83_reload_maggrab", t = 1.4 },
-            { s = "ARC9_BOCW.FARA83_reload_magin", t = 2.2 },
+            { s = "ARC9_BOCW.FARA83_reload_magin", t = 2.1 },
             { s = "ARC9_BOCW.FARA83_reload_grab", t = 2.9 },
             { s = "ARC9_BOCW.FARA83_boltback", t = 3.3 },
             { s = "ARC9_BOCW.FARA83_boltrelease", t = 3.5 },

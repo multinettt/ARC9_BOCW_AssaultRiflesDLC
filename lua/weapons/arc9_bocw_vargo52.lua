@@ -159,7 +159,7 @@ SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineSkin = 0 -- Model skin of mag.
 SWEP.DropMagazineTime = 2
 SWEP.DropMagazineQCA = nil -- QC Attachment drop mag from, would drop from shell port if not defined
-SWEP.DropMagazinePos = Vector(-40, -30, 10) -- offsets
+SWEP.DropMagazinePos = Vector(-40, -30, 5) -- offsets
 SWEP.DropMagazineAng = Angle(0, -90, 0)
 SWEP.DropMagazineVelocity = Vector(-200, -200, 0) -- Put something here if your anim throws the mag with force
 
@@ -1114,10 +1114,10 @@ SWEP.Animations = {
         MinProgress = 0.58,
         EventTable = {
             { s = "ARC9_BOCW.Vargo52_reload_start", t = 0 },
-            { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.35 },
+            { s = "ARC9_BOCW.Vargo52_reload_magout", t = 0.3 },
             { s = "ARC9_BOCW.Vargo52_reload_maginstart", t = 0.6 },
-            { s = "ARC9_BOCW.Vargo52_reload_magin", t = 0.9 },
-            { s = "ARC9_BOCW.Vargo52_reload_end", t = 1.3 },
+            { s = "ARC9_BOCW.Vargo52_reload_magin", t = 0.8 },
+            { s = "ARC9_BOCW.Vargo52_reload_end", t = 1.4 },
         },
         IKTimeLine = {
             {
@@ -1154,7 +1154,7 @@ SWEP.Animations = {
             { s = "ARC9_BOCW.Vargo52_reload_magin", t = 0.7 },
             { s = "ARC9_BOCW.Vargo52_boltback", t = 1.3 },
             { s = "ARC9_BOCW.Vargo52_boltrelease", t = 1.5 },
-            { s = "ARC9_BOCW.Vargo52_reload_end", t = 1.8 },
+            { s = "ARC9_BOCW.Vargo52_reload_end", t = 1.7 },
             { hide = 1, t = 0 },
             { hide = 0, t = 0.2 },
         },

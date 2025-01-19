@@ -625,13 +625,13 @@ SWEP.Attachments = {
         Installed = "bocw_groza_muzzle_base",
     },
     {
-        PrintName = "UNDRBARREL",
-        Bone = "tag_weapon",
-        Pos = Vector(-13.19, -4.42, 5.17),
+        PrintName = "BARREL",
+        Bone = "tag_barrel",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(20.25, 4.5, -5),
-        Category = {"bocw_underbarrel_east"},
-        InstalledElements = {"grip_mount"},
+        Icon_Offset = Vector(1, 0, 0),
+        Category = {"bocw_groza_barrel"},
+        InstalledElements = {"barrelgone"},
     },
     {
         PrintName = "BODY",
@@ -652,22 +652,13 @@ SWEP.Attachments = {
         MergeSlots = {4,5}
     },
     {
-        PrintName = "BARREL",
-        Bone = "tag_barrel",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(1, 0, 0),
-        Category = {"bocw_groza_barrel"},
-        InstalledElements = {"barrelgone"},
-    },
-    {
-        PrintName = "STOCK",
+        PrintName = "UNDRBARREL",
         Bone = "tag_weapon",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-13.19, -4.42, 5.17),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(-10, 0, 3),
-        Category = {"bocw_groza_stock"},
-        InstalledElements = {"stockgone"},
+        Icon_Offset = Vector(20.25, 4.5, -5),
+        Category = {"bocw_underbarrel_east"},
+        InstalledElements = {"grip_mount"},
     },
     {
         PrintName = "MAGAZINE",
@@ -686,6 +677,15 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(-0.5, 0, -0.75),
         Category = {"bocw_groza_wrap"},
+    },
+    {
+        PrintName = "STOCK",
+        Bone = "tag_weapon",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(-10, 0, 3),
+        Category = {"bocw_groza_stock"},
+        InstalledElements = {"stockgone"},
     },
     {
         PrintName = "REAR SIGHT",
@@ -796,10 +796,35 @@ SWEP.Animations = {
         },
     },
     ["ready"] = {
-        Source = {"ready", "ready_ext"},
+        Source = {"ready"},
         EventTable = {
             { s = "ARC9_BOCW.Groza_boltback", t = 0.4 },
             { s = "ARC9_BOCW.Groza_boltrelease", t = 0.52 },
+            { s = "ARC9_BOCW.Groza_reload_end", t = 0.9 },
+        },
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 0
+            },
+        },
+    },
+    ["ready_ext"] = {
+        Source = {"ready_ext"},
+        EventTable = {
+            { s = "ARC9_BOCW.Groza_boltback", t = 0.4 },
+            { s = "ARC9_BOCW.Groza_boltrelease", t = 0.5 },
             { s = "ARC9_BOCW.Groza_reload_end", t = 0.9 },
         },
         IKTimeLine = {

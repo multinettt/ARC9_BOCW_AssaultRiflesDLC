@@ -87,7 +87,7 @@ ATT.CompactName = "60 RND"
 ATT.Icon = Material("entities/bocw_atts/magazines/c58_extpro.png", "mips smooth")
 ATT.Description = [[High-capacity drum holds 60 rounds.
 
-The STANAG is a type of Magazine attachment available for most NATO weapons in Call of Duty: Black Ops Cold War. It acts as a high capacity mag, giving more ammo but giving the added downside of a worse aiming time and reload speed. For the C58, it gives the same benefits along with added recoil control, but reduces the damage of the weapon due to the magazine changing the ammo type. Shotguns offer the same benefits as well, but without a worse aiming time. There are two different Warsaw Pact equivalents in the Bakelite Mag and the Spetsnaz Mag.]]
+The STANAG is a type of Magazine attachment available for most NATO weapons in Call of Duty: Black Ops Cold War. It acts as a high capacity mag, giving more ammo but giving the added downside of a worse aiming time and reload speed. Shotguns offer the same benefits as well, but without a worse aiming time. There are two different Warsaw Pact equivalents in the Bakelite Mag and the Spetsnaz Mag.]]
 
 ATT.SortOrder = 3
 

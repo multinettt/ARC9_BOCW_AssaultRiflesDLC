@@ -44,7 +44,7 @@ ATT.Category = "bocw_em2_mag"
 ATT.Model = "models/weapons/arc9/atts/bocw_em2_magazine_dual1.mdl"
 ATT.DropMagazineModelOverride = "models/weapons/arc9/atts/bocw_em2_magazine_dual1.mdl"
 
-ATT.DropMagazinePos = Vector(-40, -25, 20)
+ATT.DropMagazinePos = Vector(-40, -25, 5)
 ATT.DropMagazineVelocity = Vector(-80, -80, 40)
 
 ATT.Scale = 1
@@ -129,7 +129,7 @@ ATT.Category = "bocw_em2_mag"
 ATT.Model = "models/weapons/arc9/atts/bocw_em2_magazine_dualpro.mdl"
 ATT.DropMagazineModelOverride = "models/weapons/arc9/atts/bocw_em2_magazine_dualpro.mdl"
 
-ATT.DropMagazinePos = Vector(-40, -25, 20)
+ATT.DropMagazinePos = Vector(-40, -25, 5)
 ATT.DropMagazineVelocity = Vector(-80, -80, 80)
 
 ATT.Scale = 1

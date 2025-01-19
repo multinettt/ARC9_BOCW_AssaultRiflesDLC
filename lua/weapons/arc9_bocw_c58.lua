@@ -403,7 +403,7 @@ SWEP.MagnificationZoomSpeed = 20
 
 SWEP.HasSights = true
 
-SWEP.ActivePos = Vector(0, -1.2, 0)
+SWEP.ActivePos = Vector(0, -0.5, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -1, -1)
@@ -641,12 +641,12 @@ SWEP.Attachments = {
         Installed = "bocw_c58_muzzle_base",
     },
     {
-        PrintName = "UNDRBARREL",
-        Bone = "tag_weapon",
-        Pos = Vector(-6.45, -4.42, 6.68),
+        PrintName = "BARREL",
+        Bone = "tag_barrel",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(20.25, 4.5, -5.2),
-        Category = {"bocw_underbarrel_west"},
+        Icon_Offset = Vector(5.5, 0, 0),
+        Category = {"bocw_c58_barrel"},
     },
     {
         PrintName = "BODY",
@@ -657,12 +657,30 @@ SWEP.Attachments = {
         Category = {"bocw_c58_body"},
     },
     {
-        PrintName = "BARREL",
-        Bone = "tag_barrel",
+        PrintName = "UNDRBARREL",
+        Bone = "tag_weapon",
+        Pos = Vector(-6.45, -4.42, 6.68),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(20.25, 4.5, -5.2),
+        Category = {"bocw_underbarrel_west"},
+    },
+    {
+        PrintName = "MAGAZINE",
+        DefaultName = "30 Rnd",
+        Bone = "tag_clip",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(5.5, 0, 0),
-        Category = {"bocw_c58_barrel"},
+        Icon_Offset = Vector(0, 0, -0.5),
+        Category = {"bocw_c58_mag"},
+        InstalledElements = {"maggone"},
+    },
+    {
+        PrintName = "HANDLE",
+        Bone = "tag_weapon",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(-1.25, 0, -1.5),
+        Category = {"bocw_c58_wrap"},
     },
     {
         PrintName = "STOCK",
@@ -672,24 +690,6 @@ SWEP.Attachments = {
         Icon_Offset = Vector(-1, 0, 0),
         Category = {"bocw_c58_stock"},
         InstalledElements = {"stockgone"},
-    },
-    {
-        PrintName = "MAGAZINE",
-        DefaultName = "30 Rnd",
-        Bone = "tag_clip",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, 0),
-        Category = {"bocw_c58_mag"},
-        InstalledElements = {"maggone"},
-    },
-    {
-        PrintName = "HANDLE",
-        Bone = "tag_weapon",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(-1.25, 0, -1),
-        Category = {"bocw_c58_wrap"},
     },
     {
         PrintName = "SOUND",
@@ -885,7 +885,7 @@ SWEP.Animations = {
         Source = "reload",
         NoMagSwap = true,
         Mult = 0.8,
-        MinProgress = 1.6,
+        MinProgress = 0.7,
         EventTable = {
             { s = "ARC9_BOCW.C58_reload_start", t = 0 },
             { s = "ARC9_BOCW.C58_reload_magout", t = 0.35 },
@@ -919,7 +919,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload_empty",
         Mult = 0.95,
-        MinProgress = 2.2,
+        MinProgress = 0.6,
         EventTable = {
             { s = "ARC9_BOCW.C58_reload_start", t = 0 },
             { s = "ARC9_BOCW.C58_reload_boltback", t = 0.28 },
@@ -954,7 +954,8 @@ SWEP.Animations = {
     },
     ["reload_ext"] = {
         Source = "reload_ext",
-        MinProgress = 0.6,
+        Mult = 0.8,
+        MinProgress = 0.7,
         EventTable = {
             { s = "ARC9_BOCW.C58_reload_start", t = 0 },
             { s = "ARC9_BOCW.C58_reload_magout", t = 0.35 },
@@ -987,7 +988,8 @@ SWEP.Animations = {
     },
     ["reload_empty_ext"] = {
         Source = "reload_ext_empty",
-        MinProgress = 2.2,
+        Mult = 0.9,
+        MinProgress = 0.6,
         MagSwapTime = 1,
         EventTable = {
             { s = "ARC9_BOCW.C58_reload_start", t = 0 },
@@ -1056,7 +1058,7 @@ SWEP.Animations = {
     },
     ["reload_empty_dual"] = {
         Source = "reload_dual_empty",
-        MinProgress = 0.4,
+        MinProgress = 0.45,
         EventTable = {
             { s = "ARC9_BOCW.C58_reload_start", t = 0 },
             { s = "ARC9_BOCW.C58_reload_magout", t = 0.2 },
@@ -1157,12 +1159,13 @@ SWEP.Animations = {
     },
     ["reload_mix"] = {
         Source = "reload_mix",
-        MinProgress = 0.58,
+        MinProgress = 0.65,
         EventTable = {
             { s = "ARC9_BOCW.C58_reload_start", t = 0 },
             { s = "ARC9_BOCW.C58_reload_magout", t = 0.3 },
-            { s = "ARC9_BOCW.C58_reload_magin", t = 1.2 },
-            { s = "ARC9_BOCW.C58_reload_end", t = 1.8 },
+            { s = "ARC9_BOCW.C58_reload_maggrab", t = 0.8 },
+            { s = "ARC9_BOCW.C58_reload_magin", t = 1.5 },
+            { s = "ARC9_BOCW.C58_reload_end", t = 2.4 },
         },
         IKTimeLine = {
             {
@@ -1189,7 +1192,7 @@ SWEP.Animations = {
     },
     ["reload_empty_mix"] = {
         Source = "reload_mix_empty",
-        MinProgress = 0.45,
+        MinProgress = 0.6,
         MagSwapTime = 1,
         EventTable = {
             { s = "ARC9_BOCW.C58_reload_start", t = 0 },

@@ -348,6 +348,10 @@ SWEP.BobSprintMult = 0.1
 -------------------------- VISUALS
 
 SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
+    "tag_bullet_deplete_sqtl_00_animate",
+    "tag_bullet_deplete_sqtl_01_animate",
+    "tag_bullet_deplete_sqtl_02_animate",
+    "tag_bullet_deplete_sqtl_03_animate"
 }
 SWEP.CaseBones = {}
 -- Unlike BulletBones, these bones are determined by the missing bullet amount when reloading
@@ -398,7 +402,7 @@ SWEP.MagnificationZoomSpeed = 20
 
 SWEP.HasSights = true
 
-SWEP.ActivePos = Vector(0, -1.2, 0)
+SWEP.ActivePos = Vector(0, -0.5, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -1, -1)
@@ -497,7 +501,7 @@ SWEP.AttachmentElements = {
             [2] = {
                 Pos = Vector(4.01, 0, 0),
             },
-            [3] = {
+            [5] = {
                 Pos = Vector(-7, -4.42, 5.85),
             },
         },
@@ -511,11 +515,11 @@ SWEP.AttachmentElements = {
             [2] = {
                 Pos = Vector(-1.35, 0, 0),
             },
-            [3] = {
-                Pos = Vector(-7, -4.42, 5.95),
-            },
             [4] = {
                 Pos = Vector(12, 0, -0.37),
+            },
+            [5] = {
+                Pos = Vector(-7, -4.42, 5.95),
             },
         },
     },
@@ -527,7 +531,7 @@ SWEP.AttachmentElements = {
             [2] = {
                 Pos = Vector(2.9, 0, 0),
             },
-            [3] = {
+            [5] = {
                 Pos = Vector(-7, -4.42, 5.95),
             },
         },
@@ -541,7 +545,7 @@ SWEP.AttachmentElements = {
             [2] = {
                 Pos = Vector(0.95, 0, 0),
             },
-            [3] = {
+            [5] = {
                 Pos = Vector(-7, -4.42, 5.95),
             },
         },
@@ -556,7 +560,7 @@ SWEP.AttachmentElements = {
             [2] = {
                 Pos = Vector(0.2, 0, 0),
             },
-            [3] = {
+            [5] = {
                 Pos = Vector(-7, -4.42, 5.95),
             },
         },
@@ -570,11 +574,11 @@ SWEP.AttachmentElements = {
             [2] = {
                 Pos = Vector(2.13, 0, 0),
             },
-            [3] = {
-                Pos = Vector(-7, -4.42, 5.85),
-            },
             [4] = {
                 Pos = Vector(14, 0, -0.37),
+            },
+            [5] = {
+                Pos = Vector(-7, -4.42, 5.85),
             },
         },
     },
@@ -639,13 +643,12 @@ SWEP.Attachments = {
         Installed = "bocw_grav_muzzle_base",
     },
     {
-        PrintName = "UNDRBARREL",
-        Bone = "tag_weapon",
-        Pos = Vector(-7, -4.42, 6.2),
+        PrintName = "BARREL",
+        Bone = "tag_barrel",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(20.25, 4.5, -5),
-        Category = {"bocw_underbarrel_west"},
-        InstalledElements = {"bipodgone"},
+        Icon_Offset = Vector(3, 0, 0),
+        Category = {"bocw_grav_barrel"},
     },
     {
         PrintName = "BODY",
@@ -656,21 +659,13 @@ SWEP.Attachments = {
         Category = {"bocw_grav_body"},
     },
     {
-        PrintName = "BARREL",
-        Bone = "tag_barrel",
-        Pos = Vector(0, 0, 0),
+        PrintName = "UNDRBARREL",
+        Bone = "tag_weapon",
+        Pos = Vector(-7, -4.42, 6.2),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(3, 0, 0),
-        Category = {"bocw_grav_barrel"},
-    },
-    {
-        PrintName = "STOCK",
-        Bone = "tag_stock",
-        Pos = Vector(-1.856, 0, 0),
-        Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, 0),
-        Category = {"bocw_grav_stock"},
-        InstalledElements = {"stockgone"},
+        Icon_Offset = Vector(20.25, 4.5, -5),
+        Category = {"bocw_underbarrel_west"},
+        InstalledElements = {"bipodgone"},
     },
     {
         PrintName = "MAGAZINE",
@@ -689,6 +684,15 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(-0.75, 0, -0.5),
         Category = {"bocw_grav_wrap"},
+    },
+    {
+        PrintName = "STOCK",
+        Bone = "tag_stock",
+        Pos = Vector(-1.856, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        Category = {"bocw_grav_stock"},
+        InstalledElements = {"stockgone"},
     },
     {
         PrintName = "SOUND",
@@ -1032,7 +1036,7 @@ SWEP.Animations = {
         EventTable = {
             { s = "ARC9_BOCW.Grav_reload_start", t = 0 },
             { s = "ARC9_BOCW.Grav_reload_magout", t = 0.3 },
-            { s = "ARC9_BOCW.Grav_reload_magin", t = 1 },
+            { s = "ARC9_BOCW.Grav_reload_magin", t = 1.1 },
             { s = "ARC9_BOCW.Grav_reload_boltback", t = 2.2 },
             { s = "ARC9_BOCW.Grav_reload_boltrelease", t = 2.4 },
             { s = "ARC9_BOCW.Grav_reload_end", t = 2.7 },
@@ -1066,7 +1070,7 @@ SWEP.Animations = {
         EventTable = {
             { s = "ARC9_BOCW.Grav_reload_start", t = 0 },
             { s = "ARC9_BOCW.Grav_reload_magout", t = 0.3 },
-            { s = "ARC9_BOCW.Grav_reload_magin", t = 1 },
+            { s = "ARC9_BOCW.Grav_reload_magin", t = 1.1 },
             { s = "ARC9_BOCW.Grav_reload_end", t = 1.7 },
         },
         IKTimeLine = {
@@ -1098,7 +1102,7 @@ SWEP.Animations = {
         EventTable = {
             { s = "ARC9_BOCW.Grav_reload_start", t = 0 },
             { s = "ARC9_BOCW.Grav_reload_magout", t = 0.3 },
-            { s = "ARC9_BOCW.Grav_reload_magin", t = 1 },
+            { s = "ARC9_BOCW.Grav_reload_magin", t = 1.1 },
             { s = "ARC9_BOCW.Grav_reload_boltback", t = 2.2 },
             { s = "ARC9_BOCW.Grav_reload_boltrelease", t = 2.4 },
             { s = "ARC9_BOCW.Grav_reload_end", t = 2.7 },
