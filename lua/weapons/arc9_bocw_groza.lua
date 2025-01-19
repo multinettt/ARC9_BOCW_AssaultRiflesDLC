@@ -520,42 +520,42 @@ SWEP.AttachmentElements = {
     },
     ["barrel_ultralight"] = {
         AttPosMods = {
-            [2] = {
+            [3] = {
                 Pos = Vector(-1.99, 0, 0),
             },
         },
     },
     ["barrel_cavalry"] = {
         AttPosMods = {
-            [2] = {
+            [3] = {
                 Pos = Vector(-0.17, 0, 0),
             },
         },
     },
     ["barrel_reinforced"] = {
         AttPosMods = {
-            [2] = {
+            [3] = {
                 Pos = Vector(0.36, 0, 0),
             },
         },
     },
     ["barrel_grucomposite"] = {
         AttPosMods = {
-            [2] = {
+            [3] = {
                 Pos = Vector(-0.17, 0, 0),
             }
         },
     },
     ["barrel_contourm2"] = {
         AttPosMods = {
-            [2] = {
+            [3] = {
                 Pos = Vector(-1.4, 0, 0),
             }
         },
     },
     ["barrel_cmvmilspec"] = {
         AttPosMods = {
-            [2] = {
+            [3] = {
                 Pos = Vector(0, 0, 0),
             }
         },
@@ -573,7 +573,6 @@ SWEP.AttachmentSlotMods = {
 -- Adjust the stats of specific attachments when applied to this gun
 SWEP.AttachmentTableOverrides = {
     ["bocw_optic_nochsovathermal"] = {
-        ModelOffset = Vector(2.4, 0, -2.1),
         VisualRecoil = 0.1
     },
     ["bocw_optic_visiontech2x"] = {
@@ -612,8 +611,16 @@ SWEP.Attachments = {
         Pos = Vector(1, 0, 6.15),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),
-        Category = {"optic_picatinny", "bocw_nochsova_optic"},
+        Category = {"optic_picatinny"},
         InstalledElements = {"optic_mount"},
+    },
+    {
+        Hidden = true,
+        Bone = "tag_weapon",
+        Pos = Vector(0.5, -1, 2.3),
+        Ang = Angle(0, 0, 0),
+        Category = {"bocw_nochsova_optic"},
+        MergeSlots = {1,2}
     },
     {
         PrintName = "MUZZLE",
@@ -649,7 +656,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"bocw_east_body", "bocw_ak47_body"},
         InstalledElements = {"body_mount"},
-        MergeSlots = {4,5}
+        MergeSlots = {5,6}
     },
     {
         PrintName = "UNDRBARREL",

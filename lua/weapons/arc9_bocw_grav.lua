@@ -742,6 +742,26 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
     end
 end
 
+SWEP.HookP_NameChange = function(self, name)
+
+    local attached = self:GetElements()
+    local gunname = "IMI Galil ARM"
+
+    if attached["barrel_cavalrylancer"] or attached["barrel_takedown"] then
+        gunname = "IMI Galil AR"
+    end
+
+    if attached["bocw_grav_magazine_extpro"] then
+        gunname = "IMI Galil 7.62"
+    end
+
+    if attached["barrel_extended"] and attached["bocw_grav_stock_sascombat"] then
+        gunname = "IMI Galil Sniper Rifle"
+    end
+
+    return gunname
+end
+
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
@@ -987,12 +1007,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.6,
+                t = 0.65,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.75,
                 lhik = 1,
                 rhik = 0
             },
