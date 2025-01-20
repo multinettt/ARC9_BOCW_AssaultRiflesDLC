@@ -521,14 +521,14 @@ SWEP.AttachmentElements = {
     ["barrel_ultralight"] = {
         AttPosMods = {
             [3] = {
-                Pos = Vector(-1.99, 0, 0),
+                Pos = Vector(-2.2, 0, 0),
             },
         },
     },
     ["barrel_cavalry"] = {
         AttPosMods = {
             [3] = {
-                Pos = Vector(-0.17, 0, 0),
+                Pos = Vector(-0.35, 0, 0),
             },
         },
     },
@@ -549,7 +549,7 @@ SWEP.AttachmentElements = {
     ["barrel_contourm2"] = {
         AttPosMods = {
             [3] = {
-                Pos = Vector(-1.4, 0, 0),
+                Pos = Vector(-1.5, 0, 0),
             }
         },
     },
@@ -625,7 +625,7 @@ SWEP.Attachments = {
     {
         PrintName = "MUZZLE",
         Bone = "tag_muzzle",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-0.17, 0, 0),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(1, 0, 0),
         Category = {"bocw_groza_muzzle", "bocw_east_muzzle"},

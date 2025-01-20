@@ -13,7 +13,7 @@ ATT.Model = "models/weapons/arc9/atts/bocw_groza_muzzle.mdl"
 
 ATT.Category = {"bocw_groza_muzzle"}
 
-ATT.ModelOffset = Vector(0.88, -0.03, 0)
+ATT.ModelOffset = Vector(1.04, -0.03, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.MuzzleParticleOverride = "muzzleflash_1"
@@ -22,7 +22,7 @@ ATT.MuzzleDevice = true
 
 ATT.MenuCategory = "ARC9 - BOCW Attachments"
 
-ATT.ExcludeElements = {"barrel_grucomposite", "barrel_contourm2", "barrel_cmvmilspec"}
+ATT.ExcludeElements = {"barrel_grucomposite", "barrel_contourm2", "barrel_cmvmilspec", "barrel_reinforced"}
 
 ARC9.LoadAttachment(ATT, "bocw_groza_muzzle_base")
 
