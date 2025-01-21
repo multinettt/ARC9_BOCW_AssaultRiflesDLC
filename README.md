@@ -13,9 +13,9 @@ After the stuff I had to go through, I am finally starting making weapons again.
 
 - Groza (OTs-14 Groza)
 - FARA 83
-- C58 (Ak 5)
+- C58 (CETME Model C)
 - EM2 (EM-2)
-- Grav (IMI Galil)
+- Grav (IMI Galil ARM)
 - Vargo 52 (VAHAN)
 
 ## Personalization:
