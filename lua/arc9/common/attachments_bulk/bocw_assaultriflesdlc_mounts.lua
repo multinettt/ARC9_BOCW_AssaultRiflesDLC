@@ -7,7 +7,7 @@ ATT.CompactName = "EM2 SCOPE"
 ATT.Icon = Material("entities/bocw_atts/optics/em2scope.png", "mips smooth")
 ATT.Description = [[Original Enfield EM-2 handguard and scope assembly.]]
 
-ATT.SortOrder = 3
+ATT.SortOrder = -10
 
 ATT.Model = "models/weapons/arc9/atts/bocw_scope_em2.mdl"
 
