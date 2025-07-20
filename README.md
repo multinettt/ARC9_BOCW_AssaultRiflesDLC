@@ -4,6 +4,8 @@
 
 After the stuff I had to go through, I am finally starting making weapons again. The poll-winner Assault Rifles DLC will have 6 unique weapons that should be cool, i guess.
 
+## [ARC9 BOCW Assault Rifles DLC on Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3411125427)
+
 ## You need to have [Shared Content](https://github.com/multinettt/ARC-9_BOCW_Shared_Content) in order to avoid missing textures, materials and sounds.
 
 ## [BOCW Attachments](https://github.com/multinettt/ARC-9_BOCW_Attachments)
