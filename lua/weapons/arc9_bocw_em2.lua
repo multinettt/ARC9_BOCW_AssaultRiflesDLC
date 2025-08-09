@@ -29,12 +29,12 @@ SWEP.Base = "arc9_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - Black Ops Cold War"
-SWEP.SubCategory = "Assault Rifles"
+SWEP.SubCategory = "1Assault Rifles"
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "EM2"
 SWEP.TrueName = "Enfield EM-2"
-SWEP.Class = "Assault/Battle Rifle"
+SWEP.Class = "Assault Rifle"
 SWEP.Trivia = {
      Manufacturer = "RSAF Enfield",
      Calibre = ".280 British",
