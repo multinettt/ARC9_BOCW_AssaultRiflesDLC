@@ -1,13 +1,13 @@
 --=============================================================================
---   CALL OF DUTY: BLACK OPS COLD WAR
---   Groza
---   LUA - MAIN
+--   ARC9 CALL OF DUTY: BLACK OPS COLD WAR
+--   ASSAULT RIFLES DLC
+--   GROZA
 --=============================================================================
 --[[
 --   SWEP INFORMATION:
 
 --   BASE  : ARC9
---   BUILD : v1.0
+--   BUILD : v2026.1
 --   SR.NO : 2937724
 
 
@@ -232,14 +232,14 @@ SWEP.NPCWeight = 50
 -------------------------- HANDLING
 
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
-SWEP.Sway = 0.3 -- How much the gun sways.
+SWEP.Sway = 0.5 -- How much the gun sways.
+SWEP.SwayMultHipFire = 0 -- How much the gun sways.
+SWEP.SwayMultSights = 0.2
 
 SWEP.HoldBreathTime = 5 -- time that you can hold breath for
 SWEP.RestoreBreathTime = 4
 
 SWEP.FreeAimRadiusSights = 0
-
-SWEP.SwayMultSights = 0.5
 
 SWEP.AimDownSightsTime = 0.266 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.4 -- How long it takes to go from sprinting to being able to fire.
@@ -434,7 +434,7 @@ SWEP.HolsterAng = Angle(0, -15, 25)
 -- Position for customizing
 SWEP.CustomizeAng = Angle(90, 4, 0)
 SWEP.CustomizePos = Vector(9, 34, 4)
-SWEP.CustomizeRotateAnchor = Vector(10, 0, -3)
+SWEP.CustomizeRotateAnchor = Vector(9, 0, -3)
 
 SWEP.CustomizeSnapshotFOV = 70
 SWEP.CustomizeSnapshotPos = Vector(0, 20, 0)
@@ -709,7 +709,59 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(-2.2, 0, 5.4),
         Category = {"bocw_groza_rearsight"},
-        ExcludeElements = {"bocw_optic_nochsovathermal"}
+        ExcludeElements = {"bocw_optic_nochsovathermal"},
+        CosmeticOnly = true,
+    },
+    {
+        DefaultCompactName = "CAMO",
+        DefaultIcon = Material("arc9/def_att_icons/skin.png"),
+        Category = {"universal_camo"},
+        CosmeticOnly = true,
+    },
+    --[[ why dont you fucking work amın oğlu groza
+    {
+        PrintName = "STICKER 1",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_groza_sticker1.mdl",
+        CosmeticOnly = true,
+        ExcludeElements = {"bocw_nochsova_optic"}
+    },
+    ]]
+    {
+        PrintName = "STICKER 2",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_groza_sticker2.mdl",
+        CosmeticOnly = true,
+    },
+    {
+        PrintName = "STICKER 3",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_groza_sticker3.mdl",
+        CosmeticOnly = true,
+    },
+    {
+        PrintName = "STICKER 4", 
+        Bone = "tag_clip",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_groza_sticker4.mdl",
+        CosmeticOnly = true,
+        ExcludeElements = {"groza_mag_ext", "groza_mag_dual", "groza_mag_mix"}
+    },
+    {
+        PrintName = "STICKER 4", 
+        Bone = "tag_clip",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_groza_sticker4_dual.mdl",
+        CosmeticOnly = true,
+        RequireElements = {"groza_mag_dual"}
+    },
+    {
+        PrintName = "STICKER 4", 
+        Bone = "tag_clip",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_groza_sticker4_mix.mdl",
+        CosmeticOnly = true,
+        RequireElements = {"groza_mag_mix"}
     },
     {
         PrintName = "SOUND",
@@ -718,16 +770,6 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(12, 0, 2.34),
         Category = {"bocw_groza_sound"},
-        CosmeticOnly = true,
-    },
-    {
-        PrintName = "Cosmetic",
-        DefaultCompactName = "CAMO",
-        DefaultIcon = Material("arc9/def_att_icons/skin.png"),
-        Bone = "tag_weapon",
-        Pos = Vector(3, 0, -1),
-        Ang = Angle(0, 0, 0),
-        Category = {"universal_camo"},
         CosmeticOnly = true,
     },
 }

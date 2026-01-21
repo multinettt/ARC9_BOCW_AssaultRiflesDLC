@@ -1,15 +1,14 @@
 --=============================================================================
---   CALL OF DUTY: BLACK OPS COLD WAR
+--   ARC9 CALL OF DUTY: BLACK OPS COLD WAR
+--   ASSAULT RIFLES DLC
 --   EM2
---   LUA - MAIN
 --=============================================================================
 --[[
 --   SWEP INFORMATION:
 
 --   BASE  : ARC9
---   BUILD : v1.0
+--   BUILD : v2026.1
 --   SR.NO : 3800429
-
 
 
 oooooooooooo ooo        ooooo   .oooo.   
@@ -19,7 +18,8 @@ oooooooooooo ooo        ooooo   .oooo.
  888    "     8  `888'   888    .dP'     
  888       o  8    Y     888  .oP     .o 
 o888ooooood8 o8o        o888o 8888888888 
-                                         
+
+
 ]]
 
 AddCSLuaFile()
@@ -227,14 +227,14 @@ SWEP.NPCWeight = 50
 -------------------------- HANDLING
 
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
-SWEP.Sway = 0.3 -- How much the gun sways.
+SWEP.Sway = 0.5 -- How much the gun sways.
+SWEP.SwayMultHipFire = 0 -- How much the gun sways.
+SWEP.SwayMultSights = 0.2
 
 SWEP.HoldBreathTime = 5 -- time that you can hold breath for
 SWEP.RestoreBreathTime = 4
 
 SWEP.FreeAimRadiusSights = 0
-
-SWEP.SwayMultSights = 0.5
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.4 -- How long it takes to go from sprinting to being able to fire.
@@ -433,7 +433,7 @@ SWEP.SightMidPoint = {
 -- Position for customizing
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(9, 40, 4)
-SWEP.CustomizeRotateAnchor = Vector(10, 0, -5)
+SWEP.CustomizeRotateAnchor = Vector(9, 0, -5)
 
 SWEP.CustomizeSnapshotFOV = 70
 SWEP.CustomizeSnapshotPos = Vector(6, 20, 0)
@@ -693,6 +693,62 @@ SWEP.Attachments = {
         InstalledElements = {"stockgone"},
     },
     {
+        DefaultCompactName = "CAMO",
+        DefaultIcon = Material("arc9/def_att_icons/skin.png"),
+        Category = {"universal_camo"},
+        CosmeticOnly = true,
+    },
+    {
+        PrintName = "STICKER 1",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_em2_sticker1.mdl",
+        CosmeticOnly = true,
+    },
+    {
+        PrintName = "STICKER 2",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_em2_sticker2.mdl",
+        CosmeticOnly = true,
+    },
+    {
+        PrintName = "STICKER 3",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_em2_sticker3.mdl",
+        CosmeticOnly = true,
+    },
+    {
+        PrintName = "STICKER 4",
+        Bone = "tag_clip",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_em2_sticker4.mdl",
+        CosmeticOnly = true,
+        ExcludeElements = {"bocw_em2_magazine_ext1", "bocw_em2_magazine_extpro", "em2_mag_dual"}
+    },
+    {
+        PrintName = "STICKER 4",
+        Bone = "tag_clip",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_em2_sticker4_ext.mdl",
+        CosmeticOnly = true,
+        RequireElements = {"bocw_em2_magazine_ext1"}
+    },
+    {
+        PrintName = "STICKER 4",
+        Bone = "tag_clip",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_em2_sticker4_extpro.mdl",
+        CosmeticOnly = true,
+        RequireElements = {"bocw_em2_magazine_extpro"}
+    },
+    {
+        PrintName = "STICKER 4",
+        Bone = "tag_clip",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_em2_sticker4_dual.mdl",
+        CosmeticOnly = true,
+        RequireElements = {"em2_mag_dual"}
+    },
+    {
         PrintName = "WPN SOUND",
         Bone = "tag_weapon",
         Pos = Vector(0, 0, 0),
@@ -717,16 +773,6 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, -3),
         Category = {"bocw_em2_triggerguard"},
-        CosmeticOnly = true,
-    },
-    {
-        PrintName = "Cosmetic",
-        DefaultCompactName = "CAMO",
-        DefaultIcon = Material("arc9/def_att_icons/skin.png"),
-        Bone = "tag_weapon",
-        Pos = Vector(3, 0, 3),
-        Ang = Angle(0, 0, 0),
-        Category = {"universal_camo"},
         CosmeticOnly = true,
     },
 }

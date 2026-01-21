@@ -1,15 +1,14 @@
 --=============================================================================
---   CALL OF DUTY: BLACK OPS COLD WAR
---   Grav
---   LUA - MAIN
+--   ARC9 CALL OF DUTY: BLACK OPS COLD WAR
+--   ASSAULT RIFLES DLC
+--   GRAV
 --=============================================================================
 --[[
 --   SWEP INFORMATION:
 
 --   BASE  : ARC9
---   BUILD : v1.0
+--   BUILD : v2026.1
 --   SR.NO : 46204021A
-
 
 
   .oooooo.                                   
@@ -19,6 +18,7 @@
 888     ooooo  888      .oP"888    `88..8'   
 `88.    .88'   888     d8(  888     `888'    
  `Y8bood8P'   d888b    `Y888""8o     `8'     
+
 
 ]]
 
@@ -229,14 +229,14 @@ SWEP.NPCWeight = 50
 -------------------------- HANDLING
 
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
-SWEP.Sway = 0.3 -- How much the gun sways.
+SWEP.Sway = 0.5 -- How much the gun sways.
+SWEP.SwayMultHipFire = 0 -- How much the gun sways.
+SWEP.SwayMultSights = 0.2
 
 SWEP.HoldBreathTime = 5 -- time that you can hold breath for
 SWEP.RestoreBreathTime = 4
 
 SWEP.FreeAimRadiusSights = 0
-
-SWEP.SwayMultSights = 0.5
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.4 -- How long it takes to go from sprinting to being able to fire.
@@ -434,10 +434,10 @@ SWEP.SightMidPoint = {
 -- Position for customizing
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(11, 42, 4)
-SWEP.CustomizeRotateAnchor = Vector(12, 0, -5)
+SWEP.CustomizeRotateAnchor = Vector(11, 0, -5)
 
 SWEP.CustomizeSnapshotFOV = 70
-SWEP.CustomizeSnapshotPos = Vector(0, 20, 0)
+SWEP.CustomizeSnapshotPos = Vector(3, 20, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -703,22 +703,43 @@ SWEP.Attachments = {
         InstalledElements = {"stockgone"},
     },
     {
+        DefaultCompactName = "CAMO",
+        DefaultIcon = Material("arc9/def_att_icons/skin.png"),
+        Category = {"universal_camo"},
+        CosmeticOnly = true,
+    },
+    {
+        PrintName = "STICKER 1",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_grav_sticker1.mdl",
+        CosmeticOnly = true,
+    },
+    {
+        PrintName = "STICKER 2",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_grav_sticker2.mdl",
+        CosmeticOnly = true,
+    },
+    {
+        PrintName = "STICKER 3",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_grav_sticker3.mdl",
+        CosmeticOnly = true,
+    },
+    {
+        PrintName = "STICKER 4",
+        Bone = "tag_clip",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_grav_sticker4.mdl",
+        CosmeticOnly = true,
+    },
+    {
         PrintName = "SOUND",
         Bone = "tag_barrel",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(6, 0, 0),
         Category = {"bocw_grav_sound"},
-        CosmeticOnly = true,
-    },
-    {
-        PrintName = "Cosmetic",
-        DefaultCompactName = "CAMO",
-        DefaultIcon = Material("arc9/def_att_icons/skin.png"),
-        Bone = "tag_weapon",
-        Pos = Vector(3, 0, -1),
-        Ang = Angle(0, 0, 0),
-        Category = {"universal_camo"},
         CosmeticOnly = true,
     },
 }
@@ -769,18 +790,18 @@ end
 SWEP.HookP_NameChange = function(self, name)
 
     local attached = self:GetElements()
-    local gunname = "IMI Galil ARM"
+    local gunname = "Galil ARM"
 
     if attached["barrel_cavalrylancer"] or attached["barrel_takedown"] then
-        gunname = "IMI Galil AR"
+        gunname = "Galil AR"
     end
 
     if attached["bocw_grav_magazine_extpro"] then
-        gunname = "IMI Galil 7.62"
+        gunname = "Galil 7.62"
     end
 
     if attached["barrel_extended"] and attached["bocw_grav_stock_sascombat"] then
-        gunname = "IMI Galil Sniper Rifle"
+        gunname = "Galil Sniper Rifle"
     end
 
     return gunname

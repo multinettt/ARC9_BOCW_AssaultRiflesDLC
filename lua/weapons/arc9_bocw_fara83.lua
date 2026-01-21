@@ -1,15 +1,14 @@
 --=============================================================================
---   CALL OF DUTY: BLACK OPS COLD WAR
+--   ARC9 CALL OF DUTY: BLACK OPS COLD WAR
+--   ASSAULT RIFLES DLC
 --   FARA 83
---   LUA - MAIN
 --=============================================================================
 --[[
 --   SWEP INFORMATION:
 
 --   BASE  : ARC9
---   BUILD : v1.0
+--   BUILD : v2026.1
 --   SR.NO : 3800429
-
 
 
 oooooooooooo       .o.       ooooooooo.         .o.           .ooooo.     .oooo.   
@@ -19,6 +18,7 @@ oooooooooooo       .o.       ooooooooo.         .o.           .ooooo.     .oooo.
  888    "      .88ooo8888.    888`88b.      .88ooo8888.      .8'  ``88b      `88b. 
  888          .8'     `888.   888  `88b.   .8'     `888.     `8.   .88P o.   .88P  
 o888o        o88o     o8888o o888o  o888o o88o     o8888o     `boood8'  `8bd88P'   
+
 
 ]]
 
@@ -230,14 +230,14 @@ SWEP.NPCWeight = 50
 -------------------------- HANDLING
 
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
-SWEP.Sway = 0.3 -- How much the gun sways.
+SWEP.Sway = 0.5 -- How much the gun sways.
+SWEP.SwayMultHipFire = 0 -- How much the gun sways.
+SWEP.SwayMultSights = 0.2
 
 SWEP.HoldBreathTime = 5 -- time that you can hold breath for
 SWEP.RestoreBreathTime = 4
 
 SWEP.FreeAimRadiusSights = 0
-
-SWEP.SwayMultSights = 0.5
 
 SWEP.AimDownSightsTime = 0.325 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.4 -- How long it takes to go from sprinting to being able to fire.
@@ -436,7 +436,7 @@ SWEP.SightMidPoint = {
 -- Position for customizing
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(12, 40, 4)
-SWEP.CustomizeRotateAnchor = Vector(15, -1.88, -5)
+SWEP.CustomizeRotateAnchor = Vector(12, 0, -5)
 
 SWEP.CustomizeSnapshotFOV = 70
 SWEP.CustomizeSnapshotPos = Vector(3, 15, 0)
@@ -723,22 +723,68 @@ SWEP.Attachments = {
         Category = {"bocw_fara83_stock"},
     },
     {
+        DefaultCompactName = "CAMO",
+        DefaultIcon = Material("arc9/def_att_icons/skin.png"),
+        Category = {"universal_camo"},
+        CosmeticOnly = true,
+    },
+    {
+        PrintName = "STICKER 1",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_fara83_sticker1.mdl",
+        CosmeticOnly = true,
+    },
+    {
+        PrintName = "STICKER 2",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_fara83_sticker2.mdl",
+        CosmeticOnly = true,
+    },
+    {
+        PrintName = "STICKER 3",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_fara83_sticker3.mdl",
+        CosmeticOnly = true,
+    },
+    {
+        PrintName = "STICKER 4",
+        Bone = "tag_clip",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_fara83_sticker4.mdl",
+        CosmeticOnly = true,
+        ExcludeElements = {"bocw_fara83_magazine_ext1", "bocw_fara83_magazine_extpro", "fara83_mag_dual"}
+    },
+    {
+        PrintName = "STICKER 4",
+        Bone = "tag_clip",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_fara83_sticker4_ext.mdl",
+        CosmeticOnly = true,
+        RequireElements = {"bocw_fara83_magazine_ext1"}
+    },
+    {
+        PrintName = "STICKER 4",
+        Bone = "tag_clip",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_fara83_sticker4_extpro.mdl",
+        CosmeticOnly = true,
+        RequireElements = {"bocw_fara83_magazine_extpro"}
+    },
+    {
+        PrintName = "STICKER 4",
+        Bone = "tag_clip",
+        Category = "stickers",
+        StickerModel = "models/weapons/arc9/stickers/bocw_fara83_sticker4_dual.mdl",
+        CosmeticOnly = true,
+        RequireElements = {"fara83_mag_dual"}
+    },
+    {
         PrintName = "SOUND",
         Bone = "tag_barrel",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(6, 0, 0),
         Category = {"bocw_fara83_sound"},
-        CosmeticOnly = true,
-    },
-    {
-        PrintName = "Cosmetic",
-        DefaultCompactName = "CAMO",
-        DefaultIcon = Material("arc9/def_att_icons/skin.png"),
-        Bone = "tag_weapon",
-        Pos = Vector(3, 0, -1),
-        Ang = Angle(0, 0, 0),
-        Category = {"universal_camo"},
         CosmeticOnly = true,
     },
 }
