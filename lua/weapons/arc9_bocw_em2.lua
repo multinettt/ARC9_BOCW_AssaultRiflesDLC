@@ -576,6 +576,9 @@ SWEP.AttachmentSlotMods = {
 
 -- Adjust the stats of specific attachments when applied to this gun
 SWEP.AttachmentTableOverrides = {
+    ["bocw_optic_em2"] = {
+        VisualRecoil = 0.2
+    },
     ["bocw_optic_visiontech2x"] = {
         VisualRecoil = 0.1
     },

@@ -601,13 +601,13 @@ SWEP.AttachmentTableOverrides = {
         ModelOffset = Vector(0, 0, -0.43)
     },
     ["bocw_optic_visiontech2x"] = {
-        VisualRecoil = 0.1
+        VisualRecoil = 0.2
     },
     ["bocw_optic_anpvs4thermal"] = {
         VisualRecoil = 0.1
     },
     ["bocw_optic_axialarms3x"] = {
-        VisualRecoil = 0.1
+        VisualRecoil = 0.2
     },
     ["bocw_optic_hangmanrf"] = {
         VisualRecoil = 0.1
@@ -637,6 +637,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),
         Category = {"optic_picatinny"},
+        CorrectiveAng = Angle(0.2, 0.3, 0),
         InstalledElements = {"optic_mount"},
     },
     {

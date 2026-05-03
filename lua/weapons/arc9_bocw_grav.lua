@@ -398,12 +398,13 @@ SWEP.CustomBlendFactor = nil
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(0, -1.8, 0),
+    Pos = Vector(0, -1.35, 0),
     Ang = Angle(0, 0, 0),
     Magnification = 1.4,
     Blur = true,
     --AssociatedSlot = 0, -- Attachment slot to associate the sights with. Causes RT scopes to render.
     CrosshairInSights = false,
+    ViewModelFOV = 65
 }
 
 SWEP.MagnificationZoomSpeed = 20
@@ -603,13 +604,13 @@ SWEP.AttachmentSlotMods = {
 -- Adjust the stats of specific attachments when applied to this gun
 SWEP.AttachmentTableOverrides = {
     ["bocw_optic_visiontech2x"] = {
-        VisualRecoil = 0.1
+        VisualRecoil = 1
     },
     ["bocw_optic_anpvs4thermal"] = {
         VisualRecoil = 0.1
     },
     ["bocw_optic_axialarms3x"] = {
-        VisualRecoil = 0.1
+        VisualRecoil = 1
     },
     ["bocw_optic_hangmanrf"] = {
         VisualRecoil = 0.1
@@ -618,10 +619,10 @@ SWEP.AttachmentTableOverrides = {
         VisualRecoil = 0.1
     },
     ["bocw_optic_royalkross4x"] = {
-        VisualRecoil = 0.1
+        VisualRecoil = 1
     },
     ["bocw_optic_susatmultizoom"] = {
-        VisualRecoil = 0.1
+        VisualRecoil = 1
     },
     ["bocw_optic_ultrazoomcustom"] = {
         VisualRecoil = 0.1
@@ -639,6 +640,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),
         Category = {"optic_picatinny"},
+        CorrectiveAng = Angle(0.12, 0.15, 0),
         InstalledElements = {"optic_mount"},
     },
     {
