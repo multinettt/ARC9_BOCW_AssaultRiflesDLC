@@ -974,7 +974,7 @@ SWEP.Animations = {
         Source = "reload",
         NoMagSwap = true,
         Mult = 0.8,
-        MinProgress = 0.58,
+        MinProgress = 0.75,
         EventTable = {
             { s = "ARC9_BOCW.FARA83_reload_start", t = 0 },
             { s = "ARC9_BOCW.FARA83_reload_magout", t = 0.35 },
@@ -1008,7 +1008,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload_empty",
         Mult = 0.95,
-        MinProgress = 2,
+        MinProgress = 0.55,
         DropMagAt = 1.35,
         EventTable = {
             { s = "ARC9_BOCW.FARA83_reload_start", t = 0 },
