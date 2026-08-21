@@ -7,7 +7,7 @@
 --   SWEP INFORMATION:
 
 --   BASE  : ARC9
---   BUILD : v2026.1
+--   BUILD : v2026.8
 --   SR.NO : 46204021A
 
 
@@ -925,6 +925,7 @@ SWEP.Animations = {
         Source = "reload",
         NoMagSwap = true,
         Mult = 0.8,
+        FireASAP = 1,
         MinProgress = 0.75,
         EventTable = {
             { s = "ARC9_BOCW.Grav_reload_start", t = 0 },
@@ -959,6 +960,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload_empty",
         Mult = 0.8,
+        FireASAP = 1,
         MinProgress = 0.6,
         DropMagAt = 1.35,
         EventTable = {
@@ -996,6 +998,7 @@ SWEP.Animations = {
     ["reload_ext"] = {
         Source = "reload_ext",
         Mult = 0.8,
+        FireASAP = 1,
         MinProgress = 0.6,
         EventTable = {
             { s = "ARC9_BOCW.Grav_reload_start", t = 0 },
@@ -1030,6 +1033,7 @@ SWEP.Animations = {
     ["reload_empty_ext"] = {
         Source = "reload_ext_empty",
         Mult = 0.8,
+        FireASAP = 1,
         MinProgress = 0.475,
         MagSwapTime = 1,
         DropMagAt = 1.35,
@@ -1067,6 +1071,7 @@ SWEP.Animations = {
     },
     ["reload_dual"] = {
         Source = "reload_dual",
+        FireASAP = 1,
         MinProgress = 0.55,
         EventTable = {
             { s = "ARC9_BOCW.Grav_reload_start", t = 0 },
@@ -1099,6 +1104,7 @@ SWEP.Animations = {
     },
     ["reload_empty_dual"] = {
         Source = "reload_dual_empty",
+        FireASAP = 1,
         MinProgress = 0.4,
         EventTable = {
             { s = "ARC9_BOCW.Grav_reload_start", t = 0 },
@@ -1133,6 +1139,7 @@ SWEP.Animations = {
     },
     ["1_reload_dual"] = {
         Source = "reload_dual2",
+        FireASAP = 1,
         MinProgress = 0.55,
         EventTable = {
             { s = "ARC9_BOCW.Grav_reload_start", t = 0 },
@@ -1165,6 +1172,7 @@ SWEP.Animations = {
     },
     ["1_reload_empty_dual"] = {
         Source = "reload_dual2_empty",
+        FireASAP = 1,
         MinProgress = 0.45,
         EventTable = {
             { s = "ARC9_BOCW.Grav_reload_start", t = 0 },
@@ -1199,6 +1207,7 @@ SWEP.Animations = {
     },
     ["reload_mix"] = {
         Source = "reload_mix",
+        FireASAP = 1,
         MinProgress = 0.58,
         EventTable = {
             { s = "ARC9_BOCW.Grav_reload_start", t = 0 },
@@ -1232,6 +1241,7 @@ SWEP.Animations = {
     },
     ["reload_empty_mix"] = {
         Source = "reload_mix_empty",
+        FireASAP = 1,
         MinProgress = 0.45,
         MagSwapTime = 1,
         EventTable = {
